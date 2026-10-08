@@ -3,9 +3,28 @@
 Task `jp2x8c9f` · campaign `camp_0589d1e96758477586df0e43dd8eeec1`
 Repo `ayyang04-ay/Task3` · **continue on branch `claude/amazing-wright-20gzza`**
 
-## Status: Phase 4 (Grader) in progress
+## Status: Phase 4 (Grader) complete; Phase 5 (Audit) next
 
-Phases 0–3 complete. Phase 4b authoring substantially done. Not yet piloted.
+Phases 0–3 complete. Phase 4 grader authored, checklist closed, axis-validated.
+Not yet piloted.
+
+### Session update — 2026-10-08
+
+- **Floor re-probe done on the shipped room (next step 1 below, now closed).**
+  Five blind draws, 0 of 5 proposed a dedicated B/Victoria study — 3 missed the
+  gap, 2 folded it inertly, 1 of those also committed the B/Yamagata error.
+  This supersedes the provisional stand-in result; **known-risk #1 is retired**,
+  not live. Detail in `reviewer_data/problem_card.md`.
+- **Phase 4 checklist closed.** Every A item now names its file; B7 recast from
+  a bare negation of A3 into a distinct false optimum; Golden recomputes clean.
+- **Grader axis-validated.** A strong attempt failing only A3 was held to A3 by
+  a blind grader; B7 fired as designed. The bridge-line halo risk held.
+- **Golden correction + gate hardening.** The Golden's A/H3N2 day-0 GMT
+  (160 vs 243) reproduced under no aggregation; corrected to 185 vs 278, and
+  both baseline imbalances added to `verify_room.py`. Gate is now **19 anchors**.
+- **`reviewer_data/problem_card.md` written.**
+- Remaining on the Claude Code side: Phase 5 audit pass, then push. Panel
+  calibration and QA jobs run on the Anton harness (see next step 5).
 
 ## Repo layout
 
@@ -14,7 +33,7 @@ Phases 0–3 complete. Phase 4b authoring substantially done. Not yet piloted.
 | `task_prompt.txt` | yes | model-facing prompt, with the safety out-of-scope line |
 | `data_room/` | yes | model-facing mount, 15 files |
 | `grader/grader_prompt.md` | yes | grading document, five sections |
-| `reviewer_data/` | placeholder only | problem card still to write (next step 3) |
+| `reviewer_data/` | yes | `problem_card.md` — reviewer lab notes |
 | `sources/` | yes | the ten source workbooks the room derives from |
 | `build/` | yes | `build_room.py`, `verify_room.py`, `assert_absence.py` |
 | `analysis/` | yes | scoping scripts kept as provenance for the corrections below; `analysis/README.md` says what each established |
@@ -112,22 +131,19 @@ and MOESM9 arrived. Outcome on the influenza B commitment:
 
 **0 of 5 proposed a dedicated B/Victoria characterisation study.**
 
-**The caveat.** That stand-in room had no ELISA and no HAI file. Both ship four
-antigen blocks including `B/Vic` and `B/Yam`, so in the shipped room an attempt
-sees influenza B in the first column it reads. The real notice rate is
-therefore probably higher and the real miss rate lower than the table shows.
-The spine's known-risk #1 — that the influenza B floor is untested and is the
-single largest risk to the design — is **still live**. Do not treat it as
-retired.
+**This result is superseded by the shipped-room re-probe** (session update
+above; full table in `reviewer_data/problem_card.md`). The caveat that made it
+provisional — the stand-in room lacked the ELISA and HAI files that most
+advertise the B lineage — no longer applies: the re-probe ran on the shipped
+room, which does carry those files, and the act-on-it rate was still 0 of 5.
+Known-risk #1 is therefore retired, not live.
 
-What does survive, independent of discoverability: noticing influenza B and
-acting on it are different behaviours, and four of five attempts that noticed
-it proposed nothing to close it. That is what A3 and the bridge line are built
-on. Probe C also included B/Yamagata, which is the scorable error rather than
-the omission.
+What survives independent of discoverability: noticing influenza B and acting
+on it are different behaviours, and the attempts that noticed it still proposed
+nothing to close it.
 
-Probe outputs are **not** in the repo — they were written to a session
-scratchpad and are gone. Re-probing produces fresh ones.
+Probe outputs (both rounds) were written to session scratchpads and are not in
+the repo. Re-probing produces fresh ones.
 
 
 ## What a new session cannot recover from this repo
@@ -148,6 +164,10 @@ Recorded here because it is not reconstructible from the files.
 - **Nothing has been piloted or calibrated.** No score exists for this task.
 
 ## Next steps, in order
+
+> Status (2026-10-08): steps 1, 2 and 4 are **done** (see session update). Step 3
+> (`problem_card.md`) is **written**. Remaining: the Phase 5 audit pass and push
+> on the Claude Code side, then step 5 (panel calibration) on the Anton harness.
 
 1. **Re-probe against the shipped `data_room/`.** Five or more draws on the
    real 15-file mount. This is the only open item that could still change a
@@ -188,11 +208,11 @@ Recorded here because it is not reconstructible from the files.
 
 ## Known open questions
 
-- Whether the shipped room makes influenza B too discoverable. Item 1 answers
-  this. If the notice rate goes high and the act-on-it rate stays low, the
-  design holds. If attempts start proposing B work unprompted, the primary
-  basin is weakened and the FDR-scope thread (pooled correction across 96
-  extinguishing the H1N1 signal, 11 to 0) has to carry more weight.
+- ~~Whether the shipped room makes influenza B too discoverable.~~ **Answered by
+  the re-probe (session update): notice rate up, act-on-it rate still 0 of 5, so
+  the design holds.** The FDR-scope thread (pooled correction across 96
+  extinguishing the H1N1 signal, 11 to 0) remains a secondary foreclosure but
+  does not have to carry the basin.
 - Whether `data_room/` is served at `/tmp/world/filesystem` by the harness
   automatically or needs a mapping step. The skill's `workflow.md` names
   `data_room/` as the model-facing component, which implies no manual bind,
