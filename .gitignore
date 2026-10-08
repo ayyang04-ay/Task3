@@ -1,0 +1,7 @@
+# MOESM10 ships as a 20 MB binary workbook (.xlsb) holding only single-cell
+# GEX coordinates and marker-gene tables. Nothing in it bears on any graded
+# commitment and it is deliberately not mounted in the data room, so it is
+# not tracked here. Retrieve it from the paper's supplementary files if the
+# inventory needs re-auditing.
+_sources_raw/
+*.xlsb

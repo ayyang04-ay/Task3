@@ -1,0 +1,8 @@
+Participant,Number of wk1 PB sequences,Number of wk1 PB clones,Number of GC B cell sequences,Number of GC B cell clones,Number of overlapping clones spanning wk1 PB and GC B cell,Number of wk1 PB sequences in overlapping clones,Number of GC B cell sequences in overlapping clones,Percentage of overlapping clones out of wk1 PB clones,Percentage of overlapping clones out of GC B cell clones
+397-06,6790,257,52,25,23,2085,50,8.949%,92%
+397-17,3811,213,13,11,10,378,10,4.695%,90.909%
+397-28,1152,78,117,18,15,639,103,19.231%,83.333%
+397-29,3661,207,302,63,46,1103,175,22.222%,73.016%
+397-05,1860,167,8,7,7,125,8,4.192%,100%
+397-09,508,50,15,5,1,109,5,2%,20%
+397-22,612,37,2,1,0,0,0,0%,0%
