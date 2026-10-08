@@ -67,7 +67,7 @@ regulatory bridge, not as the primary functional readout.
 pre-vaccination titre and on birth cohort.
 
 Baseline stratification is required. In `neutralization_seqbased.csv` the
-mRNA-1010 arm starts lower on A/H3N2 (day 0 GMT 160 vs 243) and in
+mRNA-1010 arm starts lower on A/H3N2 (day 0 GMT 185 vs 278) and in
 `microneutralization.csv` on the heterologous panel (week 0 GM 57.0 vs 121.3);
 baseline anti-correlates with fold-rise. An unstratified fold-rise endpoint
 therefore flatters whichever arm enrolled lower.

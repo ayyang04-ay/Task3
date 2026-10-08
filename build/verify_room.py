@@ -120,6 +120,20 @@ mm = r[r.index.get_level_values("arm")=="mRNA-1010"]; ff = r[r.index.get_level_v
 check("adverse waning d29->d181 is significant", mw(mm,ff) < 0.01,
       f"mRNA {gm(mm):.2f}x drop vs Fluarix {gm(ff):.2f}x  p={mw(mm,ff):.4f}")
 
+print("\nBaseline imbalance (stratification anchors)")
+d0 = sn[(sn.subtype=="H3N2") & (sn.day==0)]
+bp = d0.pivot_table(index=["arm","pid"], values="titer", aggfunc=gm)["titer"]
+mm = bp[bp.index.get_level_values("arm")=="mRNA-1010"]
+ff = bp[bp.index.get_level_values("arm")=="Fluarix"]
+check("H3N2 d0 GMT: mRNA arm starts lower",
+      abs(gm(mm)-185) < 2 and abs(gm(ff)-278) < 2,
+      f"GM {gm(mm):.1f} vs {gm(ff):.1f}  ratio {gm(mm)/gm(ff):.2f}")
+hw = mn[(mn.panel=="heterologous") & (mn.timepoint=="wk0") & (mn.measure=="titer")]
+m = hw.loc[hw.arm=="mRNA-1010","value"]; fl = hw.loc[hw.arm=="Fluarix","value"]
+check("heterologous microneut wk0: mRNA arm starts lower",
+      abs(gm(m)-57.0) < 1 and abs(gm(fl)-121.3) < 1,
+      f"GM {gm(m):.1f} vs {gm(fl):.1f}  ratio {gm(m)/gm(fl):.2f}")
+
 print()
 print("ALL ANCHORS PASS" if not fails else f"FAILED: {fails}")
 sys.exit(1 if fails else 0)
