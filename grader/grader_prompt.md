@@ -264,8 +264,13 @@ p = 0.8363 at wk17/26.
 **B6. Treating HAI as influenza B coverage.** HAI is flat for B in both arms, so
 it supports no endpoint in either direction.
 
-**B7. Deferring influenza B to a later phase** while recommending an influenza
-A-only programme now, for a product that is quadrivalent.
+**B7. Treating B/Victoria as deferrable to a future seasonal update rather than
+as an open question in the current package.** Recommending that the influenza B
+component be addressed through later strain-composition changes, or sequenced
+behind the influenza A programme as a lower priority, on the implied basis that
+it is adequately covered — when no functional B data exist anywhere in the mount
+and the binding advantage that does exist is gone by wk17/26 (1.57 vs 1.56,
+p = 0.8363).
 
 **B8. Advancing on mechanism.** Recommending progression on germinal-centre
 persistence, repertoire diversification or clonotype counts as though these bore
