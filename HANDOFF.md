@@ -7,6 +7,22 @@ Repo `ayyang04-ay/Task3` · **continue on branch `claude/amazing-wright-20gzza`*
 
 Phases 0–3 complete. Phase 4b authoring substantially done. Not yet piloted.
 
+## Repo layout
+
+| Path | Tracked | What it is |
+|---|---|---|
+| `task_prompt.txt` | yes | model-facing prompt, with the safety out-of-scope line |
+| `data_room/` | yes | model-facing mount, 15 files |
+| `grader/grader_prompt.md` | yes | grading document, five sections |
+| `reviewer_data/` | placeholder only | problem card still to write (next step 3) |
+| `sources/` | yes | the ten source workbooks the room derives from |
+| `build/` | yes | `build_room.py`, `verify_room.py`, `assert_absence.py` |
+| `analysis/` | yes | scoping scripts kept as provenance for the corrections below; `analysis/README.md` says what each established |
+| `_sources_raw/` | **no** | gitignored staging dir, plus the 20 MB MOESM10 `.xlsb` |
+
+There is no `generator/` — every value is real-sourced from the workbooks,
+nothing synthetic or simulated.
+
 ## What is done
 
 **Corpus (Phase 1).** All eleven source workbooks MOESM4–14 inventoried.
@@ -112,6 +128,24 @@ the omission.
 
 Probe outputs are **not** in the repo — they were written to a session
 scratchpad and are gone. Re-probing produces fresh ones.
+
+
+## What a new session cannot recover from this repo
+
+Recorded here because it is not reconstructible from the files.
+
+- **The five floor-probe answers are gone.** They were written to a session
+  scratchpad, not the repo. The outcome table above is the only record. A
+  re-probe produces new ones; do not try to locate the originals.
+- **The stand-in room the probes ran against no longer exists.** It was built
+  by `analysis/extract.py` before MOESM4 and MOESM9 arrived and lacked both,
+  plus it used the arm-unlabelled MOESM11 sheet for germinal-centre data. That
+  is why the floor result is provisional.
+- **The scoping spine is not in the repo.** It arrived as an `anton-scope` zip
+  upload. The corrections above are the record of where it was wrong; if the
+  spine document is still live elsewhere, those seven items should be written
+  back into it.
+- **Nothing has been piloted or calibrated.** No score exists for this task.
 
 ## Next steps, in order
 
