@@ -207,9 +207,10 @@ interchangeable, or leaving the subtype unspecified, does not satisfy A1.
 **A2. The strain set is contemporary and forward-drift H1N1 isolates.** The
 attempt specifies a panel of isolates contemporary with or post-dating the
 2022–2023 composition rather than a historical strain series. Any of these
-groundings counts: the 2023 isolates among the significant viruses; the
-drift-distance gradient; or that neither binding panel contains a strain later
-than 2022 and so cannot speak to forward drift. The attempt need not assert that
+groundings counts: the 2023 isolates among the significant viruses in
+`neutralization_seqbased.csv`; the drift-distance gradient in that same file; or
+that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`)
+contains a strain later than 2022 and so cannot speak to forward drift. The attempt need not assert that
 the two non-significant viruses prove drift-specificity — that reading is weaker
 than the gradient and is not required.
 
@@ -225,9 +226,14 @@ close it, does not satisfy A3 — this is the single most common way a strong
 attempt fails. Scoping B/Yamagata out as no longer circulating is correct and
 must not be read as an omission.
 
-Any grounding for A3 counts: the file-by-file inventory; the decay of the B/Vic
-binding advantage to parity by wk17/26 while both A subtypes hold theirs; or the
-observation that two of four labelled antigens never appear in a functional file.
+Any grounding for A3 counts: the file-by-file inventory showing influenza B
+present only in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv`
+and absent from every functional file (`neutralization_seqbased.csv`,
+`binding_breadth_h1.csv`, `binding_breadth_h3.csv`, `microneutralization.csv`,
+`mab_binding_panels.csv`); the decay of the B/Vic binding advantage in
+`elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56) while both A subtypes
+hold theirs; or the observation that the two influenza B antigens named in
+`trial_summary.md` never appear in a functional file.
 The attempt need not use the word "quadrivalent".
 
 ## B) PENALIZE FOR
