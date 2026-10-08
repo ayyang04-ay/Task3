@@ -15,7 +15,7 @@ against what.
 |---|---|
 | `PROMPT.md` | the prompt given to the attempt |
 | `GRADING.md` | grading guidelines, including the Golden Response |
-| `data-room/` | the mount, served to the attempt at `/tmp/world/filesystem` |
+| `data_room/` | the mount, served to the attempt at `/tmp/world/filesystem` |
 | `sources/` | the source-data workbooks the room is derived from |
 | `build/build_room.py` | assembles the room from `sources/` |
 | `build/verify_room.py` | recomputes every graded anchor from the shipped room |
@@ -24,9 +24,9 @@ against what.
 ## Reproducing
 
 ```
-python3 build/build_room.py    sources data-room
-python3 build/verify_room.py   data-room      # all anchors must pass
-python3 build/assert_absence.py data-room     # absence anchors must hold
+python3 build/build_room.py    sources data_room
+python3 build/verify_room.py   data_room      # all anchors must pass
+python3 build/assert_absence.py data_room     # absence anchors must hold
 ```
 
 Requires `pandas`, `numpy`, `scipy`, `statsmodels`, `openpyxl`.

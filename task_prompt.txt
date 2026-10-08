@@ -14,3 +14,8 @@ what — sufficient to support the claim we're pursuing.
 Put a one-line summary of your recommendation at the top of
 /tmp/outputs/answer.md, then your reasoning, every number you relied on, and
 where each came from. Save any analysis you run under /tmp/outputs.
+
+Keep this at the level of study design, specification and interpretation of the
+data package. I need endpoints, populations, comparators and readouts — not
+laboratory procedures, assay protocols or anything someone would follow at a
+bench.
