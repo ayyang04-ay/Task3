@@ -78,23 +78,25 @@ the mount, so the held data cannot test it.
 
 **Against what.** Wild-type clinical isolates post-dating the 2022–2023
 composition named in `trial_summary.md`. Egg- and cell-propagated production
-reassortants excluded — the panel in `neutralization_seqbased.csv` contains five,
-identifiable by their reassortant designations (`IVR-238`, `NIB-88`, `X-307A`,
-`X-223A`, an `egg` suffix).
+reassortants excluded — the panel in `neutralization_seqbased.csv` contains six,
+identifiable by their reassortant designations (`IVR-238` on the one H1N1 strain;
+`NIB-88`, `X-307A`, `X-223A` and two `egg`-suffixed strains on H3N2).
 
 **Why A/H1N1 carries this readout.** In `neutralization_seqbased.csv`, per-virus
 Mann-Whitney on log2 fold-change (day 29 over day 0) with Benjamini-Hochberg
 correction applied within each subtype panel separates the arms on **11 of 13**
 A/H1N1 viruses, median delta **+1.32 log2**. The two non-significant viruses are
-the two oldest in the panel — A/Michigan/45/2015 and A/Brisbane/02/2018 — and
-**6 of the 11** significant viruses are 2023 isolates post-dating the vaccine
-composition.
+A/Michigan/45/2015 and A/Brisbane/02/2018; the oldest isolate in the panel,
+A/California/07/2009, is itself significant (q = 0.036), so the separation is not
+a simple old-versus-new split. **6 of the 11** significant viruses are 2023
+isolates post-dating the vaccine composition.
 
-The gain scales with antigenic distance rather than being a uniform potency
-shift: regressing per-virus arm advantage on distance gives a positive slope for
-H1N1 and a negative one for H3N2. This is what distinguishes a strain-coverage
-gain from a potency gain, and it is why the panel must be contemporary and
-forward-drift rather than a historical series.
+The separation is carried by contemporary and forward-drift strains rather than
+by a uniform potency shift: the two non-significant viruses are older isolates
+(2015 and 2018) while 6 of the 11 significant ones are 2023 isolates post-dating
+the composition. That is why the panel must be contemporary and forward-drift
+rather than a historical series. No antigenic-distance field is mounted, so this
+rests on isolation date, not a computed distance.
 
 **Why the durability co-primary.** The functional advantage does not persist.
 Participant-level A/H1N1 GMT across wild-type panel viruses is 883.7 vs 501.4 at
@@ -158,9 +160,9 @@ delta **+2.30 log2**. Sequencing-based neutralisation separates on **0 of 83**
 H3N2 viruses after within-panel correction, at the same n per arm that detected
 11 of 13 in H1N1 — so this is not an underpowering result.
 
-On the five H3 strains measured by both methods, all five are
+On the six H3 strains measured by both methods, all six are
 binding-significant, none is neutralisation-significant, and the per-strain effect
-sizes are uncorrelated (r = +0.10). On the homologous H3 vaccine strain
+sizes are uncorrelated (r = −0.22). On the homologous H3 vaccine strain
 A/Darwin/6/2021, binding is **+2.07 log2** while neutralisation is **−0.27**.
 
 Separately, neither binding panel contains a strain later than 2022, so both
@@ -181,7 +183,8 @@ deficit noted above.
 **Molecular and mechanistic readouts** — germinal-centre persistence, repertoire
 diversification, clonotype counts, single-cell annotations — support a mechanism,
 not a protection claim, and rest on small subsets. The lymph-node cohort in
-`gc_frequencies.csv` is 2 mRNA-1010 against 11 Fluarix participants, and
+`gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants (the
+2-versus-11 figure in `trial_summary.md` is the enrolled lymph-node cohort), and
 `pb_gc_clonal_overlap.csv` covers 7 donors. The monoclonal panels are
 pseudoreplicated across those same 7 donors, so per-monoclonal percentages
 overstate the evidence; `group_I` runs opposite to `group_II`.
@@ -208,7 +211,7 @@ interchangeable, or leaving the subtype unspecified, does not satisfy A1.
 attempt specifies a panel of isolates contemporary with or post-dating the
 2022–2023 composition rather than a historical strain series. Any of these
 groundings counts: the 2023 isolates among the significant viruses in
-`neutralization_seqbased.csv`; the drift-distance gradient in that same file; or
+`neutralization_seqbased.csv`; or
 that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`)
 contains a strain later than 2022 and so cannot speak to forward drift. The attempt need not assert that
 the two non-significant viruses prove drift-specificity — that reading is weaker
@@ -274,7 +277,7 @@ p = 0.8363).
 
 **B8. Advancing on mechanism.** Recommending progression on germinal-centre
 persistence, repertoire diversification or clonotype counts as though these bore
-on protection. These are mechanistic, rest on a 2-versus-11 lymph-node cohort and
+on protection. These are mechanistic, rest on a 6-versus-11 lymph-node cohort and
 7 donors, and carry no protection weight.
 
 **B9. Reading strain-name collisions as influenza B data.** The panels contain

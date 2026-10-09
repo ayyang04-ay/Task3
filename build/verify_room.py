@@ -58,8 +58,15 @@ check("H1N1 significant within panel", (res["H1N1"].q<0.05).sum()==11,
 check("H3N2 significant within panel", (res["H3N2"].q<0.05).sum()==0,
       f"{(res['H3N2'].q<0.05).sum()} of {len(res['H3N2'])}  median delta {res['H3N2'].delta.median():+.2f} log2")
 nulls = sorted(res["H1N1"][res["H1N1"].q>=0.05].virus)
-check("H1N1 nulls are the two oldest isolates",
+check("H1N1 nulls are Brisbane/2018 and Michigan/2015 (NOT the oldest)",
       nulls == ["A/Brisbane/02/2018_H1N1","A/Michigan/45/2015_H1N1"], str(nulls))
+cal = res["H1N1"][res["H1N1"].virus=="A/California/07/2009_H1N1"]
+check("oldest H1N1 isolate (California/2009) IS significant",
+      len(cal)==1 and bool((cal.q<0.05).iloc[0]),
+      f"q={cal.q.iloc[0]:.3f}" if len(cal)==1 else "California/2009 absent")
+tagged = sorted(sn[sn.virus.str.contains(r'egg|IVR-\d+|NIB-\d+|X-\d+', case=False, na=False)].virus.unique())
+check("six reassortant-tagged viruses (5 H3N2 + 1 H1N1)", len(tagged)==6,
+      f"{len(tagged)} tagged; {sum(v.endswith('H1N1') for v in tagged)} H1N1")
 sig = res["H1N1"][res["H1N1"].q<0.05]
 check("H1N1 significant dated 2023",
       sum(bool(re.search(r'/2023', v)) for v in sig.virus)==6,
@@ -85,12 +92,13 @@ check("H1 binding breadth 7 of 9 (NOT 8)", (bb["H1"].q<0.05).sum()==7,
 print("\nBinding vs neutralization, H3 strains measured both ways")
 def norm(s):
     s = re.sub(r'_(H1N1|H3N2)$','',s); s = re.sub(r'_IVR-\d+','',s)
-    return re.sub(r'/0+(\d)/','/\\1/',s).lower().strip()
+    return re.sub(r'/0+(\d)/','/\\1/',s).lower().replace(' ','').strip()
 nb = bb["H3"].assign(key=bb["H3"].strain.map(norm))
 nn = res["H3N2"].assign(key=res["H3N2"].virus.map(norm))
 j = nb.merge(nn, on="key", suffixes=("_bind","_neut"))
-check("H3 shared: all binding-sig, none neut-sig",
-      (j.q_bind<0.05).sum()==len(j) and (j.q_neut<0.05).sum()==0,
+check("H3 shared (6): all binding-sig, none neut-sig, r<0",
+      len(j)==6 and (j.q_bind<0.05).sum()==len(j) and (j.q_neut<0.05).sum()==0
+      and pearsonr(j.delta_bind, j.delta_neut)[0] < 0,
       f"{len(j)} shared | binding-sig {(j.q_bind<0.05).sum()} | neut-sig {(j.q_neut<0.05).sum()}"
       f" | r={pearsonr(j.delta_bind, j.delta_neut)[0]:+.2f}")
 dar = j[j.key.str.contains("darwin")]
@@ -119,6 +127,12 @@ r = (pm[29]/pm[181]).dropna()
 mm = r[r.index.get_level_values("arm")=="mRNA-1010"]; ff = r[r.index.get_level_values("arm")=="Fluarix"]
 check("adverse waning d29->d181 is significant", mw(mm,ff) < 0.01,
       f"mRNA {gm(mm):.2f}x drop vs Fluarix {gm(ff):.2f}x  p={mw(mm,ff):.4f}")
+
+print("\nMechanistic cohort sizes")
+gc = pd.read_csv(f"{R}/gc_frequencies.csv")
+n_m = gc[gc.arm=="mRNA-1010"].participant.nunique(); n_f = gc[gc.arm=="Fluarix"].participant.nunique()
+check("gc_frequencies cohort is 6 vs 11 (NOT 2 vs 11)", n_m==6 and n_f==11,
+      f"mRNA {n_m} vs Fluarix {n_f}")
 
 print("\nBaseline imbalance (stratification anchors)")
 d0 = sn[(sn.subtype=="H3N2") & (sn.day==0)]
