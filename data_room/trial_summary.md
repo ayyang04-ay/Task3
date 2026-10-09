@@ -8,16 +8,19 @@ Northern Hemisphere influenza season.
 | | |
 |---|---|
 | Investigational product | mRNA-1010, quadrivalent mRNA seasonal influenza vaccine |
-| Comparator | Fluarix Quadrivalent (inactivated split-virion), 2022–2023 NH formulation |
+| Comparator | Fluarix Quadrivalent (inactivated split-virion) |
 | Dose | Single intramuscular dose, day 0 |
 | Allocation | Non-randomised; participants assigned by enrolment site |
 
-## Antigenic composition, 2022–2023 Northern Hemisphere (both products)
+## Antigenic composition (as formulated for this study, both products)
 
 - A/Victoria/4897/2022 (H1N1)pdm09-like virus
 - A/Darwin/6/2021 (H3N2)-like virus
 - B/Austria/1359417/2021 (B/Victoria lineage)-like virus
 - B/Phuket/3073/2013 (B/Yamagata lineage)-like virus
+
+These are the antigens as formulated for this study; the list is the sponsor's
+selection and is not presented as a WHO seasonal composition recommendation.
 
 ## Sampling schedule
 

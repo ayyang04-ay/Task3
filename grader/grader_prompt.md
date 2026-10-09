@@ -60,7 +60,8 @@ data at all for half the formulation.
 
 **What is measured.** Neutralisation titre against a pre-locked panel of
 contemporary and forward-drift A/H1N1 clinical isolates. Co-primary endpoints at
-day 29 and at day 181 or later. Haemagglutination inhibition retained as a
+day 29 and at a durability timepoint covering the influenza season (~4–6 months
+post-dose; day 121 or day 181). Haemagglutination inhibition retained as a
 regulatory bridge, not as the primary functional readout.
 
 **In whom.** Adults, randomised and observer-blind, stratified on
@@ -152,7 +153,10 @@ from seasonal formulations. The live influenza B question is B/Victoria.
 stem-competition and epitope mapping, Fc-effector readouts, neuraminidase
 inhibition, and heterosubtypic neutralisation rather than binding alone. Passive
 transfer and heterologous challenge in a pre-immune animal model, interpreted as
-protection per unit neutralising titre.
+protection per unit neutralising titre. This orthogonal pairing — in-vitro
+neutralisation plus in-vivo protection — is what substantiates a
+heterologous-protection claim; HAI tracks only matched strains and a binding
+readout cannot carry it.
 
 **Why A/H3N2 cannot carry a protection readout as it stands.** Bead-array binding
 in `binding_breadth_h3.csv` separates the arms on **12 of 12** H3 strains, median
@@ -201,11 +205,34 @@ endpoint rewards an arm for failing against the strain in its own vaccine.
 ## A) MUST BE PRESENT AND CORRECT
 
 **A1. The heterologous-protection readout is powered on A/H1N1.** The attempt
-names A/H1N1 as the subtype carrying a functional endpoint and grounds it in
+names A/H1N1 as the subtype carrying the functional endpoint and grounds it in
 `neutralization_seqbased.csv` — the per-virus neutralisation result, 11 of 13
 within panel (10 of 12 excluding production reassortants is the same finding) —
-rather than in any binding readout. Treating the two A subtypes as
-interchangeable, or leaving the subtype unspecified, does not satisfy A1.
+rather than in any binding readout.
+
+A1 is scored on the recommended **primary** endpoint, not on hedges elsewhere.
+The test: **would the design still be powering on A/H1N1 if A/H3N2 turned out
+negative?** If the recommendation still succeeds without H1N1 separating, it has
+not committed to H1N1 and A1 is not met. This is a scientific judgement, not a
+prompt-vagueness one — the package shows A/H3N2 at 0 of 83 on neutralisation, so
+a design that stakes the primary on H3N2 stakes it on a readout the data already
+show is dead.
+
+How specific designs are judged:
+
+| Recommended primary design | A1 |
+|---|---|
+| A/H1N1 the sole functional primary | MET |
+| A/H1N1 primary, A/H3N2 explicitly secondary or gated (tested only if H1N1 wins) | MET |
+| Equal co-primaries on both A subtypes | NOT MET |
+| A single pooled multi-subtype primary panel | NOT MET |
+| A/H3N2 first, or H3N2 co-equal with H1N1 | NOT MET |
+| A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
+| Subtype left unspecified, or the two A subtypes treated as interchangeable | NOT MET |
+
+Naming A/H1N1 as the only functional signal in the analysis and then proposing
+one of the NOT-MET structures as the recommendation does not satisfy A1 — the
+commitment is the recommendation, not the analysis.
 
 **A2. The strain set is contemporary and forward-drift H1N1 isolates.** The
 attempt specifies a panel of isolates contemporary with or post-dating the
@@ -218,26 +245,37 @@ the two non-significant viruses prove drift-specificity — that reading is weak
 than the gradient and is not required.
 
 **A3. Influenza B coverage is treated as a prerequisite.** The attempt
-establishes that the functional assays generate no influenza B data of any kind,
-draws the consequence that a quadrivalent product claim cannot rest on influenza
-A data alone, and specifies a study or sub-study producing B/Victoria functional
-data.
+establishes that no B/Victoria neutralisation or characterisation data
+exist, draws the consequence that a quadrivalent product claim cannot rest on
+influenza A data alone, and specifies a study or sub-study with a B/Victoria
+functional endpoint of its own.
+
+"Functional" here means a neutralisation, inhibition or in-vivo protection
+readout — not bead-array or ELISA binding. HAI is the one functional assay in the
+package that includes influenza B (`hai_titers.csv`), and it is flat for B/Vic in
+both arms (week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B
+coverage either way; an attempt that says exactly this is correct, not in error.
 
 A3 is satisfied only when the consequence is drawn and converted into proposed
-work. Listing influenza B among absent assays, without proposing anything to
-close it, does not satisfy A3 — this is the single most common way a strong
-attempt fails. Scoping B/Yamagata out as no longer circulating is correct and
-must not be read as an omission.
+work carrying a B/Victoria-specific functional endpoint. Two things do not
+satisfy A3: listing influenza B among absent assays without proposing anything to
+close it (the single most common way a strong attempt fails); and writing
+B/Victoria isolates into a panel whose endpoint is defined around A/H1N1 with no
+B-specific readout — that is cosmetic coverage, not characterisation. B/Victoria
+is one of the four antigens the product encodes, so its coverage must be
+justified in its own right. Scoping B/Yamagata out as no longer circulating is
+correct and must not be read as an omission.
 
 Any grounding for A3 counts: the file-by-file inventory showing influenza B
-present only in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv`
-and absent from every functional file (`neutralization_seqbased.csv`,
-`binding_breadth_h1.csv`, `binding_breadth_h3.csv`, `microneutralization.csv`,
-`mab_binding_panels.csv`); the decay of the B/Vic binding advantage in
-`elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56) while both A subtypes
-hold theirs; or the observation that the two influenza B antigens named in
-`trial_summary.md` never appear in a functional file.
-The attempt need not use the word "quadrivalent".
+absent from the neutralisation and characterisation panels
+(`neutralization_seqbased.csv`, `binding_breadth_h1.csv`, `binding_breadth_h3.csv`,
+`microneutralization.csv`, `mab_binding_panels.csv`) and present only as titres in
+`elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv` — the one
+functional assay among these, HAI, being flat for B/Vic; the decay of the B/Vic
+binding advantage in `elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56)
+while both A subtypes hold theirs; or the observation that the two influenza B
+antigens named in `trial_summary.md` never appear in a neutralisation or
+characterisation file. The attempt need not use the word "quadrivalent".
 
 ## B) PENALIZE FOR
 
@@ -294,9 +332,13 @@ signal is a smaller denominator — the mRNA arm responded less well at
 A/Darwin/6/2021 — so the endpoint rewards an arm for failing against the strain
 in its own vaccine.
 
-**B11. Substituting assay methodology for study specification.** Spending the
-response on how assays work rather than on what is measured, in whom, and against
-what. The prompt asks for conditions and readouts.
+**B11. Substituting assay methodology for study specification.** The response
+fails to specify what is measured, in whom, and against what for its studies
+because it spent the space on how assays work. The test is binary: if the
+what/whom/against-what specification is present, B11 does not fire — appended
+methodological or bench detail on top of a complete specification is neutral, not
+penalised (the prompt asks for conditions and readouts; wasted detail is the
+attempt's own inefficiency, not a scored error).
 
 **B12. Offering the absence of neuraminidase data as the coverage gap.** It is a
 reasonable observation for a mechanism study, but haemagglutinin is the licensed
@@ -306,6 +348,14 @@ uncharacterised lineage does. It does not satisfy A3.
 **B13. Unsupported assertion.** A number, p-value or claim with no derivation, or
 whose inputs do not exist in the mount. Penalised in its own right, whether or
 not the value is correct.
+
+**B14. A day-29-only functional primary.** Recommending a protection readout with
+no durability timepoint reaching roughly the length of an influenza season (~4–6
+months post-dose; day 121 or day 181), when the package shows the A/H1N1
+functional advantage waning 2.13-fold against 1.24-fold in the comparator from
+day 29 to day 181 (p = 0.0022) — a day-29-only design backs a claim the data show
+has already decayed within one season. Including a durability timepoint at or
+beyond ~4–6 months avoids B14; its exact value beyond that is neutral (C5).
 
 ## C) NEUTRAL
 
