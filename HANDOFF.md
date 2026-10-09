@@ -26,6 +26,31 @@ Not yet piloted.
 - Remaining on the Claude Code side: Phase 5 audit pass, then push. Panel
   calibration and QA jobs run on the Anton harness (see next step 5).
 
+### Session update 2 — 2026-10-09 (first panel + calibration)
+
+- **Panel ran (Phase 8).** 16/16 completed, grader claude-opus-5. Mean **0.669**
+  (range 0.32–0.97) — too high; fails the <0.55 target in the too-easy
+  direction, six attempts >0.75. Not "low."
+- **QA (6 jobs):** reward-hacking 0, difficulty 0, grader hack-robust (no-read
+  answers 0.05–0.07, planted block 0.0). High scores are real solves.
+- **Root cause of the high mean:** A1 under-specified — graders split
+  MET/PARTIAL/NOT MET on hedged designs (co-primary/pooled/go-rule), and A1
+  drives the score. Fixed with a commitment test + explicit MET/NOT-MET table.
+- **Golden factual errors found by QA and fixed** (the gate was confirming the
+  Golden's own claims, not testing them): "two oldest" false (California/2009 is
+  older and significant); gc 6-vs-11 not 2-vs-11; six reassortants not five; six
+  shared H3 strains r=−0.22 not five r=+0.10; dropped the unsound
+  distance-gradient grounding. `verify_room.py` now tests each independently —
+  gate at **22 anchors**.
+- **Other calibration edits:** B14 (durability, season-length window); A3
+  (functional = neutralisation/in-vivo, B-specific endpoint); B11 binary; Study 3
+  orthogonal confirmation; `trial_summary.md` season de-attributed (real data
+  untouched).
+- **Env issue (harness-side, escalated):** task image lacks `statsmodels` +
+  offline sandbox → 14/16 runs hand-rolled ANCOVA. Requested `statsmodels` add.
+- **Next:** re-upload BOTH the grader and the changed `data_room/`
+  (`trial_summary.md`) to RLS, re-run the 16-panel + QA. Prompt unchanged.
+
 ## Repo layout
 
 | Path | Tracked | What it is |

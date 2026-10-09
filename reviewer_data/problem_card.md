@@ -179,3 +179,48 @@ prevent was exercised for the first time, and the bridge held.
 - Not yet done: the final Phase 5 audit pass, and the Taiga 16-solver panel plus
   the three QA jobs — both of which run on the Anton harness, not from a Claude
   Code session.
+
+## Calibration round 1 (2026-10-09)
+
+First 16-solver panel (claude-opus-5 grader) returned **mean 0.669** — too high
+(<0.55 target), six attempts >0.75. QA was clean on reward-hacking, difficulty,
+and grader hack-robustness (no-read answers scored 0.05–0.07, a planted
+verification block 0.0), so the high scores are genuine solves, not exploits.
+
+**Root cause: A1 under-specified.** It named only two failure modes
+(interchangeable / unspecified) and said nothing about the designs attempts
+actually submit — H1N1-first hierarchy, equal co-primaries, pooled panel,
+≥2-of-3 go rule. Graders scored materially identical designs MET / PARTIAL /
+NOT MET, and re-grades of one fixed answer flipped the A1 label. Since A1 drives
+most of the score, this both inflated the mean and produced the variance. Fix:
+A1 now carries the "would it still succeed if A/H3N2 were negative?" test and an
+explicit MET/NOT-MET table; hedged designs are NOT MET.
+
+**Golden factual errors (QA-found, all confirmed and fixed).** The gate had been
+asserting the Golden's own expected values rather than testing them, so it missed
+them. (1) "two oldest" — A/California/07/2009 is the oldest H1N1 and is
+significant (q=0.036), so the two nulls are not the oldest; 11/13 holds. (2) gc
+cohort is 6-vs-11, not 2-vs-11 (2-vs-11 is the `trial_summary.md` figure). (3)
+six reassortant-tagged viruses, not five. (4) six shared H3 strains, r=−0.22, not
+five at +0.10 (the conclusion "uncorrelated" survives). (5) the antigenic-distance
+gradient does not reproduce — no distance field is mounted and the year-proxy
+H1N1 slope is flat (p=0.86); that A2 grounding was dropped. `verify_room.py` now
+tests each independently (22 anchors).
+
+**Other fixes.** Durability is now graded (B14; season-length window ~4–6 months
+— the day-181 figure was arbitrary). A3 "functional" was wrong: it called
+bead-array/mAb binding "functional" and omitted HAI, which is a functional assay
+that does cover B/Victoria (flat); A3 now means neutralisation/inhibition/in-vivo
+and requires a B/Victoria-specific functional endpoint, not B strains in an
+H1N1-powered panel. B11 is a binary substitution test (appended bench detail is
+neutral, consistent with the no-verbosity-penalty rule). Study 3 states orthogonal
+in-vitro + in-vivo confirmation as the standard for a heterologous-protection
+claim. `trial_summary.md` was de-attributed from a WHO 2022–23 composition — the
+listed strains and all measurements (the real experimental data) are unchanged;
+only the editorial season label we had authored was corrected.
+
+**Env defect (harness-side).** The task image lacks `statsmodels` and the sandbox
+is offline, so 14/16 runs hand-rolled ANCOVA. Escalated for a `statsmodels` image
+add. Not blocking, but a silent-error surface.
+
+Not yet re-piloted after these edits.
