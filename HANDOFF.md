@@ -295,3 +295,56 @@ Hold to these, they were settled in the previous session:
 
 Panel calibration cannot be run from a Claude Code session; it needs the Anton
 harness. Flag it rather than approximating it with subagents.
+
+---
+
+## Iteration 2 — branch `claude/keen-pasteur-b66jq1` (QA round on v1 `1327834d`)
+
+Branch-per-iteration from here: each revision of the task gets its own branch,
+and the branch name is the version. This one carries the fixes for the QA report
+on v1. The prompt and the data room are unchanged; every edit is in the grading
+document and in the gate that tests it.
+
+**Applied.** Five of the seventeen QA findings were legitimate and are fixed:
+
+1. The drift-gradient claim in Study 1 was false. The H1N1 gain is uniform
+   across eras, so the Golden now reads it as a potency gain and derives the
+   contemporary/forward-drift panel from the forward-looking claim and the 2022
+   ceiling on the binding panels instead. `verify_room.py` now tests this:
+   per-virus median delta is +1.24 log2 on the 2023 isolates against +1.37 on
+   the pre-2023 ones.
+2. The "same n, so not underpowering" argument was flawed — the H3 effect is
+   genuinely smaller, so equal n does not establish adequate power. Study 3, B1
+   and B3 are re-based on the absence of any functional H3 effect estimate to
+   power against. B3 is also narrowed so it fires on the recommendation and not
+   on a defensible absence-of-evidence or wide-CI remark, which closes the
+   separate `minor_penalty_applied_to_defensible_scientific_rationale` warning.
+4. `microneutralization.csv` carries `homologous`/`heterologous` panels and no
+   strain names, so "2 A strains" in the inventory table was wrong.
+5. C16 said five production reassortants against the Golden's six. Six is
+   correct — two `egg`, `X-307A`, `NIB-88`, `X-223A`, `IVR-238`.
+6. The two durability reductions were conflated. 2.13x/1.24x is the
+   per-participant geometric-mean fold; 2.20x/1.59x is the ratio of arm GMTs.
+   Both are real, both are now stated with their basis, and both are asserted by
+   the gate.
+
+Finding 3 (the `trial_summary_(1).md` duplicate-suffix artefact on the RLS
+mount) is upload-side. The repo carries exactly one `data_room/trial_summary.md`
+and it is correct; the mount needs a clean re-upload.
+
+**Rebutted, do not relitigate.** B11 scoring appended bench protocol as neutral
+(the prompt does not mandate a deliverable list, so penalising it would be a
+verbosity penalty the accounting rules forbid, and B11 still penalises
+substitution); penalising hedging (the prompt asks for a recommendation, and the
+commitment is data-forced at 11/13 against 0/83, not a hidden rule); and the
+score-band and A1-gravity observations, which are grader-consistency notes rather
+than validity failures.
+
+**Gates after the fixes.** Both green. `verify_room.py` is now 26 anchors, three
+of them new: the era-uniformity check, and the two durability reductions.
+
+**Paste format for RLS.** `build/flatten_grader.py` emits
+`grader/grader_prompt_flat.md` — one line per paragraph, list item and table
+row, with em/en dashes and the arrow replaced. Standard pipe tables and the
+`1.`-`29.` C-list numbering are kept deliberately; the over-flattened
+`C1.`-`C29.` plus `=>` tables variant was rejected and must not come back.

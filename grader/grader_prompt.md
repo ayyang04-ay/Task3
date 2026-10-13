@@ -92,12 +92,15 @@ A/California/07/2009, is itself significant (q = 0.036), so the separation is no
 a simple old-versus-new split. **6 of the 11** significant viruses are 2023
 isolates post-dating the vaccine composition.
 
-The separation is carried by contemporary and forward-drift strains rather than
-by a uniform potency shift: the two non-significant viruses are older isolates
-(2015 and 2018) while 6 of the 11 significant ones are 2023 isolates post-dating
-the composition. That is why the panel must be contemporary and forward-drift
-rather than a historical series. No antigenic-distance field is mounted, so this
-rests on isolation date, not a computed distance.
+The advantage is broadly uniform across the panel rather than concentrated in the
+contemporary strains: the median per-virus delta on the 2023 isolates is
+essentially the same as on the pre-2023 ones, so this is a potency gain across
+the subtype and not a drift gradient. It nonetheless extends to the 2023 isolates
+that post-date the composition, and that is why the panel must be contemporary
+and forward-drift rather than a historical series: a forward-looking claim has to
+be demonstrated against forward-drifted strains, and neither binding panel
+contains a strain later than 2022. No antigenic-distance field is mounted, so
+this rests on isolation date, not a computed distance.
 
 **Why the durability co-primary.** The functional advantage does not persist.
 Participant-level A/H1N1 GMT across wild-type panel viruses is 883.7 vs 501.4 at
@@ -105,6 +108,14 @@ day 29 (ratio 1.76) and 402.5 vs 315.9 at day 181 (ratio 1.27). Waning from day
 29 to day 181 is **2.13-fold in the mRNA arm against 1.24-fold in the comparator,
 p = 0.0022** — the most statistically secure between-arm result in the package,
 and it is unfavourable.
+
+Those waning figures are per-participant geometric-mean folds: for each
+participant, the geometric-mean titre across the wild-type panel viruses at each
+timepoint, then that participant's day-29-over-day-181 ratio, then the geometric
+mean of those ratios within arm. Taking the ratio of the two arm-level GMTs
+quoted above instead gives 2.20-fold and 1.59-fold. Both reductions are
+defensible and both show the same direction; an attempt that reaches either pair
+by a stated route has the result right.
 
 Note that the binding readout points the other way: ELISA fold-change at wk17/26
 in `elisa_igg_titers.csv` is 2.12 vs 1.40, p = 0.0001. The binding and functional
@@ -134,7 +145,7 @@ mount, influenza B appears only in `elisa_igg_titers.csv`, `hai_titers.csv` and
 | `neutralization_seqbased.csv` | 13 H1N1 + 83 H3N2 viruses | none |
 | `binding_breadth_h1.csv` | 9 H1 strains | none |
 | `binding_breadth_h3.csv` | 12 H3 strains | none |
-| `microneutralization.csv` | 2 A strains | none |
+| `microneutralization.csv` | 2 panels (homologous/heterologous), both influenza A | none |
 | `mab_binding_panels.csv` | 2 panels, ~340 and ~385 monoclonals | none |
 
 The binding data that do exist for B/Victoria do not support a claim. The
@@ -161,8 +172,13 @@ readout cannot carry it.
 **Why A/H3N2 cannot carry a protection readout as it stands.** Bead-array binding
 in `binding_breadth_h3.csv` separates the arms on **12 of 12** H3 strains, median
 delta **+2.30 log2**. Sequencing-based neutralisation separates on **0 of 83**
-H3N2 viruses after within-panel correction, at the same n per arm that detected
-11 of 13 in H1N1 — so this is not an underpowering result.
+H3N2 viruses after within-panel correction. There is therefore no functional H3
+signal in the package to carry a protection endpoint: the large H3 effect that
+does exist is a binding effect, and the one functional readout that has been run
+against these viruses finds nothing. A larger H3N2 neutralisation study might
+yet detect something, but that is a hypothesis to be generated, not a protection
+trial to be powered — the effect it would be powered to find has no estimate in
+the package at all.
 
 On the six H3 strains measured by both methods, all six are
 binding-significant, none is neutralisation-significant, and the per-strain effect
@@ -240,9 +256,13 @@ attempt specifies a panel of isolates contemporary with or post-dating the
 groundings counts: the 2023 isolates among the significant viruses in
 `neutralization_seqbased.csv`; or
 that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`)
-contains a strain later than 2022 and so cannot speak to forward drift. The attempt need not assert that
-the two non-significant viruses prove drift-specificity — that reading is weaker
-than the gradient and is not required.
+contains a strain later than 2022 and so cannot speak to forward drift. The
+attempt need not assert that the two non-significant viruses prove
+drift-specificity, and need not characterise the H1N1 gain as drift-specific at
+all — the gain is uniform across the panel, and reading it as a potency shift is
+correct (C24). What A2 requires is the contemporary and forward-drift panel,
+which follows from the forward-looking claim and the 2022 ceiling on the
+mounted panels rather than from any gradient.
 
 **A3. Influenza B coverage is treated as a prerequisite.** The attempt
 establishes that no B/Victoria neutralisation or characterisation data
@@ -282,7 +302,8 @@ characterisation file. The attempt need not use the word "quadrivalent".
 **B1. Powering the protection readout on the bead-array binding result.**
 Selecting A/H3N2 because binding breadth is largest there (12 of 12 strains,
 median +2.30 log2), when `neutralization_seqbased.csv` shows 0 of 83 H3N2 viruses
-separating at the same n per arm that detected 11 of 13 in H1N1.
+separating on the one functional assay run against them, while the same file
+shows 11 of 13 in H1N1.
 
 **B2. A multiplex-binding primary endpoint.** Proposing bead-array or ELISA
 binding as the primary readout for a protection claim, or citing the 12-of-12
@@ -290,9 +311,21 @@ result as evidence of protective strain coverage, without confronting the
 neutralisation nulls or the A/Darwin/6/2021 dissociation (+2.07 binding against
 −0.27 neutralisation).
 
-**B3. Reading the 83 H3N2 nulls as underpowering.** Recommending a larger H3N2
-neutralisation study as the protection trial on the grounds that n = 13/14 was
-too small, when that same n detected 11 of 13 in H1N1.
+**B3. Powering the protection trial on A/H3N2 by treating the 83 nulls as a
+sample-size problem.** Recommending a larger H3N2 neutralisation study *as the
+heterologous-protection trial*, on the grounds that the nulls reflect n rather
+than absence of effect. The package contains no functional H3 effect estimate to
+power against: 0 of 83 viruses separate, and the large H3 signal that does exist
+is a binding signal the neutralisation data contradict at A/Darwin/6/2021 (+2.07
+binding against −0.27 neutralisation).
+
+B3 fires on the *recommendation*, not on the observation. Noting that the H3N2
+nulls are an absence of evidence rather than evidence of absence, that the
+confidence intervals are wide, that a smaller true H3 effect would not have been
+detected at this n, or proposing a larger H3N2 neutralisation study as
+exploratory or hypothesis-generating work alongside an A/H1N1 primary, is correct
+scientific reasoning and is not penalised. What is penalised is staking the
+protection readout on it.
 
 **B4. Correcting for multiplicity across all 96 viruses at once** and concluding
 that neither subtype has functional support. The pooled correction is a
@@ -353,7 +386,9 @@ not the value is correct.
 no durability timepoint reaching roughly the length of an influenza season (~4–6
 months post-dose; day 121 or day 181), when the package shows the A/H1N1
 functional advantage waning 2.13-fold against 1.24-fold in the comparator from
-day 29 to day 181 (p = 0.0022) — a day-29-only design backs a claim the data show
+day 29 to day 181 (p = 0.0022; per-participant geometric-mean folds — 2.20-fold
+against 1.59-fold on the arm-GMT reduction, same direction) — a day-29-only
+design backs a claim the data show
 has already decayed within one season. Including a durability timepoint at or
 beyond ~4–6 months avoids B14; its exact value beyond that is neutral (C5).
 
@@ -385,7 +420,7 @@ Not graded, in either direction.
     the lowest dilution in both arms — and rejecting a seroprotection endpoint
     on those grounds.
 15. Noticing the monoclonal pseudoreplication across 7 donors.
-16. Excluding or retaining the five production reassortants in the panel.
+16. Excluding or retaining the six production reassortants in the panel.
 17. Counting 11 of 13 or 10 of 12 A/H1N1 viruses. Both follow from a defensible
     decision about the reassortants.
 18. Noticing the three differing per-assay cohort sizes — binding antibody 75,
@@ -403,7 +438,9 @@ Not graded, in either direction.
     multiplicity correction is applied to the binding panels.
 24. Whether the H1N1 gain is characterised as a strain-coverage gradient, as a
     potency shift, or as both, provided the recommended panel is still
-    contemporary and forward-drift.
+    contemporary and forward-drift. The gain is in fact uniform across eras, so
+    the potency-shift reading is the better-supported one, but neither reading
+    changes what A2 requires and neither is scored.
 25. Whether the adverse waning result is reported as a fold-ratio, a retention
     fraction, or a slope.
 26. Language, tooling, file layout and presentation of saved analysis.

@@ -71,6 +71,20 @@ sig = res["H1N1"][res["H1N1"].q<0.05]
 check("H1N1 significant dated 2023",
       sum(bool(re.search(r'/2023', v)) for v in sig.virus)==6,
       f"{sum(bool(re.search(r'/2023', v)) for v in sig.virus)} of {len(sig)}")
+def _year(v):
+    y = re.findall(r'/(\d{4})(?=_|$)', v)
+    return int(y[-1]) if y else None
+_h1 = res["H1N1"].assign(year=res["H1N1"].virus.map(_year))
+if _h1.year.isna().any():
+    check("H1N1 era split: every virus carries a parsable year", False,
+          f"unparsed: {sorted(_h1.loc[_h1.year.isna(),'virus'])}")
+else:
+    _new = _h1.loc[_h1.year >= 2023, "delta"].median()
+    _old = _h1.loc[_h1.year < 2023, "delta"].median()
+    check("H1N1 gain is uniform across eras (NOT a drift gradient)",
+          abs(_new - _old) < 0.5,
+          f"2023 isolates {_new:+.2f} vs pre-2023 {_old:+.2f} log2  "
+          f"(difference {_new-_old:+.2f}; a gradient would show the 2023 set well ahead)")
 pooled = pd.concat(res.values()); pooled["qp"] = multipletests(pooled.p, method="fdr_bh")[1]
 check("pooled FDR across 96 extinguishes H1N1", (pooled.qp<0.05).sum()==0,
       f"{(pooled.qp<0.05).sum()} of 96 survive pooled correction")
@@ -118,15 +132,25 @@ print("\nDurability of the H1N1 functional advantage")
 prod = r'egg|X-307A|NIB-88|X-223A|IVR-238'
 g = sn[(sn.subtype=="H1N1") & (~sn.virus.str.contains(prod, case=False, na=False))]
 pm = g.pivot_table(index=["arm","pid"], columns="day", values="titer", aggfunc=gm)
-for d in (29, 181):
+armgmt = {}
+for d, exp in ((29, (883.7, 501.4)), (181, (402.5, 315.9))):
     a = pm[d].dropna()
     mm = a[a.index.get_level_values("arm")=="mRNA-1010"]
     ff = a[a.index.get_level_values("arm")=="Fluarix"]
-    print(f"      d{d:<4} GMT {gm(mm):7.1f} vs {gm(ff):7.1f}  ratio {gm(mm)/gm(ff):.2f}  p={mw(mm,ff):.4f}")
+    armgmt[d] = (gm(mm), gm(ff))
+    check(f"arm GMT at d{d}", abs(gm(mm)-exp[0]) < 1.0 and abs(gm(ff)-exp[1]) < 1.0,
+          f"GMT {gm(mm):7.1f} vs {gm(ff):7.1f}  ratio {gm(mm)/gm(ff):.2f}  p={mw(mm,ff):.4f}")
 r = (pm[29]/pm[181]).dropna()
 mm = r[r.index.get_level_values("arm")=="mRNA-1010"]; ff = r[r.index.get_level_values("arm")=="Fluarix"]
 check("adverse waning d29->d181 is significant", mw(mm,ff) < 0.01,
       f"mRNA {gm(mm):.2f}x drop vs Fluarix {gm(ff):.2f}x  p={mw(mm,ff):.4f}")
+check("waning folds, per-participant reduction, are 2.13x / 1.24x",
+      abs(gm(mm)-2.13) < 0.03 and abs(gm(ff)-1.24) < 0.03,
+      f"per-participant {gm(mm):.2f}x / {gm(ff):.2f}x")
+_am = armgmt[29][0]/armgmt[181][0]; _af = armgmt[29][1]/armgmt[181][1]
+check("waning folds, arm-GMT reduction, are 2.20x / 1.59x",
+      abs(_am-2.20) < 0.03 and abs(_af-1.59) < 0.03,
+      f"arm-GMT {_am:.2f}x / {_af:.2f}x  (both reductions are quoted in the Golden)")
 
 print("\nMechanistic cohort sizes")
 gc = pd.read_csv(f"{R}/gc_frequencies.csv")
