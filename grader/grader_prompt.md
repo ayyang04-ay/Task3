@@ -212,9 +212,9 @@ deficit noted above.
 diversification, clonotype counts, single-cell annotations — support a mechanism,
 not a protection claim, and rest on small subsets. The lymph-node cohort in
 `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and
-`pb_gc_clonal_overlap.csv` covers 7 donors. The trial summary's lymph-node row
-does not reconcile with that count; either figure may be cited, and neither is
-scored (C19, C32). The monoclonal panels are
+`pb_gc_clonal_overlap.csv` covers 7 donors, matching the trial summary's
+lymph-node row. Either way the mechanistic files carry no protection weight
+(B8, C19). The monoclonal panels are
 pseudoreplicated across those same 7 donors, so per-monoclonal percentages
 overstate the evidence; `group_I` runs opposite to `group_II`.
 
@@ -486,13 +486,11 @@ Not graded, in either direction.
     specification with extra material appended scores as one without it.
 31. How the attempt handles the antigenic composition in the trial summary.
     Taking the stated composition at face value, observing that the listed H1
-    component post-dates the stated season, and resolving the
-    homologous/heterologous partition either way or under both readings all
-    count. The trial summary states the composition is the sponsor's selection;
-    the mount does not settle it further, and no reading is scored.
-32. Which lymph-node cohort size is cited, and whether the discrepancy between
-    the trial summary's row and `gc_frequencies.csv` is noticed or passed over.
-    The mechanistic files carry no protection weight either way (B8).
+    component post-dates the stated season, and running a sensitivity analysis
+    over both readings all count. The trial summary states the four antigens as
+    the sponsor's selection for mRNA-1010 and defines the homologous and
+    heterologous designations against them; nothing mounted dates the selection
+    externally, and no reading is scored.
 
 **Equivalent methods.** Any route that establishes the same claims from the
 mounted files earns what the Golden Response's route earns. The Golden Response
