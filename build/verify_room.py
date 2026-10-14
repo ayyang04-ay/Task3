@@ -157,6 +157,12 @@ gc = pd.read_csv(f"{R}/gc_frequencies.csv")
 n_m = gc[gc.arm=="mRNA-1010"].participant.nunique(); n_f = gc[gc.arm=="Fluarix"].participant.nunique()
 check("gc_frequencies cohort is 6 vs 11 (NOT 2 vs 11)", n_m==6 and n_f==11,
       f"mRNA {n_m} vs Fluarix {n_f}")
+summ = open(f"{R}/trial_summary.md", encoding="utf-8").read()
+ln = [l for l in summ.splitlines() if "fine-needle aspiration" in l.lower() and l.startswith("|")]
+nums = re.findall(r"\|\s*(\d+)\s*", ln[0]) if ln else []
+check("trial summary lymph-node row agrees with gc_frequencies",
+      len(nums) == 2 and (int(nums[0]), int(nums[1])) == (n_m, n_f),
+      f"summary row {nums} vs data {n_m}/{n_f}" if ln else "no lymph-node row found")
 
 print("\nBaseline imbalance (stratification anchors)")
 d0 = sn[(sn.subtype=="H3N2") & (sn.day==0)]

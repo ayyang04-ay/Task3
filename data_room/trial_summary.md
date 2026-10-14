@@ -12,15 +12,19 @@ Northern Hemisphere influenza season.
 | Dose | Single intramuscular dose, day 0 |
 | Allocation | Non-randomised; participants assigned by enrolment site |
 
-## Antigenic composition (as formulated for this study, both products)
+## Antigenic composition
+
+mRNA-1010 encodes four antigens, selected by the sponsor for this study:
 
 - A/Victoria/4897/2022 (H1N1)pdm09-like virus
 - A/Darwin/6/2021 (H3N2)-like virus
 - B/Austria/1359417/2021 (B/Victoria lineage)-like virus
 - B/Phuket/3073/2013 (B/Yamagata lineage)-like virus
 
-These are the antigens as formulated for this study; the list is the sponsor's
-selection and is not presented as a WHO seasonal composition recommendation.
+The comparator is Fluarix Quadrivalent as licensed and supplied for the
+2022–2023 Northern Hemisphere season; its composition is per the manufacturer's
+labelling and was not set for this study. Homologous and heterologous panel
+designations throughout refer to the mRNA-1010 antigens listed above.
 
 ## Sampling schedule
 
@@ -43,7 +47,7 @@ consent for the sub-studies:
 | Haemagglutination inhibition | 14 | 15 |
 | Bead-array binding, microneutralisation | 14 | 15 |
 | Sequencing-based neutralisation | 13 | 14 |
-| Lymph-node fine-needle aspiration | 2 | 11 |
+| Lymph-node fine-needle aspiration | 6 | 11 |
 
 ## Identifier conventions
 
