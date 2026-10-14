@@ -4,8 +4,7 @@ The first round of data is in — an immunogenicity study against Fluarix over t
 to the committee.
 
 Everything the program holds is in the mounted input folder
-(/tmp/world/filesystem). It is a working directory rather than a curated one, so
-some of what is in there will not bear on the decision.
+(/tmp/world/filesystem).
 
 Given these data, make your recommendations for the next studies. For each, I
 need the conditions and the readouts — what's measured, in whom, and against
