@@ -20,7 +20,8 @@ only half the formulation.
   on A/H1N1 — 11 of 13 viruses within panel, 6 of them 2023 isolates
   post-dating the vaccine composition.
 - A/H3N2 separates on 12 of 12 strains by bead-array **binding** and on 0 of 83
-  viruses by neutralisation, at the same n per arm. Binding is not functional
+  viruses by neutralisation — the one functional assay run against them, which
+  leaves no functional H3 effect estimate to power on. Binding is not functional
   here, and the binding panels contain no strain later than 2022.
 - The two influenza B antigens have no functional data of any kind. Across all
   eleven source workbooks, influenza B appears only in the ELISA, HAI and IgM
@@ -170,7 +171,7 @@ prevent was exercised for the first time, and the bridge held.
 
 ## Current state
 
-- Data room built; `verify_room.py` passes 19 anchors; `assert_absence.py`
+- Data room built; `verify_room.py` passes 26 anchors; `assert_absence.py`
   holds.
 - Grader is the five-section v4 (no caps, weights or severity rankings). Phase 4
   checklist closed: every A item names its file, no B item negates an A (B7 was
@@ -205,7 +206,7 @@ six reassortant-tagged viruses, not five. (4) six shared H3 strains, r=−0.22, 
 five at +0.10 (the conclusion "uncorrelated" survives). (5) the antigenic-distance
 gradient does not reproduce — no distance field is mounted and the year-proxy
 H1N1 slope is flat (p=0.86); that A2 grounding was dropped. `verify_room.py` now
-tests each independently (22 anchors).
+tests each independently (22 anchors at round 1; 26 after round 2).
 
 **Other fixes.** Durability is now graded (B14; season-length window ~4–6 months
 — the day-181 figure was arbitrary). A3 "functional" was wrong: it called
@@ -219,8 +220,102 @@ claim. `trial_summary.md` was de-attributed from a WHO 2022–23 composition —
 listed strains and all measurements (the real experimental data) are unchanged;
 only the editorial season label we had authored was corrected.
 
-**Env defect (harness-side).** The task image lacks `statsmodels` and the sandbox
-is offline, so 14/16 runs hand-rolled ANCOVA. Escalated for a `statsmodels` image
-add. Not blocking, but a silent-error surface.
+**Env note — closed, not a defect.** 14/16 runs hand-rolled ANCOVA, which read as
+a missing dependency. It is not: `scipy` and `statsmodels` are present in the
+image's `core` micromamba environment, confirmed by the round-2 env-linter and by
+the author. Only the default `PATH` interpreter lacks them, so the first analysis
+call fails once before a run switches environments. No image change is needed and
+the earlier escalation is withdrawn.
 
 Not yet re-piloted after these edits.
+
+## Calibration round 2 and QA (2026-10-13/14) — v1 `1327834d`, tagged Failed QA
+
+32 production runs, scores 0.15–0.42, mean 0.302, **17 of 32 at exactly 0.30**,
+10 distinct scores across 3 A and 14 B criteria. All 32 placed the primary
+endpoint on A/H3N2, so A1 was missed universally. Mean is inside target; the
+compression is not, and the open question is whether it comes from A1 being the
+only live gate or from the document giving graders nowhere to put an A1 miss.
+**Before reading the distribution as difficulty, rescore `172b19f3` (0.42) and
+`bfd0c3ae` (0.15) under the revised document** — a changed accounting rule moves
+the mean without the task moving.
+
+QA returned 17 findings across 7 checks. Seven sit in the author-visible tabs
+(env linter 5, reward hacking 1, data quality 1); the rest are ClaudeScope and
+harness items outside the writing scope. Disposition:
+
+**Fixed, grader-only (re-gradeable, no rerun).**
+
+- An A item is met only where the attempt's own grounding traces to a mounted
+  file. The prompt requires the reasoning, every number relied on and its
+  source, so an ungrounded commitment is not met. This closes the reward-hacking
+  probe: a 20-line answer with no file reads and no numbers scored 0.30 three
+  times, tying or beating 24 of the 32 genuine runs.
+- C30 — appended methodological or bench-level detail is neutral where the
+  specification is complete. B11 already implied this, but graders were
+  improvising a deduction anyway (0.97 against 0.80 across one rollout pair that
+  differed only by an appended protocol appendix).
+- C31 — either reading of the antigenic composition is neutral, sensitivity
+  analysis over both included.
+- C32 — either lymph-node cohort figure may be cited; the Golden no longer
+  attempts a reconciliation that cannot hold.
+- The Golden headline no longer says influenza B has "no functional data at
+  all", which contradicted A3 naming HAI a functional assay covering B/Victoria.
+- Study 3 reads "neutralisation against drifted H3 isolates" rather than
+  "heterosubtypic", which named a different concept from the task's claim and
+  sits next to the floor draw that went chasing H5/H7 breadth.
+- A1's near-miss table gained a hierarchical-testing row and a paragraph saying
+  the table is read on testing structure rather than on the label. See the
+  rationale below.
+- The trial summary is cited by description rather than filename, with a framing
+  note that an upload suffix is not evidence the file went unread. This closes
+  the `trial_summary_(1).md` mismatch without a re-upload.
+
+**Fixed, requires a model rerun** (staged on `claude/qa-round2-rerun`).
+
+- The prompt's "It is a working directory rather than a curated one, so some of
+  what is in there will not bear on the decision" is cut. The sentence states
+  its own consequence, telling the solver that irrelevant files exist and
+  pre-empting the triage judgement the room is built to require. Note this is a
+  hardening change and should be decided together with A1, not independently.
+- The trial summary's lymph-node row and the claim that Fluarix was formulated
+  for this study.
+
+### Why "equal co-primaries" stays NOT MET
+
+A next-study recommendation is a funding decision — the prompt has it going to a
+committee. Co-primary endpoints are conjunctive, so making A/H3N2 neutralisation
+a co-primary designs a trial whose success condition includes a readout the
+package shows at 0 of 83; the programme halts at its first gate, and the alpha
+spent protecting that endpoint comes out of the one endpoint that separates. A
+design that succeeds only if both subtypes separate has not committed to either.
+
+Two boundaries, because the argument proves more than the criterion should
+claim. A1 tests whether programme success is **gated** on the dead readout, not
+whether H3N2 work is **included** — C9 and C10 keep additional readouts neutral,
+and scope is enforced on substitution rather than addition, so a criterion
+penalising the inclusion of H3 work would collide with the neutral list. And the
+funding argument is the author's rationale, not a mounted fact: the prompt
+implies committee approval but never mentions cost, so the criterion cites 0 of
+83 and the conjunctive failure rather than the economics.
+
+Commitment is rewarded under A1 alone and the absence of commitment is punished
+only by A1 failing to be met. There is deliberately no B item for hedging: that
+would mirror an A item, which the grading spec prohibits, and would double-count
+one failure.
+
+## Deferred — recorded as not fixed
+
+Read this list at calibration before diagnosing an odd score, so a soft defect
+is not mistaken for a design signal.
+
+| Item | Why not fixed |
+|---|---|
+| B11 scores appended bench detail neutral, against the prompt's scope line (env linter, error) | The grading spec names "penalise substitution, never addition" as a required authoring rule and says scope constraints are enforced on substitution. Penalising addition is a verbosity penalty the accounting rules forbid in either direction, and the Golden's own Study 3 proposes challenge work. Rebutted; C30 makes the neutrality explicit so graders stop improvising a deduction. |
+| Guidance never states how grave an A1 miss is (env linter, warning) | Severity rankings are on the spec's "what never goes in" list. The grounding half of the finding was implemented; the gravity half is refused. |
+| Prompt leaves the claim's scope open (env linter, info) | A domain judgement the task intends to test. Commitment is prompt-grounded ("make your recommendations", "a one-line summary of your recommendation"), project-mandated and data-forced. A scope clause would be directive and brushes the no-answer-taxonomy rule. |
+| Grader requires a committed subtype without announcing it (data quality, warning) | Withdrawn by the env-linter itself on re-check: the commitment is derivable from `neutralization_seqbased.csv`, so it is not a hidden rule. QA's own probes support the hedging penalty — their committed probe scored 0.30 against 0.25 for the conditional hedge. |
+| Bridge line says "above" where the Golden sits below (problem linter, info) | The bridge line is verbatim mandated boilerplate; the spec says do not reword it. |
+| External domain facts (WHO compositions, B/Yamagata withdrawal, CBER margins) are needed but unverifiable in the sandbox (ClaudeScope, error) | Partly intrinsic to the lane. B/Yamagata scoping is already "correct, not required", so no A item depends on the unmounted fact. The rest affects polish only. |
+| ClaudeScope "recommendation contradicts own evidence" (error) | Not a defect. ClaudeScope itself calls it the capability under evaluation, correctly reflected in low grades. It is positive evidence the basin works. |
+| `column` and `file` absent from the image; default `PATH` python lacks the scientific stack; grading justification truncated in run metadata | Harness-side, outside the writing scope. The scientific stack is present in the `core` environment. |

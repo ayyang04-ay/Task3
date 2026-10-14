@@ -257,10 +257,24 @@ How specific designs are judged:
 | A/H1N1 the sole functional primary | MET |
 | A/H1N1 primary, A/H3N2 explicitly secondary or gated (tested only if H1N1 wins) | MET |
 | Equal co-primaries on both A subtypes | NOT MET |
+| Two primaries tested hierarchically, A/H1N1 first, its claim standing alone if A/H3N2 fails | MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | A/H3N2 first, or H3N2 co-equal with H1N1 | NOT MET |
 | A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
 | Subtype left unspecified, or the two A subtypes treated as interchangeable | NOT MET |
+
+The table is read on the testing structure, not on the label an attempt uses.
+"Equal co-primaries" means the two endpoints share the alpha and programme
+success requires both, with no testing hierarchy between them — a design that
+stakes success on a readout the package shows at 0 of 83, and that spends
+type-I error budget protecting it at the expense of the one endpoint that
+separates. An attempt that writes "co-primary" but describes a hierarchical or
+gatekeeping procedure, under which the A/H1N1 claim stands on its own if
+A/H3N2 fails, is judged under the gated row above and is MET.
+
+Proposing A/H3N2 work alongside a committed A/H1N1 primary is not penalised
+here or anywhere (C9, C10). What A1 tests is whether programme success is
+gated on the dead readout.
 
 Naming A/H1N1 as the only functional signal in the analysis and then proposing
 one of the NOT-MET structures as the recommendation does not satisfy A1 — the

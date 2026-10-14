@@ -42,7 +42,8 @@ does so for only half the formulation.
   persist — waning from day 29 to day 181 is 2.13-fold against 1.24-fold in the
   comparator, p = 0.0022.
 - **A/H3N2** separates on 12 of 12 strains by bead-array binding and on 0 of 83
-  viruses by neutralisation, at the same n per arm. Binding is not functional
+  viruses by neutralisation — the one functional assay run against them, which
+  leaves no functional H3 effect estimate to power on. Binding is not functional
   here, and the binding panels contain no strain later than 2022.
 - **B/Victoria** has no functional data of any kind. Across all eleven source
   workbooks, influenza B appears only in the ELISA, HAI and IgM tables. The
