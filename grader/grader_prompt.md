@@ -14,6 +14,12 @@ recommendation at the top, then the recommended studies, then the reasoning with
 every number traced to its file. Any analysis scripts or intermediate files saved
 under `/tmp/outputs`.
 
+References below to "the trial summary" mean the summary document mounted in the
+input folder, which carries the study design, the antigenic composition, the
+per-assay cohort table and the identifier conventions. Its mounted filename may
+carry an upload suffix; cite it as the attempt found it, and do not treat a
+filename difference as evidence the file was not read.
+
 The number of studies proposed is not graded. One well-specified trial plus an
 influenza B characterisation study, and a three-to-four study programme covering
 the same ground, earn the same. What is graded is whether the three commitments
@@ -53,8 +59,9 @@ for this task.
 **Recommendation.** Power the heterologous-protection readout on A/H1N1 against
 contemporary and forward-drift isolates with a durability co-primary, and run a
 B/Victoria functional characterisation study in parallel — the package
-establishes broader binding, not broader protection, and generates no functional
-data at all for half the formulation.
+establishes broader binding, not broader protection, and for half the
+formulation it generates no neutralisation or characterisation data at all and
+only a flat HAI result.
 
 ### Study 1 — heterologous protection, A/H1N1
 
@@ -78,7 +85,7 @@ pattern immune imprinting would produce. No age or birth year appears anywhere i
 the mount, so the held data cannot test it.
 
 **Against what.** Wild-type clinical isolates post-dating the 2022–2023
-composition named in `trial_summary.md`. Egg- and cell-propagated production
+composition named in the trial summary. Egg- and cell-propagated production
 reassortants excluded — the panel in `neutralization_seqbased.csv` contains six,
 identifiable by their reassortant designations (`IVR-238` on the one H1N1 strain;
 `NIB-88`, `X-307A`, `X-223A` and two `egg`-suffixed strains on H3N2).
@@ -136,7 +143,7 @@ standalone.
 post-dating B/Austria/1359417/2021.
 
 **Why this is a prerequisite and not an addition.** The product is quadrivalent —
-`trial_summary.md` names four antigens, two of them influenza B. Across the whole
+the trial summary names four antigens, two of them influenza B. Across the whole
 mount, influenza B appears only in `elisa_igg_titers.csv`, `hai_titers.csv` and
 `igm_fold_change.csv`. The functional assays are influenza A only:
 
@@ -162,7 +169,8 @@ from seasonal formulations. The live influenza B question is B/Victoria.
 
 **What is measured.** Whether the additional H3 binding is functional at all:
 stem-competition and epitope mapping, Fc-effector readouts, neuraminidase
-inhibition, and heterosubtypic neutralisation rather than binding alone. Passive
+inhibition, and neutralisation against drifted H3 isolates rather than binding
+alone. Passive
 transfer and heterologous challenge in a pre-immune animal model, interpreted as
 protection per unit neutralising titre. This orthogonal pairing — in-vitro
 neutralisation plus in-vivo protection — is what substantiates a
@@ -203,9 +211,10 @@ deficit noted above.
 **Molecular and mechanistic readouts** — germinal-centre persistence, repertoire
 diversification, clonotype counts, single-cell annotations — support a mechanism,
 not a protection claim, and rest on small subsets. The lymph-node cohort in
-`gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants (the
-2-versus-11 figure in `trial_summary.md` is the enrolled lymph-node cohort), and
-`pb_gc_clonal_overlap.csv` covers 7 donors. The monoclonal panels are
+`gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and
+`pb_gc_clonal_overlap.csv` covers 7 donors. The trial summary's lymph-node row
+does not reconcile with that count; either figure may be cited, and neither is
+scored (C19, C32). The monoclonal panels are
 pseudoreplicated across those same 7 donors, so per-monoclonal percentages
 overstate the evidence; `group_I` runs opposite to `group_II`.
 
@@ -219,6 +228,13 @@ A/Darwin/6/2021 the mRNA arm responded less well than the comparator. Such an
 endpoint rewards an arm for failing against the strain in its own vaccine.
 
 ## A) MUST BE PRESENT AND CORRECT
+
+An A item is met only where the attempt's own grounding, traced to a mounted
+file, establishes it. The prompt requires the reasoning, every number relied on
+and where each came from; a commitment asserted with no such grounding is not
+met, however correct the recommendation reads. This is the value-and-basis
+accounting rule applied to the A items, not a judgement about how grave any one
+miss is.
 
 **A1. The heterologous-protection readout is powered on A/H1N1.** The attempt
 names A/H1N1 as the subtype carrying the functional endpoint and grounds it in
@@ -294,7 +310,7 @@ absent from the neutralisation and characterisation panels
 functional assay among these, HAI, being flat for B/Vic; the decay of the B/Vic
 binding advantage in `elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56)
 while both A subtypes hold theirs; or the observation that the two influenza B
-antigens named in `trial_summary.md` never appear in a neutralisation or
+antigens named in the trial summary never appear in a neutralisation or
 characterisation file. The attempt need not use the word "quadrivalent".
 
 ## B) PENALIZE FOR
@@ -356,7 +372,7 @@ influenza A strains named after the Australian state of Victoria and the Japanes
 prefecture of Yamagata — among them `A/Victoria/4897/2022_IVR-238_H1N1`,
 `A/Victoria/1389/2023_H1N1` and `A/YAMAGATA/98/2023_H3N2`. Reading any of these
 as B-lineage coverage is a nomenclature error. The actual B antigens named in
-`trial_summary.md` are B/Austria/1359417/2021 and B/Phuket/3073/2013, and neither
+the trial summary are B/Austria/1359417/2021 and B/Phuket/3073/2013, and neither
 appears in any functional file.
 
 **B10. Normalising heterologous titre to the participant's own vaccine-strain
@@ -450,6 +466,19 @@ Not graded, in either direction.
 28. Omitting any number the Golden Response carries that is not needed to
     establish A1, A2 or A3.
 29. Length, section ordering, and whether studies are numbered or named.
+30. Appended methodological, assay or bench-level detail, where the
+    what/whom/against-what specification is already complete. The prompt's
+    scope line is enforced on substitution (B11), not on addition: a complete
+    specification with extra material appended scores as one without it.
+31. How the attempt handles the antigenic composition in the trial summary.
+    Taking the stated composition at face value, observing that the listed H1
+    component post-dates the stated season, and resolving the
+    homologous/heterologous partition either way or under both readings all
+    count. The trial summary states the composition is the sponsor's selection;
+    the mount does not settle it further, and no reading is scored.
+32. Which lymph-node cohort size is cited, and whether the discrepancy between
+    the trial summary's row and `gc_frequencies.csv` is noticed or passed over.
+    The mechanistic files carry no protection weight either way (B8).
 
 **Equivalent methods.** Any route that establishes the same claims from the
 mounted files earns what the Golden Response's route earns. The Golden Response
