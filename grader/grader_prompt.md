@@ -105,8 +105,8 @@ essentially the same as on the pre-2023 ones, so this is a potency gain across
 the subtype and not a drift gradient. It nonetheless extends to the 2023 isolates
 that post-date the composition, and that is why the panel must be contemporary
 and forward-drift rather than a historical series: a forward-looking claim has to
-be demonstrated against forward-drifted strains, and neither binding panel
-contains a strain later than 2022. No antigenic-distance field is mounted, so
+be demonstrated against forward-drifted strains, and neither bead-array breadth
+panel contains a strain later than 2022. No antigenic-distance field is mounted, so
 this rests on isolation date, not a computed distance.
 
 **Why the durability co-primary.** The functional advantage does not persist.
