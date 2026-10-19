@@ -14,44 +14,49 @@ Northern Hemisphere influenza season.
 
 ## Antigenic composition
 
-mRNA-1010 encodes four antigens, selected by the sponsor for this study:
+Both products carry the 2022–2023 Northern Hemisphere seasonal strains. The arms
+differ only in the H3N2 component, where the two products use cell- and
+egg-propagated preparations of the same strain:
 
-- A/Victoria/4897/2022 (H1N1)pdm09-like virus
-- A/Darwin/6/2021 (H3N2)-like virus
-- B/Austria/1359417/2021 (B/Victoria lineage)-like virus
-- B/Phuket/3073/2013 (B/Yamagata lineage)-like virus
+| Component | mRNA-1010 | Fluarix |
+|---|---|---|
+| A(H1N1)pdm09 | A/Wisconsin/588/2019 | A/Wisconsin/588/2019 |
+| A(H3N2) | A/Darwin/6/2021 (cell) | A/Darwin/9/2021 (egg) |
+| B/Victoria lineage | B/Austria/1359417/2021 | B/Austria/1359417/2021 |
+| B/Yamagata lineage | B/Phuket/3073/2013 | B/Phuket/3073/2013 |
 
-The comparator is Fluarix Quadrivalent as licensed and supplied for the
-2022–2023 Northern Hemisphere season; its composition is per the manufacturer's
-labelling and was not set for this study. Homologous and heterologous panel
-designations throughout refer to the mRNA-1010 antigens listed above.
+Homologous and heterologous panel designations refer to these components.
 
 ## Sampling schedule
 
-Peripheral blood at day 0 (pre-dose), day 7 (week 1), day 29 (week 4),
-day 121 (week 17) and day 181 (week 26). Not all participants attended both
-later visits; week 17 and week 26 are reported together as `wk17/26` in
-fold-change tables.
+Peripheral blood at baseline (pre-dose) and at weeks 1, 2, 4, 8, 17 and 26.
+Fine-needle aspiration of the draining ipsilateral axillary lymph node was
+performed in a consented subset at baseline and at weeks 2, 8, 17 and 26.
 
-Fine-needle aspiration of the draining axillary lymph node was performed in a
-consented subset at weeks 1, 2, 4, 8, 17 and 26.
+Not every assay was run at every timepoint, and not all participants attended
+both later visits. Where a file reports week 17 and week 26 together it is
+labelled `wk17/26`.
 
 ## Assay cohorts
 
-Participant numbers differ by assay according to sample availability and
-consent for the sub-studies:
+Participant numbers differ by assay according to sample availability and consent
+for the sub-studies:
 
 | Assay family | mRNA-1010 | Fluarix |
 |---|---|---|
-| Binding antibody (ELISA, IgM) | 38 | 37 |
+| Binding antibody (ELISA) | 38 | 37 |
+| IgM fold change | 14 | 15 |
 | Haemagglutination inhibition | 14 | 15 |
 | Bead-array binding, microneutralisation | 14 | 15 |
 | Sequencing-based neutralisation | 13 | 14 |
+| Plasmablast frequencies | 13 | 15 |
 | Lymph-node fine-needle aspiration | 6 | 11 |
 
 ## Identifier conventions
 
-- Serology and cellular assay files: participant IDs of the form `397-0NN`.
+- Serology and cellular assay files: participant IDs of the form `397-0NN`. In
+  `igm_fold_change.csv` the numeric part appears unpadded and without the
+  `397-` prefix.
 - Monoclonal antibodies: `397.DD.CCC`, where `DD` is the donor and `CCC` the clone.
 - Sequencing-based neutralisation sera: `<arm>_<participant>_d<day>`.
 
