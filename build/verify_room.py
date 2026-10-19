@@ -114,11 +114,12 @@ def norm(s):
 nb = bb["H3"].assign(key=bb["H3"].strain.map(norm))
 nn = res["H3N2"].assign(key=res["H3N2"].virus.map(norm))
 j = nb.merge(nn, on="key", suffixes=("_bind","_neut"))
+rj = pearsonr(j.delta_bind, j.delta_neut)[0] if len(j) > 1 else float("nan")
 check("H3 shared (6): all binding-sig, none neut-sig, r<0",
       len(j)==6 and (j.q_bind<0.05).sum()==len(j) and (j.q_neut<0.05).sum()==0
-      and pearsonr(j.delta_bind, j.delta_neut)[0] < 0,
+      and rj < 0,
       f"{len(j)} shared | binding-sig {(j.q_bind<0.05).sum()} | neut-sig {(j.q_neut<0.05).sum()}"
-      f" | r={pearsonr(j.delta_bind, j.delta_neut)[0]:+.2f}")
+      f" | r={rj:+.2f}")
 dar = j[j.key.str.contains("darwin")]
 check("A/Darwin/6/2021: binding positive, neutralisation negative",
       len(dar)==1 and dar.delta_bind.iloc[0] > 0 and dar.delta_neut.iloc[0] < 0,
@@ -159,6 +160,14 @@ check("waning folds, arm-GMT reduction, are 2.20x / 1.59x",
       f"arm-GMT {_am:.2f}x / {_af:.2f}x  (both reductions are quoted in the Golden)")
 
 print("\nMechanistic cohort sizes")
+gcf = pd.read_csv(f"{R}/gc_frequencies.csv", dtype=str)
+iso = sorted(gcf.isotype.unique()) if "isotype" in gcf.columns else []
+check("gc_frequencies keeps IgG and IgA as separate labelled rows",
+      iso == ["IgA","IgG"] and len(gcf) == 156
+      and gcf.groupby("isotype").size().nunique() == 1
+      and not gcf.duplicated(["timepoint","isotype","arm","participant"]).any(),
+      f"isotypes {iso}; {len(gcf)} rows; dup keys "
+      f"{int(gcf.duplicated(['timepoint','isotype','arm','participant']).sum()) if iso else 'n/a'}")
 gc = pd.read_csv(f"{R}/gc_frequencies.csv")
 n_m = gc[gc.arm=="mRNA-1010"].participant.nunique(); n_f = gc[gc.arm=="Fluarix"].participant.nunique()
 check("gc_frequencies cohort is 6 vs 11 (NOT 2 vs 11)", n_m==6 and n_f==11,
