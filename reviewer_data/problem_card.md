@@ -213,12 +213,11 @@ tests each independently (22 anchors at round 1; 26 after round 2).
 bead-array/mAb binding "functional" and omitted HAI, which is a functional assay
 that does cover B/Victoria (flat); A3 now means neutralisation/inhibition/in-vivo
 and requires a B/Victoria-specific functional endpoint, not B strains in an
-H1N1-powered panel. B11 is a binary substitution test (appended bench detail is
-neutral, consistent with the no-verbosity-penalty rule). Study 3 states orthogonal
-in-vitro + in-vivo confirmation as the standard for a heterologous-protection
-claim. `trial_summary.md` was de-attributed from a WHO 2022–23 composition — the
-listed strains and all measurements (the real experimental data) are unchanged;
-only the editorial season label we had authored was corrected.
+H1N1-powered panel. Study 3 states orthogonal in-vitro + in-vivo confirmation as
+the standard for a heterologous-protection claim. (B11 was a substitution test at
+this point; it was reframed in round 3 — see below.) The composition in
+`trial_summary.md` was edited twice more after this round and is now the study's
+own; the history is in the round-3 section.
 
 **Env note — closed, not a defect.** 14/16 runs hand-rolled ANCOVA, which read as
 a missing dependency. It is not: `scipy` and `statsmodels` are present in the
@@ -319,3 +318,97 @@ is not mistaken for a design signal.
 | External domain facts (WHO compositions, B/Yamagata withdrawal, CBER margins) are needed but unverifiable in the sandbox (ClaudeScope, error) | Partly intrinsic to the lane. B/Yamagata scoping is already "correct, not required", so no A item depends on the unmounted fact. The rest affects polish only. |
 | ClaudeScope "recommendation contradicts own evidence" (error) | Not a defect. ClaudeScope itself calls it the capability under evaluation, correctly reflected in low grades. It is positive evidence the basin works. |
 | `column` and `file` absent from the image; default `PATH` python lacks the scientific stack; grading justification truncated in run metadata | Harness-side, outside the writing scope. The scientific stack is present in the `core` environment. |
+
+## Round 3 (2026-10-15/19) — v2 `cfbe42ba`, Failed QA, 16-run panel mean 0.313
+
+Panel: 16 runs, 0.20–0.40, mean 0.313, median 0.30, seven at exactly 0.30, pass
+rate 0. Reward hacking returned **zero findings**, up from one info item.
+
+**Root cause of the panel's failure route, and it was self-inflicted.** Round 2
+attributed the four antigens to mRNA-1010 and described the comparator "per the
+manufacturer's labelling". That implied the arms received different H1 antigens,
+so all 18 runs discounted the A/H1N1 neutralisation advantage as strain choice
+rather than platform and powered on A/H3N2. They failed A1 by a route that is
+not the basin: 17 of 18 avoided B1, the designed trap.
+
+**The real composition, from the study's own methods** (Nat Immunol
+s41590-026-02569-5; methods via PMC11483064). Our `sources/` MOESM workbooks
+belong to this paper but carry panel antigens only — the composition and the
+visit schedule are in the paper, not the supplementary data.
+
+| Component | mRNA-1010 | Fluarix |
+|---|---|---|
+| A(H1N1)pdm09 | A/Wisconsin/588/2019 | same |
+| A(H3N2) | A/Darwin/6/2021 | A/Darwin/9/2021 |
+| B/Victoria | B/Austria/1359417/2021 | same |
+| B/Yamagata | B/Phuket/3073/2013 | same |
+
+A/Victoria/4897/2022 was never in this trial. Two consequences, both favourable:
+A/Wisconsin/588/2019 sits in the neutralisation and H1 binding panels, so the
+homologous H1 is measured and carries the largest between-arm delta of the 13 H1
+viruses (+1.61 log2) — the advantage is largest on the homologous strain and
+extends across ten heterologous ones; and a 2019/2021-era composition puts every
+2023 panel isolate unambiguously after it, so A2's forward-drift grounding no
+longer depends on anyone recalling WHO recommendations.
+
+**The H1 row is a deliberate call.** A/Wisconsin/588/2019 was the cell-based
+2022–23 recommendation while Fluarix is egg-grown, so the authors may have
+simplified. We align to the mount: A/Wisconsin/588/2019 appears in two panels,
+and A/Victoria/2570/2019 appears nowhere in the data room or the source
+workbooks (the only `2570` match is a substring of the titre 525706). Asserting
+an egg-based H1 for the comparator would reintroduce the confound that produced
+the 0 pass rate. C31 makes questioning it neutral.
+
+**Two independent audits** of the rewritten summary both returned DO NOT SHIP and
+agreed on the defects. Fixed: the identifier convention (wrong in both
+directions — `397-0NN` holds in three of nine participant files, and the stated
+exception named the padded file instead of the unpadded one); "not all
+participants attended both later visits", where in fact none did (0 of 75 in
+ELISA, 0 of 27 in sequencing-based neutralisation, so the day-181 durability
+cohort is 21); "cell- and egg-propagated preparations of the same strain", which
+is false since Darwin/6 and Darwin/9 are different isolates carried as two panel
+viruses; the deleted day-to-week bridge; the missing monoclonal and
+clonal-overlap rows; and the lost homologous/heterologous anchor, without which
+those labels in `microneutralization.csv` have no referent.
+
+**Cohort sizes are not a defect.** `MOESM4` sheet `Fig 1d` carries 75
+participants, so ELISA 38/37 is real source data; the 29 figure describes the
+single-season subset the other assays use. The unpadded/padded split is also in
+the source (`Fig 1d` unpadded, `Fig 1e` padded).
+
+**Gate is 37 anchors.** Six additions test the summary's own structural claims
+against the files: the identifier form per file, the participant-`20` anomaly,
+the 4-vs-3 monoclonal donor split, and that no participant attends both later
+visits.
+
+### Grader changes this round
+
+- **B11 reframed to be cause-neutral.** It now penalises the absence of what the
+  prompt requires — what is measured, in whom, against what, per recommended
+  study — with no reference to substitution or methodology. An attempt that
+  misallocates its budget loses on the requirements it then cannot meet, which
+  is a consequence of its own prioritisation rather than a line item. This also
+  removes the B11/C30 overlap QA filed three rounds running.
+- **B4 re-based on the method.** The pooled correction is the error in itself:
+  the two libraries answer two questions, and the 83 largely null H3N2 tests set
+  the threshold for the 13 H1N1 ones, which is what drops 11 to 0. Penalised
+  where pooling is the basis offered for the verdict; not penalised where the
+  pooled result is reported alongside the within-panel one with the choice of
+  family reasoned through. Closes the finding that graders were firing B4 on its
+  first half alone.
+- C31 rewritten, the arm-specific H3 references rescoped to mRNA-1010's own
+  component, the microneutralisation sentence changed from "homologous strain" to
+  "homologous panel" since the file names no strains, and C18's stale count of
+  differing cohort sizes dropped.
+
+### Deferred this round — recorded as not fixed
+
+| Item | Why not fixed |
+|---|---|
+| B11/C30 waive the prompt's bench prohibition (env linter, error, third filing) | The grading spec names "penalise substitution, never addition" as a required authoring rule governing scope constraints. The round-3 reframe goes further: the prohibition is not separately scored at all, and the prompt's positive requirements are. Penalising addition is a verbosity penalty the accounting rules forbid in either direction, and the Golden's own Study 3 proposes challenge work. |
+| Guidance never states how grave an A1 miss is (env linter, warning, third filing) | Refuted by project guidance, which lists "weighted penalties or severity rankings… 'penalize heavily', 'penalize lightly'" among what must not be included. Not a legitimate finding; do not re-raise. |
+| Prompt leaves the claim's scope open (env linter, info) | A domain judgement the task intends to test. Commitment is prompt-grounded, project-mandated and data-forced. A scope clause would be directive and brushes the no-answer-taxonomy rule. |
+| Grader expects Mann-Whitney/BH as undisclosed methodology (data quality, warning) | Self-retracted inside the env linter's own B4 finding: "That part does not hold." C23 and the equivalent-methods clause accept any test. |
+| Bridge line says "above" where the Golden sits below (problem linter, info) | Verbatim mandated boilerplate; the spec says do not reword it. |
+| Undocumented defects in the real data files (env linter, warning) | The eleven source workbooks are real study data and editing them would manufacture evidence. Only the authored layer is ours to correct, and it has been. C20 keeps flagging such items neutral. |
+| Summary should state that the neutralisation and breadth panels are influenza A only, and that the comparator's H3 has no member in the H3 binding panel (both audits) | Both true, both the solver's to discover. Writing either into a mounted file states the consequence the task is built on. Rejected on design grounds, not on accuracy. |

@@ -143,7 +143,7 @@ Any grounding for A3 counts: the file-by-file inventory showing influenza B abse
 
 B3 fires on the *recommendation*, not on the observation. Noting that the H3N2 nulls are an absence of evidence rather than evidence of absence, that the confidence intervals are wide, that a smaller true H3 effect would not have been detected at this n, or proposing a larger H3N2 neutralisation study as exploratory or hypothesis-generating work alongside an A/H1N1 primary, is correct scientific reasoning and is not penalised. What is penalised is staking the protection readout on it.
 
-**B4. Correcting for multiplicity across all 96 viruses at once** and concluding that neither subtype has functional support. The pooled correction is a multiplicity artefact across two separate libraries of 13 and 83 viruses.
+**B4. Correcting for multiplicity across all 96 viruses at once.** The 13 A/H1N1 and 83 A/H3N2 viruses are two separately assembled libraries screened for two different questions, so one correction spanning both controls error over a family no programme is asking about, and the 83 largely null A/H3N2 tests set the threshold for the 13 A/H1N1 ones. The A/H1N1 count falls from 11 to 0 on the pooling alone. Penalised where the pooled correction is the basis offered for the verdict, most often paired with the conclusion that neither subtype has functional support. Reporting the pooled result alongside the within-panel result, with the choice of family reasoned through, is not B4 - nor is any other test, which C23 and the equivalent-methods clause leave open.
 
 **B5. Treating the week-4 influenza B binding advantage as coverage.** Citing p = 0.0146 at week 4 as evidence B is characterised, when the same comparison is p = 0.8363 at wk17/26.
 
@@ -157,7 +157,7 @@ B3 fires on the *recommendation*, not on the observation. Noting that the H3N2 n
 
 **B10. Normalising heterologous titre to the participant's own vaccine-strain titre** and reporting the resulting A/H3N2 separation as a real effect. The signal is a smaller denominator - the mRNA arm responded less well at A/Darwin/6/2021 - so the endpoint rewards an arm for failing against the strain in its own vaccine.
 
-**B11. Substituting assay methodology for study specification.** The response fails to specify what is measured, in whom, and against what for its studies because it spent the space on how assays work. The test is binary: if the what/whom/against-what specification is present, B11 does not fire - appended methodological or bench detail on top of a complete specification is neutral, not penalised (the prompt asks for conditions and readouts; wasted detail is the attempt's own inefficiency, not a scored error).
+**B11. The study specification is missing.** A recommended study is offered without specifying what is measured, in whom, and against what. The prompt requires these three for each study it asks for, so their absence is the error - whatever the response spent its space on instead, and whether or not the gap is filled by methodological material. Where the specification is present, what else the response carries is not scored here (C30).
 
 **B12. Offering the absence of neuraminidase data as the coverage gap.** It is a reasonable observation for a mechanism study, but haemagglutinin is the licensed correlate and no NA absence threatens product-level coverage the way an uncharacterised lineage does. It does not satisfy A3.
 
