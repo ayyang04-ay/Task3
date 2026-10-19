@@ -164,6 +164,38 @@ check("trial summary lymph-node row agrees with gc_frequencies",
       len(nums) == 2 and (int(nums[0]), int(nums[1])) == (n_m, n_f),
       f"summary row {nums} vs data {n_m}/{n_f}" if ln else "no lymph-node row found")
 
+print("\nAuthored-summary claims about file structure")
+ids = lambda f, c="participant": sorted(set(pd.read_csv(f"{R}/{f}", dtype=str)[c]))
+check("397-0NN only in the three files the summary says",
+      all(all(v.startswith("397-") for v in ids(f))
+          for f in ("binding_breadth_h1.csv","binding_breadth_h3.csv","microneutralization.csv"))
+      and not any(v.startswith("397-") for f in ("hai_titers.csv","gc_frequencies.csv",
+                  "igm_fold_change.csv","elisa_igg_titers.csv","plasmablast_frequencies.csv")
+                  for v in ids(f)),
+      "prefixed / bare split as stated")
+check("elisa IDs unpadded; hai/gc/plasmablast padded",
+      all(not v.startswith("0") for v in ids("elisa_igg_titers.csv"))
+      and all(len(v)==3 for f in ("hai_titers.csv","gc_frequencies.csv","plasmablast_frequencies.csv")
+              for v in ids(f)),
+      f"elisa e.g. {ids('elisa_igg_titers.csv')[:2]}")
+igm = ids("igm_fold_change.csv")
+check("igm padded except participant 20",
+      [v for v in igm if len(v)!=3] == ["20"], f"non-3-digit: {[v for v in igm if len(v)!=3]}")
+check("pb_gc uses 397-NN (two digits)",
+      all(re.fullmatch(r"397-\d\d", v) for v in ids("pb_gc_clonal_overlap.csv","Participant")),
+      str(ids("pb_gc_clonal_overlap.csv","Participant")[:2]))
+mab = pd.read_csv(f"{R}/mab_binding_panels.csv", dtype=str)
+mab["donor"] = mab.mab_id.str.split(".").str[1]
+dn = mab.groupby("arm").donor.nunique().to_dict()
+check("mAb donors are 4 mRNA / 3 Fluarix",
+      dn.get("mRNA-1010")==4 and dn.get("Fluarix")==3, str(dn))
+el = pd.read_csv(f"{R}/elisa_igg_titers.csv", dtype=str)
+lateboth = (el[el.timepoint.isin(["wk17","wk26"])].groupby("participant").timepoint.nunique() > 1).sum()
+snl = sn[sn.day.isin([121,181])].groupby("pid").day.nunique()
+check("no participant attends both later visits",
+      lateboth == 0 and (snl > 1).sum() == 0,
+      f"elisa both {lateboth}; seqbased both {(snl>1).sum()} (d181 n={sn[sn.day==181].pid.nunique()})")
+
 print("\nBaseline imbalance (stratification anchors)")
 d0 = sn[(sn.subtype=="H3N2") & (sn.day==0)]
 bp = d0.pivot_table(index=["arm","pid"], values="titer", aggfunc=gm)["titer"]

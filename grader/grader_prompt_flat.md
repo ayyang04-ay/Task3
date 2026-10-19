@@ -80,7 +80,7 @@ B/Yamagata is out of scope: it has not circulated since 2020 and has been remove
 
 **Why A/H3N2 cannot carry a protection readout as it stands.** Bead-array binding in `binding_breadth_h3.csv` separates the arms on **12 of 12** H3 strains, median delta **+2.30 log2**. Sequencing-based neutralisation separates on **0 of 83** H3N2 viruses after within-panel correction. There is therefore no functional H3 signal in the package to carry a protection endpoint: the large H3 effect that does exist is a binding effect, and the one functional readout that has been run against these viruses finds nothing. A larger H3N2 neutralisation study might yet detect something, but that is a hypothesis to be generated, not a protection trial to be powered - the effect it would be powered to find has no estimate in the package at all.
 
-On the six H3 strains measured by both methods, all six are binding-significant, none is neutralisation-significant, and the per-strain effect sizes are uncorrelated (r = -0.22). On the homologous H3 vaccine strain A/Darwin/6/2021, binding is **+2.07 log2** while neutralisation is **-0.27**.
+On the six H3 strains measured by both methods, all six are binding-significant, none is neutralisation-significant, and the per-strain effect sizes are uncorrelated (r = -0.22). On A/Darwin/6/2021, mRNA-1010's own H3 component, binding is **+2.07 log2** while neutralisation is **-0.27**.
 
 Separately, neither binding panel contains a strain later than 2022, so both measure back-boost against historical strains rather than forward drift and cannot support a forward-looking claim in principle.
 
@@ -88,7 +88,7 @@ Separately, neither binding panel contains a strain later than 2022, so both mea
 
 **Haemagglutination inhibition, the licensed correlate, separates nothing.** A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66 (p = 0.69).
 
-**Conventional microneutralisation is flat** and numerically favours the comparator on the homologous strain - week 4 fold-change GM 2.49 vs 3.32 (p = 0.53). Heterologous is 4.12 vs 3.03 (p = 0.32), confounded by the baseline deficit noted above.
+**Conventional microneutralisation is flat** and numerically favours the comparator on the homologous panel - week 4 fold-change GM 2.49 vs 3.32 (p = 0.53). Heterologous is 4.12 vs 3.03 (p = 0.32), confounded by the baseline deficit noted above.
 
 **Molecular and mechanistic readouts** - germinal-centre persistence, repertoire diversification, clonotype counts, single-cell annotations - support a mechanism, not a protection claim, and rest on small subsets. The lymph-node cohort in `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and `pb_gc_clonal_overlap.csv` covers 7 donors, matching the trial summary's lymph-node row. Either way the mechanistic files carry no protection weight (B8, C19). The monoclonal panels are pseudoreplicated across those same 7 donors, so per-monoclonal percentages overstate the evidence; `group_I` runs opposite to `group_II`.
 
@@ -186,7 +186,7 @@ Not graded, in either direction.
 15. Noticing the monoclonal pseudoreplication across 7 donors.
 16. Excluding or retaining the six production reassortants in the panel.
 17. Counting 11 of 13 or 10 of 12 A/H1N1 viruses. Both follow from a defensible decision about the reassortants.
-18. Noticing the three differing per-assay cohort sizes - binding antibody 75, HAI 29, sequencing-based neutralisation 27.
+18. Noticing that per-assay cohort sizes differ - binding antibody 75, HAI 29, sequencing-based neutralisation 27.
 19. Rejecting `gc_frequencies.csv` or any mechanistic file as unusable, or using it descriptively while declining to draw a comparative claim.
 20. Flagging data-quality items such as the malformed year in `A/SOUTHAFRICA/R07876/202023_H3N2`.
 21. Observing that the study was open-label and non-randomised, and framing the package as hypothesis-generating rather than claim-supporting.
@@ -199,6 +199,6 @@ Not graded, in either direction.
 28. Omitting any number the Golden Response carries that is not needed to establish A1, A2 or A3.
 29. Length, section ordering, and whether studies are numbered or named.
 30. Appended methodological, assay or bench-level detail, where the what/whom/against-what specification is already complete. The prompt's scope line is enforced on substitution (B11), not on addition: a complete specification with extra material appended scores as one without it.
-31. How the attempt handles the antigenic composition in the trial summary. Taking the stated composition at face value, observing that the listed H1 component post-dates the stated season, and running a sensitivity analysis over both readings all count. The trial summary states the four antigens as the sponsor's selection for mRNA-1010 and defines the homologous and heterologous designations against them; nothing mounted dates the selection externally, and no reading is scored.
+31. How the attempt handles the antigenic composition in the trial summary. Taking the stated composition at face value, and questioning whether an egg-based comparator would in fact have carried the H1 component the summary assigns to both arms, both count. The mount states the composition and nothing in it corroborates or refutes the comparator's formulation, so no reading is scored. What the attempt may not do is treat the H3N2 difference between A/Darwin/6/2021 and A/Darwin/9/2021 as grounds to discard the A/H1N1 neutralisation result, which rests on a component the summary gives both arms; the per-virus gain is also uniform across the panel and largest on A/Wisconsin/588/2019, the stated H1 component itself.
 
 **Equivalent methods.** Any route that establishes the same claims from the mounted files earns what the Golden Response's route earns. The Golden Response uses per-virus Mann-Whitney with within-panel Benjamini-Hochberg correction and participant-level geometric means; a mixed model over the panel, a covariate-adjusted analysis of day-29 titre, a permutation test, or a distance-regression approach all count where they establish A1, A2 and A3 from the same files.
