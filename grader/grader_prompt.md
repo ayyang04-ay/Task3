@@ -243,12 +243,14 @@ within panel (10 of 12 excluding production reassortants is the same finding) �
 rather than in any binding readout.
 
 A1 is scored on the recommended **primary** endpoint, not on hedges elsewhere.
-The test: **would the design still be powering on A/H1N1 if A/H3N2 turned out
-negative?** If the recommendation still succeeds without H1N1 separating, it has
-not committed to H1N1 and A1 is not met. This is a scientific judgement, not a
-prompt-vagueness one — the package shows A/H3N2 at 0 of 83 on neutralisation, so
-a design that stakes the primary on H3N2 stakes it on a readout the data already
-show is dead.
+The test: **if A/H3N2 fails, does the A/H1N1 claim still stand on its own?** If
+the A/H1N1 result survives as a claim in its own right, the design has committed
+to A/H1N1 and A1 is met; if a negative A/H3N2 result takes the A/H1N1 claim down
+with it, or if the design would read the same way had A/H1N1 been the subtype
+that failed, it has not committed and A1 is not met. This is a scientific
+judgement, not a prompt-vagueness one — the package shows A/H3N2 at 0 of 83 on
+neutralisation, so a design that stakes the primary on H3N2 stakes it on a
+readout the data already show is dead.
 
 How specific designs are judged:
 
@@ -428,15 +430,28 @@ design backs a claim the data show
 has already decayed within one season. Including a durability timepoint at or
 beyond ~4–6 months avoids B14; its exact value beyond that is neutral (C5).
 
+**B15. Discarding the A/H1N1 neutralisation result as confounded by vaccine
+composition.** Treating the arms as non-comparable on A/H1N1, and so declining to
+power on it, on the grounds that the two products' antigens differ. The trial
+summary assigns the same A(H1N1)pdm09 component to both arms and records the
+difference as H3N2 only, so the confound does not apply to the subtype the
+result rests on. The mounted data refute it independently: the per-virus gain is
+uniform across the 13-virus panel and largest on A/Wisconsin/588/2019 (+1.61
+log2), the stated H1 component itself, where a newer-antigen explanation
+predicts the opposite. Questioning the comparator's stated formulation is
+neutral (C31); using that question to set the A/H1N1 result aside is not.
+
 ## C) NEUTRAL
 
 Not graded, in either direction.
 
 1. The number of studies proposed, and their ordering.
 2. Whether B/Victoria is a standalone study or a sub-study of the main trial.
-3. Whether B/Victoria is held to need full functional characterisation or a
-   narrower bridging immunogenicity study. Both are defensible; the mount does
-   not settle it.
+3. The scale of the B/Victoria work — full functional characterisation or a
+   narrower bridging study. Both are defensible and the mount does not settle
+   it. The readout is not neutral in the same way: A3 still requires a
+   functional B/Victoria endpoint, so a narrower study satisfies A3 only if it
+   carries one.
 4. Sample size and power assumptions, and whether any are offered at all.
 5. Timepoint selection beyond the durability co-primary — day 181, day 271, day
    365 all count.
@@ -495,11 +510,7 @@ Not graded, in either direction.
     egg-based comparator would in fact have carried the H1 component the summary
     assigns to both arms, both count. The mount states the composition and
     nothing in it corroborates or refutes the comparator's formulation, so no
-    reading is scored. What the attempt may not do is treat the H3N2 difference
-    between A/Darwin/6/2021 and A/Darwin/9/2021 as grounds to discard the A/H1N1
-    neutralisation result, which rests on a component the summary gives both
-    arms; the per-virus gain is also uniform across the panel and largest on
-    A/Wisconsin/588/2019, the stated H1 component itself.
+    reading is scored (B15 covers the one use of the composition that is).
 
 **Equivalent methods.** Any route that establishes the same claims from the
 mounted files earns what the Golden Response's route earns. The Golden Response
