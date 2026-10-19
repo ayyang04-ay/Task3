@@ -38,9 +38,11 @@ Not every assay was run at every timepoint. Files labelled in days map to the
 visit weeks as day 0 (baseline), day 7 (week 1), day 29 (week 4), day 121
 (week 17) and day 181 (week 26).
 
-Participants attended **one** of the two later visits, not both: a given
-participant contributes either a week-17 or a week-26 sample, never both. Where
-a file reports the two together it is labelled `wk17/26`.
+Attendance at the two later visits was not uniform across assays. In the serum
+assays — ELISA, microneutralisation and sequencing-based neutralisation — each
+participant contributes a week-17 or a week-26 sample but not both; in HAI and
+in the cellular assays some participants contribute both. Where a file reports
+the two visits together it is labelled `wk17/26`.
 
 ## Assay cohorts
 

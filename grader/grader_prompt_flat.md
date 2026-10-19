@@ -46,7 +46,7 @@ Birth-cohort stratification follows from the H1/H3 asymmetry below, which is the
 
 The advantage is broadly uniform across the panel rather than concentrated in the contemporary strains: the median per-virus delta on the 2023 isolates is essentially the same as on the pre-2023 ones, so this is a potency gain across the subtype and not a drift gradient. It nonetheless extends to the 2023 isolates that post-date the composition, and that is why the panel must be contemporary and forward-drift rather than a historical series: a forward-looking claim has to be demonstrated against forward-drifted strains, and neither binding panel contains a strain later than 2022. No antigenic-distance field is mounted, so this rests on isolation date, not a computed distance.
 
-**Why the durability co-primary.** The functional advantage does not persist. Participant-level A/H1N1 GMT across wild-type panel viruses is 883.7 vs 501.4 at day 29 (ratio 1.76) and 402.5 vs 315.9 at day 181 (ratio 1.27). Waning from day 29 to day 181 is **2.13-fold in the mRNA arm against 1.24-fold in the comparator, p = 0.0022** - the most statistically secure between-arm result in the package, and it is unfavourable.
+**Why the durability co-primary.** The functional advantage does not persist. Participant-level A/H1N1 GMT across wild-type panel viruses is 883.7 vs 501.4 at day 29 (ratio 1.76) and 402.5 vs 315.9 at day 181 (ratio 1.27). Waning from day 29 to day 181 is **2.13-fold in the mRNA arm against 1.24-fold in the comparator, p = 0.0022** - significant, and unfavourable to the investigational arm.
 
 Those waning figures are per-participant geometric-mean folds: for each participant, the geometric-mean titre across the wild-type panel viruses at each timepoint, then that participant's day-29-over-day-181 ratio, then the geometric mean of those ratios within arm. Taking the ratio of the two arm-level GMTs quoted above instead gives 2.20-fold and 1.59-fold. Both reductions are defensible and both show the same direction; an attempt that reaches either pair by a stated route has the result right.
 
@@ -67,7 +67,7 @@ Note that the binding readout points the other way: ELISA fold-change at wk17/26
 | `neutralization_seqbased.csv` | 13 H1N1 + 83 H3N2 viruses | none |
 | `binding_breadth_h1.csv` | 9 H1 strains | none |
 | `binding_breadth_h3.csv` | 12 H3 strains | none |
-| `microneutralization.csv` | 2 panels (homologous/heterologous), both influenza A | none |
+| `microneutralization.csv` | 2 panels, named only `homologous`/`heterologous` | not identifiable |
 | `mab_binding_panels.csv` | 2 panels, ~340 and ~385 monoclonals | none |
 
 The binding data that do exist for B/Victoria do not support a claim. The advantage is significant at week 4 (GM fold-change 3.16 vs 2.30, p = 0.0146) and absent by wk17/26 (**1.57 vs 1.56, p = 0.8363**), while both A subtypes hold theirs at that same timepoint (A/H1 2.12 vs 1.40; A/H3 3.47 vs 1.52). HAI is flat for influenza B in both arms (B/Vic week 4 fold-change 1.08 vs 1.05, p = 0.675), so it supports no endpoint either way.
@@ -82,7 +82,7 @@ B/Yamagata is out of scope: it has not circulated since 2020 and has been remove
 
 On the six H3 strains measured by both methods, all six are binding-significant, none is neutralisation-significant, and the per-strain effect sizes are uncorrelated (r = -0.22). On A/Darwin/6/2021, mRNA-1010's own H3 component, binding is **+2.07 log2** while neutralisation is **-0.27**.
 
-Separately, neither binding panel contains a strain later than 2022, so both measure back-boost against historical strains rather than forward drift and cannot support a forward-looking claim in principle.
+Separately, neither bead-array breadth panel - `binding_breadth_h1.csv` or `binding_breadth_h3.csv` - contains a strain later than 2022, so both measure back-boost against historical strains rather than forward drift and cannot support a forward-looking claim in principle.
 
 ### What the package does not support
 
@@ -90,7 +90,7 @@ Separately, neither binding panel contains a strain later than 2022, so both mea
 
 **Conventional microneutralisation is flat** and numerically favours the comparator on the homologous panel - week 4 fold-change GM 2.49 vs 3.32 (p = 0.53). Heterologous is 4.12 vs 3.03 (p = 0.32), confounded by the baseline deficit noted above.
 
-**Molecular and mechanistic readouts** - germinal-centre persistence, repertoire diversification, clonotype counts, single-cell annotations - support a mechanism, not a protection claim, and rest on small subsets. The lymph-node cohort in `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and `pb_gc_clonal_overlap.csv` covers 7 donors, matching the trial summary's lymph-node row. Either way the mechanistic files carry no protection weight (B8, C19). The monoclonal panels are pseudoreplicated across those same 7 donors, so per-monoclonal percentages overstate the evidence; `group_I` runs opposite to `group_II`.
+**Molecular and mechanistic readouts** - germinal-centre persistence, repertoire diversification, clonotype counts, single-cell annotations - support a mechanism, not a protection claim, and rest on small subsets. The lymph-node cohort in `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and `pb_gc_clonal_overlap.csv` covers the same 7 donors as the monoclonal panels, four in one arm and three in the other. Either way the mechanistic files carry no protection weight (B8, C19). The monoclonal panels are pseudoreplicated across those same 7 donors, so per-monoclonal percentages overstate the evidence; `group_I` runs opposite to `group_II`.
 
 **Correcting across all 96 viruses at once** extinguishes the H1N1 signal (11 -> 0, nothing surviving) and makes the subtypes look equivalent. The panels are two separate libraries of 13 and 83 viruses; correction belongs within each.
 
@@ -131,7 +131,7 @@ Naming A/H1N1 as the only functional signal in the analysis and then proposing o
 
 A3 is satisfied only when the consequence is drawn and converted into proposed work carrying a B/Victoria-specific functional endpoint. Two things do not satisfy A3: listing influenza B among absent assays without proposing anything to close it (the single most common way a strong attempt fails); and writing B/Victoria isolates into a panel whose endpoint is defined around A/H1N1 with no B-specific readout - that is cosmetic coverage, not characterisation. B/Victoria is one of the four antigens the product encodes, so its coverage must be justified in its own right. Scoping B/Yamagata out as no longer circulating is correct and must not be read as an omission.
 
-Any grounding for A3 counts: the file-by-file inventory showing influenza B absent from the neutralisation and characterisation panels (`neutralization_seqbased.csv`, `binding_breadth_h1.csv`, `binding_breadth_h3.csv`, `microneutralization.csv`, `mab_binding_panels.csv`) and present only as titres in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv` - the one functional assay among these, HAI, being flat for B/Vic; the decay of the B/Vic binding advantage in `elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56) while both A subtypes hold theirs; or the observation that the two influenza B antigens named in the trial summary never appear in a neutralisation or characterisation file. The attempt need not use the word "quadrivalent".
+Any grounding for A3 counts: the file-by-file inventory showing influenza B absent from the panels that name their antigens (`neutralization_seqbased.csv`, `binding_breadth_h1.csv`, `binding_breadth_h3.csv`, `mab_binding_panels.csv`) and present only as titres in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv` - the one functional assay among these, HAI, being flat for B/Vic; the decay of the B/Vic binding advantage in `elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56) while both A subtypes hold theirs; or the observation that the two influenza B antigens named in the trial summary never appear in a neutralisation or characterisation file. The attempt need not use the word "quadrivalent".
 
 ## B) PENALIZE FOR
 

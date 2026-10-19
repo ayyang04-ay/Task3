@@ -113,8 +113,7 @@ this rests on isolation date, not a computed distance.
 Participant-level A/H1N1 GMT across wild-type panel viruses is 883.7 vs 501.4 at
 day 29 (ratio 1.76) and 402.5 vs 315.9 at day 181 (ratio 1.27). Waning from day
 29 to day 181 is **2.13-fold in the mRNA arm against 1.24-fold in the comparator,
-p = 0.0022** — the most statistically secure between-arm result in the package,
-and it is unfavourable.
+p = 0.0022** — significant, and unfavourable to the investigational arm.
 
 Those waning figures are per-participant geometric-mean folds: for each
 participant, the geometric-mean titre across the wild-type panel viruses at each
@@ -152,7 +151,7 @@ mount, influenza B appears only in `elisa_igg_titers.csv`, `hai_titers.csv` and
 | `neutralization_seqbased.csv` | 13 H1N1 + 83 H3N2 viruses | none |
 | `binding_breadth_h1.csv` | 9 H1 strains | none |
 | `binding_breadth_h3.csv` | 12 H3 strains | none |
-| `microneutralization.csv` | 2 panels (homologous/heterologous), both influenza A | none |
+| `microneutralization.csv` | 2 panels, named only `homologous`/`heterologous` | not identifiable |
 | `mab_binding_panels.csv` | 2 panels, ~340 and ~385 monoclonals | none |
 
 The binding data that do exist for B/Victoria do not support a claim. The
@@ -193,9 +192,10 @@ binding-significant, none is neutralisation-significant, and the per-strain effe
 sizes are uncorrelated (r = −0.22). On A/Darwin/6/2021, mRNA-1010's own H3
 component, binding is **+2.07 log2** while neutralisation is **−0.27**.
 
-Separately, neither binding panel contains a strain later than 2022, so both
-measure back-boost against historical strains rather than forward drift and
-cannot support a forward-looking claim in principle.
+Separately, neither bead-array breadth panel — `binding_breadth_h1.csv` or
+`binding_breadth_h3.csv` — contains a strain later than 2022, so both measure
+back-boost against historical strains rather than forward drift and cannot
+support a forward-looking claim in principle.
 
 ### What the package does not support
 
@@ -212,8 +212,8 @@ deficit noted above.
 diversification, clonotype counts, single-cell annotations — support a mechanism,
 not a protection claim, and rest on small subsets. The lymph-node cohort in
 `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and
-`pb_gc_clonal_overlap.csv` covers 7 donors, matching the trial summary's
-lymph-node row. Either way the mechanistic files carry no protection weight
+`pb_gc_clonal_overlap.csv` covers the same 7 donors as the monoclonal panels,
+four in one arm and three in the other. Either way the mechanistic files carry no protection weight
 (B8, C19). The monoclonal panels are
 pseudoreplicated across those same 7 donors, so per-monoclonal percentages
 overstate the evidence; `group_I` runs opposite to `group_II`.
@@ -317,9 +317,9 @@ justified in its own right. Scoping B/Yamagata out as no longer circulating is
 correct and must not be read as an omission.
 
 Any grounding for A3 counts: the file-by-file inventory showing influenza B
-absent from the neutralisation and characterisation panels
+absent from the panels that name their antigens
 (`neutralization_seqbased.csv`, `binding_breadth_h1.csv`, `binding_breadth_h3.csv`,
-`microneutralization.csv`, `mab_binding_panels.csv`) and present only as titres in
+`mab_binding_panels.csv`) and present only as titres in
 `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv` — the one
 functional assay among these, HAI, being flat for B/Vic; the decay of the B/Vic
 binding advantage in `elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56)

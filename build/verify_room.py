@@ -27,14 +27,14 @@ print("\nHAI  (hai_titers.csv)  fold change vs wk0")
 h = pd.read_csv(f"{R}/hai_titers.csv")
 w = h.pivot_table(index=["antigen","arm","participant"], columns="timepoint",
                   values="hai_titer", aggfunc="first")
-w["late"] = w.get("wk26").fillna(w.get("wk17"))
-for ag, exp in (("A/H1N1",(2.76,2.25)), ("A/H3N2",(1.72,1.66)), ("B/Vic",None)):
+for ag, exp in (("A/H1N1",(2.76,2.25)), ("A/H3N2",(1.72,1.66)), ("B/Vic","flat")):
     g = w.xs(ag, level="antigen").dropna(subset=["wk0","wk4"])
     r = (g.wk4 / g.wk0)
     m = r[r.index.get_level_values("arm")=="mRNA-1010"]
     f = r[r.index.get_level_values("arm")=="Fluarix"]
     p = mw(m, f)
-    cond = True if exp is None else (abs(gm(m)-exp[0])<0.02 and abs(gm(f)-exp[1])<0.02)
+    cond = (gm(m) < 1.2 and gm(f) < 1.2 and p > 0.05) if exp == "flat" \
+           else (abs(gm(m)-exp[0])<0.02 and abs(gm(f)-exp[1])<0.02)
     check(f"{ag} wk4 fold change", cond, f"GM {gm(m):.2f} vs {gm(f):.2f}  p={p:.4f}")
 
 print("\nSequencing-based neutralization  (neutralization_seqbased.csv)")
@@ -65,7 +65,8 @@ check("oldest H1N1 isolate (California/2009) IS significant",
       len(cal)==1 and bool((cal.q<0.05).iloc[0]),
       f"q={cal.q.iloc[0]:.3f}" if len(cal)==1 else "California/2009 absent")
 tagged = sorted(sn[sn.virus.str.contains(r'egg|IVR-\d+|NIB-\d+|X-\d+', case=False, na=False)].virus.unique())
-check("six reassortant-tagged viruses (5 H3N2 + 1 H1N1)", len(tagged)==6,
+check("six reassortant-tagged viruses (5 H3N2 + 1 H1N1)",
+      len(tagged)==6 and sum(v.endswith("H1N1") for v in tagged)==1,
       f"{len(tagged)} tagged; {sum(v.endswith('H1N1') for v in tagged)} H1N1")
 sig = res["H1N1"][res["H1N1"].q<0.05]
 check("H1N1 significant dated 2023",
@@ -86,7 +87,8 @@ else:
           f"2023 isolates {_new:+.2f} vs pre-2023 {_old:+.2f} log2  "
           f"(difference {_new-_old:+.2f}; a gradient would show the 2023 set well ahead)")
 pooled = pd.concat(res.values()); pooled["qp"] = multipletests(pooled.p, method="fdr_bh")[1]
-check("pooled FDR across 96 extinguishes H1N1", (pooled.qp<0.05).sum()==0,
+check("pooled FDR across 96 extinguishes H1N1",
+      (pooled.qp<0.05).sum()==0 and len(pooled)==96,
       f"{(pooled.qp<0.05).sum()} of 96 survive pooled correction")
 
 print("\nBinding breadth  (binding_breadth_h*.csv)")
@@ -98,9 +100,11 @@ for tag, f_ in (("H1","binding_breadth_h1.csv"), ("H3","binding_breadth_h3.csv")
         b = g.loc[g.arm=="Fluarix","log2_fold_change_mfi"]
         rec.append(dict(strain=s, delta=a.median()-b.median(), p=mw(a,b)))
     r = pd.DataFrame(rec); r["q"] = multipletests(r.p, method="fdr_bh")[1]; bb[tag]=r
-check("H3 binding breadth 12 of 12", (bb["H3"].q<0.05).sum()==12,
+check("H3 binding breadth 12 of 12",
+      (bb["H3"].q<0.05).sum()==12 and len(bb["H3"])==12,
       f"{(bb['H3'].q<0.05).sum()} of 12  median delta {bb['H3'].delta.median():+.2f} log2")
-check("H1 binding breadth 7 of 9 (NOT 8)", (bb["H1"].q<0.05).sum()==7,
+check("H1 binding breadth 7 of 9 (NOT 8)",
+      (bb["H1"].q<0.05).sum()==7 and len(bb["H1"])==9,
       f"{(bb['H1'].q<0.05).sum()} of 9  median delta {bb['H1'].delta.median():+.2f} log2")
 
 print("\nBinding vs neutralization, H3 strains measured both ways")
@@ -116,8 +120,10 @@ check("H3 shared (6): all binding-sig, none neut-sig, r<0",
       f"{len(j)} shared | binding-sig {(j.q_bind<0.05).sum()} | neut-sig {(j.q_neut<0.05).sum()}"
       f" | r={pearsonr(j.delta_bind, j.delta_neut)[0]:+.2f}")
 dar = j[j.key.str.contains("darwin")]
-check("homologous A/Darwin/6/2021 dissociation", len(dar)==1,
-      f"binding {dar.delta_bind.iloc[0]:+.2f} / neut {dar.delta_neut.iloc[0]:+.2f}")
+check("A/Darwin/6/2021: binding positive, neutralisation negative",
+      len(dar)==1 and dar.delta_bind.iloc[0] > 0 and dar.delta_neut.iloc[0] < 0,
+      f"binding {dar.delta_bind.iloc[0]:+.2f} / neut {dar.delta_neut.iloc[0]:+.2f}"
+      if len(dar)==1 else f"{len(dar)} Darwin rows matched the join")
 
 print("\nConventional microneutralization  (microneutralization.csv)")
 mn = pd.read_csv(f"{R}/microneutralization.csv")
@@ -189,12 +195,20 @@ mab["donor"] = mab.mab_id.str.split(".").str[1]
 dn = mab.groupby("arm").donor.nunique().to_dict()
 check("mAb donors are 4 mRNA / 3 Fluarix",
       dn.get("mRNA-1010")==4 and dn.get("Fluarix")==3, str(dn))
-el = pd.read_csv(f"{R}/elisa_igg_titers.csv", dtype=str)
-lateboth = (el[el.timepoint.isin(["wk17","wk26"])].groupby("participant").timepoint.nunique() > 1).sum()
+def both_late(f):
+    d = pd.read_csv(f"{R}/{f}", dtype=str)
+    s = d[d.timepoint.isin(["wk17","wk26"])].drop_duplicates(["arm","participant","timepoint"])
+    return int((s.groupby(["arm","participant"]).size() > 1).sum())
+serum = {f: both_late(f) for f in ("elisa_igg_titers.csv","microneutralization.csv")}
 snl = sn[sn.day.isin([121,181])].groupby("pid").day.nunique()
-check("no participant attends both later visits",
-      lateboth == 0 and (snl > 1).sum() == 0,
-      f"elisa both {lateboth}; seqbased both {(snl>1).sum()} (d181 n={sn[sn.day==181].pid.nunique()})")
+serum["neutralization_seqbased.csv"] = int((snl > 1).sum())
+cell = {f: both_late(f) for f in ("hai_titers.csv","gc_frequencies.csv",
+                                  "plasmablast_frequencies.csv")}
+check("serum assays: no participant attends both later visits",
+      all(v == 0 for v in serum.values()), str(serum))
+check("HAI and cellular assays: some participants DO attend both",
+      all(v > 0 for v in cell.values()),
+      f"{cell} (seqbased d181 n={sn[sn.day==181].pid.nunique()})")
 
 print("\nBaseline imbalance (stratification anchors)")
 d0 = sn[(sn.subtype=="H3N2") & (sn.day==0)]

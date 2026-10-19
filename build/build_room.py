@@ -131,14 +131,24 @@ write("mab_binding_panels.csv",
 
 # ----------------------------------------------------- cellular / mechanistic
 # MOESM6 'Fig 3d' carries arm labels; MOESM11 'Fig 4b' does not and is dropped.
+# 'Fig 3d' holds two stacked blocks, IgG then IgA, under one set of arm columns.
+# Both are real measurements; the isotype is carried as its own column so the
+# two are not collapsed into one value per participant-timepoint.
 rows = load(6, "Fig 3d")
 arms, ids = arm_cols(rows)
-rec = [[f"wk{rows[ri][0]}", arms[j], ids[j], rows[ri][j]]
-       for ri in range(2, len(rows)) if rows[ri][0] not in (None, "")
-       for j in range(1, len(rows[ri]))
-       if ids.get(j) and isinstance(rows[ri][j], (int, float))]
+rec, isotype = [], None
+for ri in range(len(rows)):
+    head = rows[ri][0]
+    if isinstance(head, str) and "GC cells" in head:
+        isotype = "IgA" if "IgA" in head else "IgG"
+        continue
+    if head in (None, "") or isotype is None:
+        continue
+    for j in range(1, len(rows[ri])):
+        if ids.get(j) and isinstance(rows[ri][j], (int, float)):
+            rec.append([f"wk{head}", isotype, arms[j], ids[j], rows[ri][j]])
 write("gc_frequencies.csv",
-      ["timepoint", "arm", "participant", "pct_ha_specific_igg_gc"], rec)
+      ["timepoint", "isotype", "arm", "participant", "pct_ha_specific_gc"], rec)
 
 rows = load(5, "Fig 2b")
 arms, ids = arm_cols(rows)
