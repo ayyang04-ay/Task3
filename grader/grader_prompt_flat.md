@@ -98,7 +98,11 @@ Separately, neither bead-array breadth panel - `binding_breadth_h1.csv` or `bind
 
 ## A) MUST BE PRESENT AND CORRECT
 
-An A item is met only where the attempt's own grounding, traced to a mounted file, establishes it. The prompt requires the reasoning, every number relied on and where each came from; a commitment asserted with no such grounding is not met, however correct the recommendation reads. This is the value-and-basis accounting rule applied to the A items, not a judgement about how grave any one miss is.
+An A item is met only where the attempt's own grounding, traced to a mounted file, establishes it. The prompt requires the reasoning, every number relied on and where each came from; a commitment asserted with no such grounding is not met, however correct the recommendation reads.
+
+A commitment whose grounding contradicts the mounted files, or contradicts the attempt's own saved analysis, is not met for the same reason: a derivation that does not produce the value it is offered as producing has established nothing. So where the figures an A item rests on are not reproducible from the files, that item is not met even though the recommendation it supports is the correct one - and an attempt whose A1 to A3 figures are all of that kind has grounded none of the three. This is distinct from B13, which records the unsupported assertion itself; here the question is only whether the commitment was established.
+
+This is the value-and-basis accounting rule applied to the A items, not a judgement about how grave any one miss is.
 
 **A1. The heterologous-protection readout is powered on A/H1N1.** The attempt names A/H1N1 as the subtype carrying the functional endpoint and grounds it in `neutralization_seqbased.csv` - the per-virus neutralisation result, 11 of 13 within panel (10 of 12 excluding production reassortants is the same finding) - rather than in any binding readout.
 

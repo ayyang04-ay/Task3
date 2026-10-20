@@ -412,3 +412,60 @@ visits.
 | Bridge line says "above" where the Golden sits below (problem linter, info) | Verbatim mandated boilerplate; the spec says do not reword it. |
 | Undocumented defects in the real data files (env linter, warning) | The eleven source workbooks are real study data and editing them would manufacture evidence. Only the authored layer is ours to correct, and it has been. C20 keeps flagging such items neutral. |
 | Summary should state that the neutralisation and breadth panels are influenza A only, and that the comparator's H3 has no member in the H3 binding panel (both audits) | Both true, both the solver's to discover. Writing either into a mounted file states the consequence the task is built on. Rejected on design grounds, not on accuracy. |
+
+## Round 4 (2026-10-19) — v3 `8bc07a26`, 16-run panel mean 0.278
+
+Panel: 16 runs, 0.18–0.40 plus one at 0.52, mean 0.278, median 0.275, ten
+distinct values, largest cluster three at 0.30. The round-3 pile of seven at a
+single value is gone.
+
+**The composition correction did what it was meant to.** The strain-mismatch
+route that carried the whole of the round-3 panel — discounting the A/H1N1
+result because the arms were read as having different H1 antigens — appears in
+3 of 16 gradings, down from 18 of 18. B1, the designed trap, is discussed in
+14 of 16. The task now fails attempts for the reason it was built on.
+
+QA v3 returned 4 findings in the author-visible tabs, down from 7, with the env
+linter at 1 from 5.
+
+**Fixed.** The reward-hacking check found that an attempt with the three correct
+commitments and invented statistics scored 0.35, against 0.20 for two honest
+attempts each missing one A item, and above the 0.278 panel mean. The grader
+recomputed every figure, recorded B13 firing roughly ten times, and still
+credited A1 to A3, because the recommendation was right. B13 is a B item, so it
+records the error without bearing on whether a commitment was established.
+
+The A-section preamble now names the case: a commitment whose grounding
+contradicts the mounted files, or the attempt's own saved analysis, is not met,
+on the same basis as one asserted with no grounding at all. Fabrication
+therefore lands as A items not met rather than as B hits with no mechanical
+consequence.
+
+QA proposed capping such attempts at 0.1. That mechanism is refused — caps are
+on the prohibited list — while the finding itself is accepted. The distinction
+matters: nothing in the project guidance makes it defensible that fabrication
+outscores grounded work, and the accounting rule says the opposite.
+
+Expect this to lower the mean further. That is the correct direction: a grader
+that credits an unsupported correct answer teaches a policy that reaching the
+conclusion matters and deriving it does not, which inverts what this task
+measures.
+
+**Clean, and worth recording as validation.** The reward-hacking check confirmed
+no answer leakage, no network, `/tmp/outputs` empty at start, and the mount
+holding only the 15 input files with none carrying the conclusions. A
+prompt-injection hand-in scored 0.0 and was named deceptive; the reference
+pasted in with no analysis in the transcript scored 0.03; an empty hand-in 0.0;
+H3N2-binding-primary, day-29-only, pooled-96 and HAI-as-B-coverage all 0.03. A
+correct answer by a different route — Welch t-test rather than Mann-Whitney,
+giving 8 of 13 rather than 11 of 13 — scored 0.90 against the reference's 0.92,
+so the grader is not narrower than its own equivalent-methods clause.
+
+**Deferred, fourth filing.** B11 and C30 leave an appended bench protocol
+score-neutral. The measured gap has collapsed across rounds — 0.97 against 0.80,
+then 0.95 against 0.93, now 0.92 against 0.93, the protocol version scoring
+marginally higher, which is noise rather than a penalty. The position is
+unchanged: the authoring rule enforces scope on substitution, never addition,
+and the same env-linter run confirms every other wrong hand-in was correctly
+marked down. The data-quality item on undisclosed statistical method was
+retracted within its own check.
