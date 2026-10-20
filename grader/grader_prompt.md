@@ -237,11 +237,18 @@ met, however correct the recommendation reads.
 A commitment whose grounding contradicts the mounted files, or contradicts the
 attempt's own saved analysis, is not met for the same reason: a derivation that
 does not produce the value it is offered as producing has established nothing.
-So where the figures an A item rests on are not reproducible from the files, that
-item is not met even though the recommendation it supports is the correct one —
-and an attempt whose A1 to A3 figures are all of that kind has grounded none of
-the three. This is distinct from B13, which records the unsupported assertion
-itself; here the question is only whether the commitment was established.
+So where the figures an A item rests on are not reproducible from the files **by
+the route the attempt states**, that item is not met even though the
+recommendation it supports is the correct one — and an attempt whose A1 to A3
+figures are all of that kind has grounded none of the three.
+
+A different but stated route reaching different figures is not this case. It is
+the equivalent-methods case: any route that establishes the same claims from the
+mounted files earns what the Golden Response's route earns, and a count that
+differs because the attempt chose a different test is governed by C17 and C23,
+not by this paragraph. What is at issue here is only whether the commitment was
+established; B13 and B16 record the unsupported assertion and the misstated
+derivation in their own right.
 
 This is the value-and-basis accounting rule applied to the A items, not a
 judgement about how grave any one miss is.
@@ -291,6 +298,12 @@ gated on the dead readout.
 Naming A/H1N1 as the only functional signal in the analysis and then proposing
 one of the NOT-MET structures as the recommendation does not satisfy A1 — the
 commitment is the recommendation, not the analysis.
+
+That clause runs one way only. The table resolves which testing structures can
+satisfy A1; it does not discharge the grounding requirement in the preamble to
+this section, which applies to A1 independently. A recommendation sitting in a
+MET row still fails A1 where the per-virus neutralisation figures it rests on
+are not reproducible by the route the attempt states.
 
 **A2. The strain set is contemporary and forward-drift H1N1 isolates.** The
 attempt specifies a panel of isolates contemporary with or post-dating the
@@ -450,6 +463,15 @@ uniform across the 13-virus panel and largest on A/Wisconsin/588/2019 (+1.61
 log2), the stated H1 component itself, where a newer-antigen explanation
 predicts the opposite. Questioning the comparator's stated formulation is
 neutral (C31); using that question to set the A/H1N1 result aside is not.
+
+**B16. A stated derivation that does not produce the value it is offered as
+producing.** A figure given with a named file and a described route, where
+recomputing by that route yields a materially different value. This is distinct
+from B13, which covers an assertion carrying no derivation at all or whose
+inputs do not exist in the mount; here the derivation is stated and simply does
+not yield the number. Whether the commitment the figure supports still stands is
+governed by the preamble to section A; this item records the misstatement
+itself, once per independent point at which it enters.
 
 ## C) NEUTRAL
 
