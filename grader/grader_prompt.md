@@ -89,11 +89,12 @@ Any grounding for A3 counts: the file-by-file inventory showing influenza B
 absent from the panels that name their antigens
 (`neutralization_seqbased.csv`, `binding_breadth_h1.csv`,
 `binding_breadth_h3.csv`, `mab_binding_panels.csv`) and present only as titres
-in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv`; the
-decay of the B/Vic binding advantage in `elisa_igg_titers.csv` to parity by
-wk17/26 (1.57 vs 1.56) while both A subtypes hold theirs; HAI being flat for B/Vic (week-4 fold-change 1.08 vs
-1.05, p = 0.675); or the two influenza B antigens named in the trial summary
-never appearing in a neutralisation or characterisation file.
+in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv`, the one
+functional assay among these, HAI, being flat for B/Vic (week-4 fold-change
+1.08 vs 1.05, p = 0.675); the decay of the B/Vic binding advantage in
+`elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56) while both A
+subtypes hold theirs; or the two influenza B antigens named in the trial
+summary never appearing in a neutralisation or characterisation file.
 
 The two panels in `microneutralization.csv` are labelled only `homologous` and
 `heterologous` and do not resolve by antigen, so no B/Victoria-specific result
@@ -192,8 +193,10 @@ or not the value is correct.
 **B14. A day-29-only functional primary.** Recommending a protection readout
 with no durability timepoint reaching roughly the length of an influenza season
 (~4–6 months post-dose; day 121 or day 181), when the A/H1N1 functional
-advantage wanes 2.13-fold against 1.24-fold in the comparator from day 29 to
-day 181 (p = 0.0022, per-participant geometric-mean folds) — a claim the data
+advantage wanes 2.13-fold against 1.24-fold in the Fluarix comparator from day
+29 to day 181 (p = 0.0022, per-participant geometric-mean folds; reducing by
+arm GMT instead gives 2.20-fold against 1.59-fold, same direction) — a claim
+the data
 show has already decayed within one season. Any durability timepoint at or
 beyond ~4-6 months avoids B14; its exact value is neutral (C5).
 

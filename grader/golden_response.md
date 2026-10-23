@@ -24,8 +24,8 @@ day 29 and at a durability timepoint covering the influenza season (~4–6 month
 post-dose; day 121 or day 181). Haemagglutination inhibition retained as a
 regulatory bridge, not as the primary functional readout.
 
-**In whom.** Adults, randomised and observer-blind, stratified on
-pre-vaccination titre and on birth cohort.
+**In whom.** Adults, randomised and observer-blind against Fluarix as the
+active comparator, stratified on pre-vaccination titre and on birth cohort.
 
 Baseline stratification is required. In `neutralization_seqbased.csv` the
 mRNA-1010 arm starts lower on A/H3N2 (day 0 GMT 185.3 vs 277.7, participant-level
@@ -94,8 +94,8 @@ of a single season.
 characterisation that already exists for the A subtypes: a binding-breadth panel
 and monoclonal antibody isolation.
 
-**In whom.** The same adult population. This may run as a sub-study of Study 1 or
-standalone.
+**In whom.** The same adult population, against the same Fluarix comparator.
+This may run as a sub-study of Study 1 or standalone.
 
 **Against what.** Contemporary B/Victoria isolates, including drift variants
 post-dating B/Austria/1359417/2021.
