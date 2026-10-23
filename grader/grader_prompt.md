@@ -37,6 +37,7 @@ discharge the grounding requirement above.
 | Co-primaries with programme success if either A subtype passes | NOT MET |
 | A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
 | A go rule reachable by a path that does not require A/H1N1, including a non-subtype path such as an HAI or seroconversion bridge | NOT MET |
+| A/H3N2 tested first, with A/H1N1 reached only if A/H3N2 passes | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
 | Any other structure where success can be reached without A/H1N1 passing, or that would read the same way had A/H1N1 failed | NOT MET |
