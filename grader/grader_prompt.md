@@ -12,13 +12,17 @@ route named here.
 **A1. A/H1N1 alone carries the primary functional readout.** The attempt names
 A/H1N1 as the subtype carrying the functional endpoint and grounds it in
 `neutralization_seqbased.csv`, where 11 of 13 viruses separate within panel (10
-of 12 excluding production reassortants is the same finding).
+of 12 excluding production reassortants is the same finding), rather than in
+any binding readout.
 
 A1 is scored on the recommended primary endpoint, not on hedges elsewhere. An
 attempt that recommends powering on A/H3N2 and later remarks that A/H1N1 also
-separates has recommended A/H3N2. Where the opening summary and the study
-specification disagree, the specification governs; a submission that
-contradicts itself is still either met or not met.
+separates has recommended A/H3N2. Naming A/H1N1 as the only functional signal
+in the analysis and then recommending a NOT-MET structure does not satisfy A1:
+the commitment is the recommendation, not the analysis. Where the opening
+summary and the study specification disagree, the specification governs; a
+submission that contradicts itself is still either met or not met, and the
+contradiction is penalised under B17.
 
 Designs are judged on testing structure, not the label used. A MET row does not
 discharge the grounding requirement above.
@@ -28,12 +32,14 @@ discharge the grounding requirement above.
 | A/H1N1 the sole functional primary | MET |
 | A/H1N1 primary, A/H3N2 secondary or gated behind it | MET |
 | A/H1N1 first in a testing hierarchy or gatekeeping procedure, whatever it is labelled, its claim standing alone if A/H3N2 fails | MET |
-| Any other structure in which the A/H1N1 claim stands alone when A/H3N2 fails | MET |
+| Any other structure where programme success requires A/H1N1 to pass and the A/H1N1 claim stands alone if A/H3N2 fails | MET |
 | Both A subtypes as equal co-primaries - shared alpha, success requiring both, no hierarchy | NOT MET |
-| Any go rule that can be satisfied without A/H1N1 passing | NOT MET |
+| Co-primaries with programme success if either A subtype passes | NOT MET |
+| A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
+| A go rule reachable by a path that does not require A/H1N1, including a non-subtype path such as an HAI or seroconversion bridge | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
-| Any other structure that would read the same way had A/H1N1 been the subtype that failed | NOT MET |
+| Any other structure where success can be reached without A/H1N1 passing, or that would read the same way had A/H1N1 failed | NOT MET |
 
 **A2. The proposed H1N1 panel uses contemporary and later isolates, not a
 historical series.** The attempt specifies a panel of isolates contemporary
@@ -135,8 +141,9 @@ Japanese prefecture of Yamagata — among them `A/Victoria/4897/2022_IVR-238_H1N
 antigens named in the trial summary are B/Austria/1359417/2021 and
 B/Phuket/3073/2013, and neither appears in any functional file.
 
-**B10. Normalising heterologous titre to the participant's own vaccine-strain
-titre.** Reporting the resulting A/H3N2 separation as a real effect. The
+**B10. Reporting the vaccine-strain-normalised A/H3N2 separation as a real
+effect.** Normalising heterologous titre to the participant's own
+vaccine-strain titre and taking the resulting separation at face value. The
 mRNA arm responded less well at A/Darwin/6/2021, so the signal is a smaller
 denominator and the endpoint rewards an arm for failing against the strain in
 its own vaccine.
@@ -185,6 +192,12 @@ B13, which covers an assertion carrying no derivation at all or whose inputs do
 not exist in the mount. Whether the commitment it supports still stands is
 governed by the A items; this records the misstatement.
 
+**B17. The recommendation contradicts the study specification.** The opening
+summary states a success condition the attempt's own studies do not carry - most
+often a programme gate on both A subtypes where the specification lets the
+A/H1N1 claim stand alone. A1 is decided on the specification; this records the
+contradiction itself.
+
 ## C) NEUTRAL
 
 The following are examples of acceptable variations that should not affect the
@@ -193,7 +206,8 @@ score. Other variations may also be neutral - use your judgment.
 1. The number of studies proposed, and their ordering.
 2. Whether B/Victoria is a standalone study or a sub-study of the main trial.
 3. The scale of the B/Victoria work — full functional characterisation or a
-   narrower bridging study.
+   narrower bridging study. A3 still requires a functional B/Victoria
+   endpoint, so a narrower study satisfies A3 only if it carries one.
 4. Sample size and power assumptions, and whether any are offered at all.
 5. Timepoint selection beyond the durability timepoint B14 requires - day 181,
    day 271, day 365 all count.
@@ -214,8 +228,8 @@ score. Other variations may also be neutral - use your judgment.
     endpoint on those grounds.
 15. Noticing the monoclonal pseudoreplication across 7 donors.
 16. Excluding or retaining the six production reassortants in the panel.
-17. Counting 11 of 13 or 10 of 12 A/H1N1 viruses. Both follow from a defensible
-    decision about the reassortants.
+17. Counting 11 of 13 or 10 of 12 A/H1N1 viruses, or another count reached by
+    a defensible alternative analysis such as a baseline-adjusted model.
 18. Noticing that per-assay cohort sizes differ — binding antibody 75,
     HAI 29, sequencing-based neutralisation 27.
 19. Rejecting `gc_frequencies.csv` or any mechanistic file as unusable, or
