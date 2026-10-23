@@ -4,7 +4,7 @@
 
 The following are the key requirements of a correct answer. Use your judgment to identify any additional required content not listed here.
 
-An item below is met only where the attempt gives its grounding and that grounding recomputes by the route the attempt describes, which need not be the route named here.
+An item below is met only where the attempt gives its grounding and that grounding recomputes by the route the attempt describes, which need not be the route named here. Prose that disagrees with the attempt's own tables establishes nothing.
 
 **A1. A/H1N1 alone carries the primary functional readout.** The attempt names A/H1N1 as the subtype carrying the functional endpoint and grounds it in `neutralization_seqbased.csv`, where 11 of 13 viruses separate within panel (10 of 12 excluding production reassortants is the same finding), rather than in any binding readout.
 
@@ -21,7 +21,7 @@ Designs are judged on testing structure, not the label used. A MET row does not 
 | Both A subtypes as equal co-primaries - shared alpha, success requiring both, no hierarchy | NOT MET |
 | Co-primaries with programme success if either A subtype passes | NOT MET |
 | A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
-| A go rule reachable by a path that does not require A/H1N1, including a non-subtype path such as an HAI or seroconversion bridge | NOT MET |
+| A go rule the programme can satisfy without demonstrating heterologous protection, such as an HAI or seroconversion non-inferiority path against matched strains | NOT MET |
 | A/H3N2 tested first, with A/H1N1 reached only if A/H3N2 passes | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
@@ -75,7 +75,7 @@ B3 fires on the recommendation, not the observation. Absence of evidence rather 
 
 **B16. A derivation that does not produce its own value.** A figure given with a named file and a described route, where recomputing by that route yields a materially different value. Distinct from B13, which covers an assertion carrying no derivation at all or whose inputs do not exist in the mount. Whether the commitment it supports still stands is governed by the A items; this records the misstatement.
 
-**B17. The recommendation contradicts the study specification.** The opening summary states a success condition the attempt's own studies do not carry - most often a programme gate on both A subtypes where the specification lets the A/H1N1 claim stand alone. A1 is decided on the specification; this records the contradiction itself.
+**B17. The recommendation contradicts the study specification.** Where A1 is met on the specification, the opening summary states a different success condition - most often a programme gate on both A subtypes where the specification lets the A/H1N1 claim stand alone. A1 is decided on the specification; this records the contradiction, and does not apply where the contradiction is itself the reason A1 fails.
 
 ## C) NEUTRAL
 
@@ -87,7 +87,7 @@ The following are examples of acceptable variations that should not affect the s
 4. Sample size and power assumptions, and whether any are offered at all.
 5. Timepoint selection beyond the durability timepoint B14 requires - day 181, day 271, day 365 all count.
 6. Choice of neutralisation platform: sequencing-based, conventional microneutralisation, pseudovirus, or focus-reduction.
-7. Whether HAI is retained as a regulatory bridge, dropped, or not mentioned.
+7. Whether HAI is retained as a regulatory bridge, dropped, or not mentioned. Retaining it is neutral; offering it as the route by which the heterologous-protection claim succeeds is not.
 8. Dose-ranging, schedule, prime-boost or adjuvant arms.
 9. Proposing animal challenge, passive transfer, or Fc-effector work alongside the clinical studies.
 10. Proposing neuraminidase, T-cell or mucosal readouts as additions, provided they are not offered in place of A3.
