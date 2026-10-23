@@ -6,9 +6,8 @@ The following are the key requirements of a correct answer. Use your judgment
 to identify any additional required content not listed here.
 
 An item below is met only where the attempt gives its grounding and that
-grounding recomputes by the route it describes. Where the prose and the
-attempt's own tables disagree, the tables are what count. A different route
-that recomputes its own figures is the equivalent-methods case (C17, C23).
+grounding recomputes by the route the attempt describes, which need not be the
+route named here.
 
 **A1. A/H1N1 alone carries the primary functional readout.** The attempt names
 A/H1N1 as the subtype carrying the functional endpoint and grounds it in
