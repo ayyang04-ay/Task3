@@ -13,8 +13,8 @@ is named at the figure.
 contemporary and forward-drift isolates with a durability co-primary, and run a
 B/Victoria functional characterisation study in parallel — the package
 establishes broader binding, not broader protection, and for half the
-formulation it generates no neutralisation or characterisation data at all and
-only a flat HAI result.
+formulation it generates no antigen-resolved neutralisation or characterisation
+data at all and only a flat HAI result.
 
 ### Study 1 — heterologous protection, A/H1N1
 
@@ -49,7 +49,8 @@ identifiable by their reassortant designations (`IVR-238` on the one H1N1 strain
 Mann-Whitney on log2 fold-change (day 29 over day 0) with Benjamini-Hochberg
 correction applied within each subtype panel separates the arms on **11 of 13**
 A/H1N1 viruses, median delta **+1.32 log2** - the median across the 13 viruses
-of each virus's between-arm difference in mean log2 fold-change. The two non-significant viruses are
+of each virus's between-arm difference in median log2 fold-change. Every
+per-strain delta below is reduced the same way. The two non-significant viruses are
 A/Michigan/45/2015 and A/Brisbane/02/2018; the oldest isolate in the panel,
 A/California/07/2009, is itself significant (q = 0.036), so the separation is not
 a simple old-versus-new split. **6 of the 11** significant viruses are 2023
@@ -134,9 +135,14 @@ neutralisation plus in-vivo protection — is what substantiates a
 heterologous-protection claim; HAI tracks only matched strains and a binding
 readout cannot carry it.
 
+**In whom, and against what.** Non-clinical. Stored sera from the trial
+participants for the in-vitro work, and a pre-immune ferret or mouse model for
+passive transfer and challenge, comparing mRNA-1010 against Fluarix sera at
+matched neutralising titre. No new clinical cohort is needed.
+
 **Why A/H3N2 cannot carry a protection readout as it stands.** Bead-array binding
 in `binding_breadth_h3.csv` separates the arms on **12 of 12** H3 strains, median
-delta **+2.30 log2**. Sequencing-based neutralisation separates on **0 of 83**
+delta **+2.30 log2**, per-strain medians as above. Sequencing-based neutralisation separates on **0 of 83**
 H3N2 viruses after within-panel correction. There is therefore no functional H3
 signal in the package to carry a protection endpoint: the large H3 effect that
 does exist is a binding effect, and the one functional readout that has been run
@@ -150,7 +156,8 @@ binding-significant, none is neutralisation-significant, and the per-strain effe
 sizes are uncorrelated (Pearson r = −0.22 on the six paired per-strain
 between-arm deltas; the two Darwin strains are kept separate, and pooling them
 collapses the figure to about zero). On A/Darwin/6/2021, mRNA-1010's own H3
-component, binding is **+2.07 log2** while neutralisation is **−0.27**.
+component, binding is **+2.07 log2** while neutralisation is **−0.27**, both
+per-strain medians.
 
 Separately, neither bead-array breadth panel — `binding_breadth_h1.csv` or
 `binding_breadth_h3.csv` — contains a strain later than 2022, so both measure
@@ -160,8 +167,8 @@ support a forward-looking claim in principle.
 ### What the package does not support
 
 **Haemagglutination inhibition separates nothing.**
-A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66
-(p = 0.69).
+A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.28); A/H3N2 1.72 vs 1.66
+(p = 0.71).
 
 **Conventional microneutralisation is flat** and numerically favours the
 comparator on the homologous panel — week 4 fold-change GM 2.49 vs 3.32

@@ -65,14 +65,17 @@ but describes a hierarchical or gatekeeping procedure, under which the A/H1N1
 claim stands alone if A/H3N2 fails, is judged under the gated row and is MET.
 
 Proposing A/H3N2 work alongside a committed A/H1N1 primary is not penalised
-here or anywhere (C9, C10). What A1 tests is whether programme success is
+here or anywhere (B3, C27). What A1 tests is whether programme success is
 gated on the dead readout.
 
 Naming A/H1N1 as the only functional signal in the analysis and then
 recommending one of the NOT-MET structures does not satisfy A1 - the commitment
 is the recommendation, not the analysis. Nor does a MET row discharge the
 grounding requirement: a recommendation in a MET row still fails A1 where the
-figures it rests on are not reproducible by the route the attempt states.
+figures it rests on are not reproducible by the route the attempt states. A
+different route that is stated and does reproduce its own figures is the
+equivalent-methods case, not this one - a count other than 11 of 13 arrived at
+by a defensible alternative is governed by C17 and C23.
 
 **A2. The strain set is contemporary and forward-drift H1N1 isolates.** The
 attempt specifies a panel of isolates contemporary with or post-dating the
@@ -81,8 +84,9 @@ groundings counts: the 2023 isolates among the significant viruses in
 `neutralization_seqbased.csv`; or
 that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`)
 contains a strain later than 2022 and so cannot speak to forward drift. A2 is
-met on the attempt's own grounding, traced to a mounted file; asserted without
-it, not met.
+met on the attempt's own grounding, traced to a mounted file: asserted without
+it, or resting on figures the attempt's stated route does not reproduce, not
+met.
 
 **A3. Influenza B coverage is treated as a prerequisite.** The attempt
 establishes that no B/Victoria neutralisation or characterisation data
@@ -104,7 +108,8 @@ B/Victoria isolates into a panel whose endpoint is defined around A/H1N1 with no
 B-specific readout — that is cosmetic coverage, not characterisation. B/Victoria
 is one of the four antigens the product encodes, so its coverage must be
 justified in its own right. A3 is met on the attempt's own grounding, traced to
-a mounted file; asserted without it, not met.
+a mounted file: asserted without it, or resting on figures the attempt's stated
+route does not reproduce, not met.
 
 Any grounding for A3 counts: the file-by-file inventory showing influenza B
 absent from the panels that name their antigens
@@ -118,10 +123,13 @@ antigens named in the trial summary never appear in a neutralisation or
 characterisation file.
 
 The two panels in `microneutralization.csv` are labelled only `homologous` and
-`heterologous` and name no antigen, so they are not identifiable by lineage.
-They neither establish B/Victoria coverage nor count against an inventory that
-reports the absence, and an attempt that records them as unidentifiable has read
-the file correctly.
+`heterologous`, with no breakdown by antigen. The trial summary anchors those
+designations to the mRNA-1010 components, which include the B/Victoria antigen,
+so an attempt that reads the homologous panel as touching B/Victoria is reading
+the mount correctly, and so is one that records the panels as unidentifiable by
+lineage. Either way no B/Victoria-specific result can be recovered from an
+aggregate that does not resolve by antigen, so the panels neither supply the
+functional endpoint A3 requires nor refute an inventory reporting its absence.
 
 ## B) PENALIZE FOR
 
@@ -130,23 +138,23 @@ exhaustive - apply your judgment to any other issues you identify.
 
 **B1. Powering the protection readout on the bead-array binding result.**
 Selecting A/H3N2 because binding breadth is largest there (12 of 12 strains,
-median +2.30 log2), when `neutralization_seqbased.csv` shows 0 of 83 H3N2 viruses
+per-strain median between-arm delta +2.30 log2), when `neutralization_seqbased.csv` shows 0 of 83 H3N2 viruses
 separating on the one functional assay run against them, while the same file
 shows 11 of 13 in H1N1.
 
 **B2. A multiplex-binding primary endpoint.** Proposing bead-array or ELISA
 binding as the primary readout for a protection claim, or citing the 12-of-12
 result as evidence of protective strain coverage, without confronting the
-neutralisation nulls or the A/Darwin/6/2021 dissociation (+2.07 binding against
-−0.27 neutralisation).
+neutralisation nulls or the A/Darwin/6/2021 dissociation (per-strain median
+between-arm deltas, +2.07 binding against −0.27 neutralisation).
 
 **B3. Powering the protection trial on A/H3N2 by treating the 83 nulls as a
 sample-size problem.** Recommending a larger H3N2 neutralisation study *as the
 heterologous-protection trial*, on the grounds that the nulls reflect n rather
 than absence of effect. The package contains no functional H3 effect estimate to
 power against: 0 of 83 viruses separate, and the large H3 signal that does exist
-is a binding signal the neutralisation data contradict at A/Darwin/6/2021 (+2.07
-binding against −0.27 neutralisation).
+is a binding signal the neutralisation data contradict at A/Darwin/6/2021
+(+2.07 binding against −0.27 neutralisation, per-strain medians).
 
 B3 fires on the recommendation, not the observation. Absence of evidence rather
 than evidence of absence, wide confidence intervals, a smaller true H3 effect
@@ -227,7 +235,8 @@ composition.** Treating the arms as non-comparable on A/H1N1, and so declining t
 power on it, on the grounds that the two products' antigens differ. The trial
 summary assigns the same A(H1N1)pdm09 component to both arms and records the
 difference as H3N2 only. The data refute it independently: the per-virus gain is
-largest on A/Wisconsin/588/2019 (+1.61 log2), the stated H1 component itself,
+largest on A/Wisconsin/588/2019 (+1.61 log2, same reduction), the stated H1
+component itself,
 where a newer-antigen explanation predicts the opposite. Questioning the
 comparator's stated formulation is neutral (C31); using that question to set the
 A/H1N1 result aside is not.
@@ -254,8 +263,8 @@ score. Other variations may also be neutral - use your judgment.
    functional B/Victoria endpoint, so a narrower study satisfies A3 only if it
    carries one.
 4. Sample size and power assumptions, and whether any are offered at all.
-5. Timepoint selection beyond the durability co-primary — day 181, day 271, day
-   365 all count.
+5. Timepoint selection beyond the durability timepoint B14 requires - day 181,
+   day 271, day 365 all count.
 6. Choice of neutralisation platform: sequencing-based, conventional
    microneutralisation, pseudovirus, or focus-reduction.
 7. Whether HAI is retained as a regulatory bridge, dropped, or not mentioned.
@@ -315,6 +324,10 @@ score. Other variations may also be neutral - use your judgment.
 32. Scoping B/Yamagata out as no longer circulating, and whether it is
     mentioned at all. The live influenza B question is B/Victoria, and leaving
     B/Yamagata aside is not an omission.
+33. Whether the `microneutralization.csv` panels are read as unidentifiable by
+    lineage or, on the trial summary's anchoring convention, as touching the
+    B/Victoria component. The mount supports both and neither resolves the
+    panels by antigen.
 
 **Equivalent methods.** Any route that establishes the same claims from the
 mounted files earns what any other route earns. Per-virus Mann-Whitney with
