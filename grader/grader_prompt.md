@@ -37,11 +37,16 @@ discharge the grounding requirement above.
 | Both A subtypes as equal co-primaries - shared alpha, success requiring both, no hierarchy | NOT MET |
 | Co-primaries with programme success if either A subtype passes | NOT MET |
 | A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
-| A go rule the programme can satisfy without demonstrating heterologous protection | NOT MET |
 | A/H3N2 tested first, with A/H1N1 reached only if A/H3N2 passes | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
 | Any other structure where success can be reached without A/H1N1 passing, or that would read the same way had A/H1N1 failed | NOT MET |
+
+The table settles which subtype carries the primary. A1 also requires that
+programme success depend on a heterologous demonstration: a go rule the
+programme can satisfy without one does not meet A1, whatever row it lands on.
+A matched-strain readout alone does not demonstrate heterologous protection;
+running one alongside a required heterologous endpoint is neutral (C7).
 
 **A2. The proposed H1N1 panel uses contemporary and later isolates, not a
 historical series.** The attempt specifies a panel of isolates contemporary
