@@ -55,33 +55,27 @@ attempt gives its grounding and that grounding recomputes by the route it
 describes. Where the prose and the attempt's own tables disagree, the tables
 are what count.
 
-"Functional" means a neutralisation, inhibition or in-vivo protection readout,
-not bead-array or ELISA binding. HAI is the one functional assay in the package
-that resolves influenza B by antigen (`hai_titers.csv`), and it is flat for
-B/Vic in both arms, so it establishes no B coverage either way; an attempt that
-says exactly this is correct, not in error.
+"Functional" means neutralisation, inhibition or in-vivo protection, not
+bead-array or ELISA binding. HAI is the one functional assay that resolves
+influenza B by antigen (`hai_titers.csv`) and it is flat for B/Vic in both arms
+(week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B coverage
+either way; an attempt that says so is correct.
 
 Two things do not satisfy A3: listing influenza B among absent assays without
-proposing anything to close it, which is the single most common way a strong
-attempt fails; and writing B/Victoria isolates into a panel whose endpoint is
-defined around A/H1N1 with no B-specific readout, which is cosmetic coverage
-rather than characterisation.
+proposing anything to close it, which is the most common way a strong attempt
+fails; and writing B/Victoria isolates into a panel whose endpoint is defined
+around A/H1N1 with no B-specific readout.
 
-Any grounding for A3 counts: the file-by-file inventory showing influenza B
-absent from the panels that name their antigens
-(`neutralization_seqbased.csv`, `binding_breadth_h1.csv`,
+Any grounding counts. Influenza B is absent from the panels that name their
+antigens (`neutralization_seqbased.csv`, `binding_breadth_h1.csv`,
 `binding_breadth_h3.csv`, `mab_binding_panels.csv`) and present only as titres
-in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv`, the one
-functional assay among these, HAI, being flat for B/Vic (week-4 fold-change
-1.08 vs 1.05, p = 0.675); the decay of the B/Vic binding advantage in
-`elisa_igg_titers.csv` to parity by wk17/26 (1.57 vs 1.56) while both A
-subtypes hold theirs; or the two influenza B antigens named in the trial
-summary never appearing in a neutralisation or characterisation file.
-
-The two panels in `microneutralization.csv` are labelled only `homologous` and
-`heterologous` and do not resolve by antigen, so no B/Victoria-specific result
-can be recovered from them. They neither supply the functional endpoint A3
-requires nor refute an inventory reporting its absence.
+in `elisa_igg_titers.csv`, `hai_titers.csv` and `igm_fold_change.csv`; the
+B/Vic binding advantage decays to parity by wk17/26 (1.57 vs 1.56) while both A
+subtypes hold theirs; the two influenza B antigens named in the trial summary
+appear in no neutralisation or characterisation file. The
+`microneutralization.csv` panels are labelled only `homologous` and
+`heterologous` and do not resolve by antigen, so they neither satisfy A3 nor
+count against an inventory reporting the absence.
 
 ## B) PENALIZE FOR
 
