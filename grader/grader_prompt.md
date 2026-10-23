@@ -5,55 +5,35 @@
 The following are the key requirements of a correct answer. Use your judgment
 to identify any additional required content not listed here.
 
-**A1. The heterologous-protection readout is powered on A/H1N1.** The attempt
-names A/H1N1 as the subtype carrying the functional endpoint and grounds it in
-`neutralization_seqbased.csv` — 11 of 13 viruses separating within panel (10 of
-12 excluding production reassortants is the same finding) — rather than in any
-binding readout. A1 is met only on grounding the attempt states and that
-reproduces by the route it states; prose contradicting the attempt's own tables
-establishes nothing. The most common way this task goes wrong is recommending
-A/H3N2 on the strength of the bead-array binding result.
+**A1. A/H1N1 alone carries the primary functional readout.** The attempt names
+A/H1N1 as the subtype carrying the functional endpoint and grounds it in
+`neutralization_seqbased.csv`, where 11 of 13 viruses separate within panel (10
+of 12 excluding production reassortants is the same finding). A1 is met only
+where the attempt gives its grounding and that grounding recomputes by the
+route it describes. Where the prose and the attempt's own tables disagree, the
+tables are what count. A different route that recomputes its own figures is the
+equivalent-methods case (C17, C23).
 
-A1 is scored on the recommended **primary** endpoint, not on hedges elsewhere:
-an attempt that recommends powering on A/H3N2 and later remarks that A/H1N1
-also separates has recommended A/H3N2. Where the opening summary and the study
-specification disagree about what success requires, the specification governs.
-A1 is met or not met either way; a submission that contradicts itself has no
-partial state.
+A1 is scored on the recommended primary endpoint, not on hedges elsewhere. An
+attempt that recommends powering on A/H3N2 and later remarks that A/H1N1 also
+separates has recommended A/H3N2. Where the opening summary and the study
+specification disagree, the specification governs; a submission that
+contradicts itself is still either met or not met.
 
-Two questions decide it. Is programme success gated on A/H3N2, which the
-package shows at 0 of 83 on neutralisation? And would the design read the same
-way had A/H1N1 been the subtype that failed? Either one answered yes is not a
-commitment to A/H1N1.
+Designs are judged on testing structure, not the label used. A MET row does not
+discharge the grounding requirement above.
 
 | Recommended primary design | A1 |
 |---|---|
 | A/H1N1 the sole functional primary | MET |
-| A/H1N1 primary, A/H3N2 explicitly secondary or gated (tested only if H1N1 wins) | MET |
-| Two primaries tested hierarchically, A/H1N1 first, its claim standing alone if A/H3N2 fails | MET |
-| Equal co-primaries on both A subtypes | NOT MET |
-| Co-primaries with programme success if either A subtype passes | NOT MET |
+| A/H1N1 primary, A/H3N2 secondary or gated behind it | MET |
+| A/H1N1 first in a testing hierarchy or gatekeeping procedure, whatever it is labelled, its claim standing alone if A/H3N2 fails | MET |
+| Any other structure in which the A/H1N1 claim stands alone when A/H3N2 fails | MET |
+| Both A subtypes as equal co-primaries - shared alpha, success requiring both, no hierarchy | NOT MET |
+| Any go rule that can be satisfied without A/H1N1 passing | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
-| A/H3N2 first, or H3N2 co-equal with H1N1 | NOT MET |
-| A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
-| Subtype left unspecified, or the two A subtypes treated as interchangeable | NOT MET |
-
-The table is read on the testing structure, not the label an attempt uses.
-"Equal co-primaries" means the two endpoints share the alpha and success
-requires both, with no hierarchy between them. An attempt that writes
-"co-primary" but describes a hierarchical or gatekeeping procedure, under which
-the A/H1N1 claim stands alone if A/H3N2 fails, is judged under the gated row
-and is MET.
-
-Proposing A/H3N2 work alongside a committed A/H1N1 primary is not penalised
-here or anywhere (B3, C27).
-
-Naming A/H1N1 as the only functional signal in the analysis and then
-recommending a NOT-MET structure does not satisfy A1: the commitment is the
-recommendation, not the analysis. Nor does a MET row discharge the grounding
-requirement. A different route that is stated and does reproduce its own
-figures is the equivalent-methods case — a count other than 11 of 13 from a
-defensible alternative is governed by C17 and C23.
+| Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
+| Any other structure that would read the same way had A/H1N1 been the subtype that failed | NOT MET |
 
 **A2. The strain set is contemporary and forward-drift H1N1 isolates.** The
 attempt specifies a panel of isolates contemporary with or post-dating the
@@ -61,17 +41,19 @@ attempt specifies a panel of isolates contemporary with or post-dating the
 counts: the 2023 isolates among the significant viruses in
 `neutralization_seqbased.csv`, or that neither binding panel
 (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`) contains a strain later
-than 2022 and so cannot speak to forward drift. A2 is met only on grounding the
-attempt states and that reproduces by the route it states; prose contradicting
-the attempt's own tables establishes nothing.
+than 2022 and so cannot speak to forward drift. A2 is met only where the
+attempt gives its grounding and that grounding recomputes by the route it
+describes. Where the prose and the attempt's own tables disagree, the tables
+are what count.
 
 **A3. Influenza B coverage is treated as a prerequisite.** The attempt
 establishes that no antigen-resolved B/Victoria neutralisation or
 characterisation data exist, draws the consequence that a quadrivalent product
 claim cannot rest on influenza A data alone, and specifies a study or sub-study
-with a B/Victoria functional endpoint of its own. A3 is met only on grounding
-the attempt states and that reproduces by the route it states; prose
-contradicting the attempt's own tables establishes nothing.
+with a B/Victoria functional endpoint of its own. A3 is met only where the
+attempt gives its grounding and that grounding recomputes by the route it
+describes. Where the prose and the attempt's own tables disagree, the tables
+are what count.
 
 "Functional" means a neutralisation, inhibition or in-vivo protection readout,
 not bead-array or ELISA binding. HAI is the one functional assay in the package
