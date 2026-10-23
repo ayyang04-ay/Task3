@@ -2,9 +2,9 @@
 
 ## Task framing
 
-The attempt receives a working directory holding the complete source data from a single immunogenicity study of a quadrivalent mRNA seasonal influenza vaccine (mRNA-1010) against a licensed quadrivalent comparator (Fluarix), 2022-2023 Northern Hemisphere season. It is asked to recommend the next studies, and for each to specify what is measured, in whom, and against what, sufficient to support a heterologous-protection claim.
+The attempt receives a working directory holding the complete source data from a single immunogenicity study of a quadrivalent mRNA seasonal influenza vaccine (mRNA-1010) against a licensed quadrivalent comparator (Fluarix), 2022-2023 Northern Hemisphere season. It is asked to build a proposal recommending the next studies, and to give the endpoints, populations, comparators and readouts for each, against a heterologous-protection claim.
 
-**Deliverable set to inspect.** `/tmp/outputs/answer.md`, carrying a one-line recommendation at the top, then the recommended studies, then the reasoning with every number traced to its file. Any analysis scripts or intermediate files saved under `/tmp/outputs`.
+**Deliverable set to inspect.** `/tmp/outputs/answer.md`, carrying a summary of the recommendation at the top, then the recommended studies, then the reasoning, with the numbers relied on cited to their files. Any analysis scripts or intermediate files saved under `/tmp/outputs`.
 
 References below to "the trial summary" mean the summary document mounted in the input folder, which carries the study design, the antigenic composition, the per-assay cohort table and the identifier conventions. Its mounted filename may carry an upload suffix; cite it as the attempt found it, and do not treat a filename difference as evidence the file was not read.
 
@@ -18,7 +18,7 @@ The number of studies proposed is not graded. One well-specified trial plus an i
 - A carried-forward error is penalised once, where it enters the chain. An error entering at two independent points is two errors.
 - Impartial between methods. No verbosity penalty, in either direction.
 
-**The commitment is required, and it is scored on the recommendation itself** - the one-line summary plus the study specifications, not on hedges elsewhere in the document. An attempt that recommends powering on A/H3N2 and later remarks that A/H1N1 also separates has recommended A/H3N2.
+**The commitment is required, and it is scored on the recommendation itself** - the opening recommendation plus the study specifications, not on hedges elsewhere in the document. An attempt that recommends powering on A/H3N2 and later remarks that A/H1N1 also separates has recommended A/H3N2.
 
 **The dominant failure** is treating the bead-array binding result as the protection signal, and recommending A/H3N2 on the strength of it. The second most common is inventorying the influenza B absence without proposing work to close it.
 
@@ -86,7 +86,7 @@ Separately, neither bead-array breadth panel - `binding_breadth_h1.csv` or `bind
 
 ### What the package does not support
 
-**Haemagglutination inhibition, the licensed correlate, separates nothing.** A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66 (p = 0.69).
+**Haemagglutination inhibition separates nothing.** A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66 (p = 0.69).
 
 **Conventional microneutralisation is flat** and numerically favours the comparator on the homologous panel - week 4 fold-change GM 2.49 vs 3.32 (p = 0.53). Heterologous is 4.12 vs 3.03 (p = 0.32), confounded by the baseline deficit noted above.
 
@@ -98,7 +98,7 @@ Separately, neither bead-array breadth panel - `binding_breadth_h1.csv` or `bind
 
 ## A) MUST BE PRESENT AND CORRECT
 
-An A item is met only where the attempt's own grounding, traced to a mounted file, establishes it. The prompt requires the reasoning, every number relied on and where each came from; a commitment asserted with no such grounding is not met, however correct the recommendation reads.
+An A item is met only where the attempt's own grounding, traced to a mounted file, establishes it. The prompt requires explicit reasoning and cited numbers and values; a commitment asserted with no such grounding is not met, however correct the recommendation reads.
 
 A commitment whose grounding contradicts the mounted files, or contradicts the attempt's own saved analysis, is not met for the same reason: a derivation that does not produce the value it is offered as producing has established nothing. So where the figures an A item rests on are not reproducible from the files **by the route the attempt states**, that item is not met even though the recommendation it supports is the correct one - and an attempt whose A1 to A3 figures are all of that kind has grounded none of the three.
 
@@ -165,9 +165,9 @@ B3 fires on the *recommendation*, not on the observation. Noting that the H3N2 n
 
 **B10. Normalising heterologous titre to the participant's own vaccine-strain titre** and reporting the resulting A/H3N2 separation as a real effect. The signal is a smaller denominator - the mRNA arm responded less well at A/Darwin/6/2021 - so the endpoint rewards an arm for failing against the strain in its own vaccine.
 
-**B11. The study specification is missing.** A recommended study is offered without specifying what is measured, in whom, and against what. The prompt requires these three for each study it asks for, so their absence is the error - whatever the response spent its space on instead, and whether or not the gap is filled by methodological material. Where the specification is present, what else the response carries is not scored here (C30).
+**B11. The study specification is missing.** A recommended study is offered without its endpoints, population, comparator and readouts. The prompt requires these for each study it asks for, so their absence is the error - whatever the response spent its space on instead, and whether or not the gap is filled by methodological material. Where the specification is present, what else the response carries is not scored here (C30).
 
-**B12. Offering the absence of neuraminidase data as the coverage gap.** It is a reasonable observation for a mechanism study, but haemagglutinin is the licensed correlate and no NA absence threatens product-level coverage the way an uncharacterised lineage does. It does not satisfy A3.
+**B12. Offering the absence of neuraminidase data as the coverage gap.** Reasonable as a mechanism observation, and haemagglutinin carries the dominant antibody response, but the four antigens `trial_summary.md` names are all haemagglutinin and neuraminidase is not among them. No NA absence threatens the product's coverage claim the way an uncharacterised encoded antigen does. It does not satisfy A3.
 
 **B13. Unsupported assertion.** A number, p-value or claim with no derivation, or whose inputs do not exist in the mount. Penalised in its own right, whether or not the value is correct.
 

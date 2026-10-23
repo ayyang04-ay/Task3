@@ -5,14 +5,14 @@
 The attempt receives a working directory holding the complete source data from a
 single immunogenicity study of a quadrivalent mRNA seasonal influenza vaccine
 (mRNA-1010) against a licensed quadrivalent comparator (Fluarix), 2022–2023
-Northern Hemisphere season. It is asked to recommend the next studies, and for
-each to specify what is measured, in whom, and against what, sufficient to
-support a heterologous-protection claim.
+Northern Hemisphere season. It is asked to build a proposal recommending the next
+studies, and to give the endpoints, populations, comparators and readouts for
+each, against a heterologous-protection claim.
 
-**Deliverable set to inspect.** `/tmp/outputs/answer.md`, carrying a one-line
-recommendation at the top, then the recommended studies, then the reasoning with
-every number traced to its file. Any analysis scripts or intermediate files saved
-under `/tmp/outputs`.
+**Deliverable set to inspect.** `/tmp/outputs/answer.md`, carrying a summary of
+the recommendation at the top, then the recommended studies, then the reasoning,
+with the numbers relied on cited to their files. Any analysis scripts or
+intermediate files saved under `/tmp/outputs`.
 
 References below to "the trial summary" mean the summary document mounted in the
 input folder, which carries the study design, the antigenic composition, the
@@ -39,8 +39,8 @@ under A are made and correctly grounded.
 - Impartial between methods. No verbosity penalty, in either direction.
 
 **The commitment is required, and it is scored on the recommendation itself** —
-the one-line summary plus the study specifications, not on hedges elsewhere in
-the document. An attempt that recommends powering on A/H3N2 and later remarks
+the opening recommendation plus the study specifications, not on hedges
+elsewhere in the document. An attempt that recommends powering on A/H3N2 and later remarks
 that A/H1N1 also separates has recommended A/H3N2.
 
 **The dominant failure** is treating the bead-array binding result as the
@@ -199,7 +199,7 @@ support a forward-looking claim in principle.
 
 ### What the package does not support
 
-**Haemagglutination inhibition, the licensed correlate, separates nothing.**
+**Haemagglutination inhibition separates nothing.**
 A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66
 (p = 0.69).
 
@@ -230,8 +230,8 @@ endpoint rewards an arm for failing against the strain in its own vaccine.
 ## A) MUST BE PRESENT AND CORRECT
 
 An A item is met only where the attempt's own grounding, traced to a mounted
-file, establishes it. The prompt requires the reasoning, every number relied on
-and where each came from; a commitment asserted with no such grounding is not
+file, establishes it. The prompt requires explicit reasoning and
+cited numbers and values; a commitment asserted with no such grounding is not
 met, however correct the recommendation reads.
 
 A commitment whose grounding contradicts the mounted files, or contradicts the
@@ -428,16 +428,18 @@ A/Darwin/6/2021 — so the endpoint rewards an arm for failing against the strai
 in its own vaccine.
 
 **B11. The study specification is missing.** A recommended study is offered
-without specifying what is measured, in whom, and against what. The prompt
-requires these three for each study it asks for, so their absence is the error —
+without its endpoints, population, comparator and readouts. The prompt requires
+these for each study it asks for, so their absence is the error —
 whatever the response spent its space on instead, and whether or not the gap is
 filled by methodological material. Where the specification is present, what else
 the response carries is not scored here (C30).
 
-**B12. Offering the absence of neuraminidase data as the coverage gap.** It is a
-reasonable observation for a mechanism study, but haemagglutinin is the licensed
-correlate and no NA absence threatens product-level coverage the way an
-uncharacterised lineage does. It does not satisfy A3.
+**B12. Offering the absence of neuraminidase data as the coverage gap.**
+Reasonable as a mechanism observation, and haemagglutinin carries the dominant
+antibody response, but the four antigens `trial_summary.md` names are all
+haemagglutinin and neuraminidase is not among them. No NA absence threatens the
+product's coverage claim the way an uncharacterised encoded antigen does. It
+does not satisfy A3.
 
 **B13. Unsupported assertion.** A number, p-value or claim with no derivation, or
 whose inputs do not exist in the mount. Penalised in its own right, whether or
