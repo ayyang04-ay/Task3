@@ -4,7 +4,9 @@
 
 The following are the key requirements of a correct answer. Use your judgment to identify any additional required content not listed here.
 
-**A1. A/H1N1 alone carries the primary functional readout.** The attempt names A/H1N1 as the subtype carrying the functional endpoint and grounds it in `neutralization_seqbased.csv`, where 11 of 13 viruses separate within panel (10 of 12 excluding production reassortants is the same finding). A1 is met only where the attempt gives its grounding and that grounding recomputes by the route it describes. Where the prose and the attempt's own tables disagree, the tables are what count. A different route that recomputes its own figures is the equivalent-methods case (C17, C23).
+An item below is met only where the attempt gives its grounding and that grounding recomputes by the route it describes. Where the prose and the attempt's own tables disagree, the tables are what count. A different route that recomputes its own figures is the equivalent-methods case (C17, C23).
+
+**A1. A/H1N1 alone carries the primary functional readout.** The attempt names A/H1N1 as the subtype carrying the functional endpoint and grounds it in `neutralization_seqbased.csv`, where 11 of 13 viruses separate within panel (10 of 12 excluding production reassortants is the same finding).
 
 A1 is scored on the recommended primary endpoint, not on hedges elsewhere. An attempt that recommends powering on A/H3N2 and later remarks that A/H1N1 also separates has recommended A/H3N2. Where the opening summary and the study specification disagree, the specification governs; a submission that contradicts itself is still either met or not met.
 
@@ -22,9 +24,9 @@ Designs are judged on testing structure, not the label used. A MET row does not 
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
 | Any other structure that would read the same way had A/H1N1 been the subtype that failed | NOT MET |
 
-**A2. The strain set is contemporary and forward-drift H1N1 isolates.** The attempt specifies a panel of isolates contemporary with or post-dating the 2022-2023 composition rather than a historical strain series. Either grounding counts: the 2023 isolates among the significant viruses in `neutralization_seqbased.csv`, or that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`) contains a strain later than 2022 and so cannot speak to forward drift. A2 is met only where the attempt gives its grounding and that grounding recomputes by the route it describes. Where the prose and the attempt's own tables disagree, the tables are what count.
+**A2. The proposed H1N1 panel uses contemporary and later isolates, not a historical series.** The attempt specifies a panel of isolates contemporary with or post-dating the 2022-2023 composition. Either grounding counts: the 2023 isolates among the significant viruses in `neutralization_seqbased.csv`, or that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`) contains a strain later than 2022 and so cannot speak to forward drift.
 
-**A3. Influenza B coverage is treated as a prerequisite.** The attempt establishes that no antigen-resolved B/Victoria neutralisation or characterisation data exist, draws the consequence that a quadrivalent product claim cannot rest on influenza A data alone, and specifies a study or sub-study with a B/Victoria functional endpoint of its own. A3 is met only where the attempt gives its grounding and that grounding recomputes by the route it describes. Where the prose and the attempt's own tables disagree, the tables are what count.
+**A3. B/Victoria needs its own functional study before a quadrivalent claim.** The attempt establishes that no antigen-resolved B/Victoria neutralisation or characterisation data exist, draws the consequence that a quadrivalent product claim cannot rest on influenza A data alone, and specifies a study or sub-study with a B/Victoria functional endpoint of its own.
 
 "Functional" means neutralisation, inhibition or in-vivo protection, not bead-array or ELISA binding. HAI is the one functional assay that resolves influenza B by antigen (`hai_titers.csv`) and it is flat for B/Vic in both arms (week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B coverage either way; an attempt that says so is correct.
 
