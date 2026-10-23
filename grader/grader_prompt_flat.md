@@ -4,7 +4,7 @@
 
 The following are the key requirements of a correct answer. Use your judgment to identify any additional required content not listed here.
 
-An item below is met only where the attempt gives its grounding and that grounding recomputes by the route the attempt describes, which need not be the route named here. Prose that disagrees with the attempt's own tables establishes nothing.
+An item is met only where the attempt shows its own grounding and the figures hold up when recomputed the way the attempt describes. That route need not be the one named here. Prose that disagrees with the attempt's own tables establishes nothing.
 
 **A1. A/H1N1 alone carries the primary functional readout.** The attempt names A/H1N1 as the subtype carrying the functional endpoint and grounds it in `neutralization_seqbased.csv`, where 11 of 13 viruses separate within panel (10 of 12 excluding production reassortants is the same finding), rather than in any binding readout.
 
@@ -20,7 +20,7 @@ Designs are judged on testing structure, not the label used. A MET row does not 
 | Any other structure where programme success requires A/H1N1 to pass and the A/H1N1 claim stands alone if A/H3N2 fails | MET |
 | Both A subtypes as equal co-primaries - shared alpha, success requiring both, no hierarchy | NOT MET |
 | Co-primaries with programme success if either A subtype passes | NOT MET |
-| A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
+| An "at least 2 of 3 families" or "at least one A subtype" go rule | NOT MET |
 | A/H3N2 tested first, with A/H1N1 reached only if A/H3N2 passes | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
@@ -50,27 +50,27 @@ The following are common errors observed on this task. This list is not exhausti
 
 B3 fires on the recommendation, not the observation. Absence of evidence rather than evidence of absence, wide confidence intervals, a smaller true H3 effect going undetected at this n, and a larger H3N2 study proposed as exploratory work alongside an A/H1N1 primary are all correct reasoning and are not penalised. What is penalised is staking the protection readout on it.
 
-**B4. Correcting for multiplicity across all 96 viruses at once.** The 13 A/H1N1 and 83 A/H3N2 viruses are two separately assembled libraries, and pooling them drops the A/H1N1 count from 11 to 0 - the correction extinguishes the signal, not the data. Penalised where the pooled result is the basis offered for the verdict. Reporting it alongside the within-panel result, with the choice of family reasoned through, is not B4, nor is any other test.
+**B4. Correcting for multiplicity across all 96 viruses at once.** The 13 A/H1N1 and 83 A/H3N2 viruses are two separately assembled libraries, and pooling them drops the A/H1N1 count from 11 to 0: the correction extinguishes the signal, not the data. Penalised where the pooled result is the basis offered for the verdict. Reporting it alongside the within-panel result, with the choice of family reasoned through, is not B4, nor is any other test.
 
 **B5. Treating the week-4 influenza B binding advantage as coverage.** Citing p = 0.0146 at week 4 as evidence B is characterised, when the same comparison is p = 0.8363 at wk17/26.
 
 **B6. Treating HAI as influenza B coverage.** HAI is flat for B in both arms, so it supports no endpoint in either direction.
 
-**B7. Treating B/Victoria as deferrable to a future seasonal update.** Addressing the influenza B component through later strain-composition changes, or sequencing it behind the influenza A programme as lower priority, on the implied basis that it is adequately covered - when no functional B data exist anywhere in the mount and the binding advantage that does exist is gone by wk17/26.
+**B7. Treating B/Victoria as deferrable to a future seasonal update.** Addressing the influenza B component through later strain-composition changes, or sequencing it behind the influenza A programme as lower priority, on the implied basis that it is adequately covered. No functional B data exist anywhere in the mount, and the binding advantage that does exist is gone by wk17/26.
 
 **B8. Advancing the programme on mechanistic data.** Recommending progression on germinal-centre persistence, repertoire diversification or clonotype counts as though these bore on protection. These rest on a 6-versus-11 lymph-node cohort and 7 donors and carry no protection weight.
 
-**B9. Reading strain-name collisions as influenza B data.** The panels contain influenza A strains named after the Australian state of Victoria and the Japanese prefecture of Yamagata - among them `A/Victoria/4897/2022_IVR-238_H1N1`, `A/Victoria/1389/2023_H1N1` and `A/YAMAGATA/98/2023_H3N2`. The actual B antigens named in the trial summary are B/Austria/1359417/2021 and B/Phuket/3073/2013, and neither appears in any functional file.
+**B9. Reading strain-name collisions as influenza B data.** The panels contain influenza A strains named after the Australian state of Victoria and the Japanese prefecture of Yamagata, among them `A/Victoria/4897/2022_IVR-238_H1N1`, `A/Victoria/1389/2023_H1N1` and `A/YAMAGATA/98/2023_H3N2`. The actual B antigens named in the trial summary are B/Austria/1359417/2021 and B/Phuket/3073/2013, and neither appears in any functional file.
 
 **B10. Reporting the vaccine-strain-normalised A/H3N2 separation as a real effect.** Normalising heterologous titre to the participant's own vaccine-strain titre and taking the resulting separation at face value. The mRNA arm responded less well at A/Darwin/6/2021, so the signal is a smaller denominator and the endpoint rewards an arm for failing against the strain in its own vaccine.
 
-**B11. The study specification is missing.** A recommended study is offered without its endpoints, population, comparator and readouts. The prompt requires these for each study it asks for, so their absence is the error, whatever the response spent its space on instead and whether or not the gap is filled by methodological material. Where the specification is present, what else the response carries is not scored here (C30).
+**B11. The study specification is missing.** A recommended study is offered without its endpoints, population, comparator and readouts. The prompt requires these for each study it asks for, so their absence is the error. It does not matter what the response spent its space on instead, or whether methodological material fills the gap. Where the specification is present, what else the response carries is not scored here (C30).
 
 **B12. Offering the absence of neuraminidase data as the coverage gap.** Reasonable as a mechanism observation, but the four antigens `trial_summary.md` names are all haemagglutinin and neuraminidase is not among them, so no NA absence threatens the product's coverage claim the way an uncharacterised encoded antigen does. It does not satisfy A3.
 
 **B13. Unsupported assertion.** A number, p-value or claim with no derivation, or whose inputs do not exist in the mount. Penalised in its own right, whether or not the value is correct.
 
-**B14. A day-29-only functional primary.** Recommending a protection readout with no durability timepoint reaching roughly the length of an influenza season (~4-6 months post-dose; day 121 or day 181), when the A/H1N1 functional advantage wanes 2.13-fold against 1.24-fold in the Fluarix comparator from day 29 to day 181 (p = 0.0022, per-participant geometric-mean folds; reducing by arm GMT instead gives 2.20-fold against 1.59-fold, same direction) - a claim the data show has already decayed within one season. Any durability timepoint at or beyond ~4-6 months avoids B14; its exact value is neutral (C5).
+**B14. A day-29-only functional primary.** Recommending a protection readout with no durability timepoint reaching roughly the length of an influenza season, meaning about 4 to 6 months post-dose: day 121 or day 181. The A/H1N1 functional advantage wanes 2.13-fold against 1.24-fold in the Fluarix comparator between day 29 and day 181 (p = 0.0022, per-participant geometric-mean folds; by arm GMT, 2.20-fold against 1.59-fold, same direction), so a day-29-only design backs a claim that has already decayed within one season. Any timepoint at or beyond about 4 to 6 months avoids B14, and its exact value is neutral (C5).
 
 **B15. Discarding the A/H1N1 neutralisation result as confounded by vaccine composition.** Treating the arms as non-comparable on A/H1N1 and so declining to power on it. The trial summary assigns the same A(H1N1)pdm09 component to both arms and records the difference as H3N2 only. The data refute it independently: the per-virus gain is uniform across the 13-virus panel and largest on A/Wisconsin/588/2019 (+1.61 log2, same reduction), the stated H1 component itself, where a newer-antigen explanation predicts the opposite. Questioning the comparator's stated formulation is neutral (C31); using that question to set the A/H1N1 result aside is not.
 
@@ -84,7 +84,7 @@ The following are examples of acceptable variations that should not affect the s
 
 1. The number of studies proposed, and their ordering.
 2. Whether B/Victoria is a standalone study or a sub-study of the main trial.
-3. The scale of the B/Victoria work - full functional characterisation or a narrower bridging study. A3 still requires a functional B/Victoria endpoint, so a narrower study satisfies A3 only if it carries one.
+3. The scale of the B/Victoria work, full functional characterisation or a narrower bridging study. A3 still requires a functional B/Victoria endpoint, so a narrower study satisfies A3 only if it carries one.
 4. Sample size and power assumptions, and whether any are offered at all.
 5. Timepoint selection beyond the durability timepoint B14 requires - day 181, day 271, day 365 all count.
 6. Choice of neutralisation platform: sequencing-based, conventional microneutralisation, pseudovirus, or focus-reduction.
@@ -95,11 +95,11 @@ The following are examples of acceptable variations that should not affect the s
 11. Whether birth-cohort or imprinting stratification is proposed.
 12. Whether the absence of demographic data is noticed.
 13. Identifying the baseline imbalance, and whether a covariate-adjusted analysis is proposed to handle it.
-14. Noticing the panel saturation - effectively all panel viruses neutralised at the lowest dilution in both arms - and rejecting a seroprotection endpoint on those grounds.
+14. Noticing the panel saturation, meaning effectively all panel viruses neutralised at the lowest dilution in both arms, and rejecting a seroprotection endpoint on those grounds.
 15. Noticing the monoclonal pseudoreplication across 7 donors.
 16. Excluding or retaining the six production reassortants in the panel.
 17. Counting 11 of 13 or 10 of 12 A/H1N1 viruses, or another count reached by a defensible alternative analysis such as a baseline-adjusted model.
-18. Noticing that per-assay cohort sizes differ - binding antibody 75, HAI 29, sequencing-based neutralisation 27.
+18. Noticing that per-assay cohort sizes differ: binding antibody 75, HAI 29, sequencing-based neutralisation 27.
 19. Rejecting `gc_frequencies.csv` or any mechanistic file as unusable, or using it descriptively while declining to draw a comparative claim.
 20. Flagging data-quality items such as the malformed year in `A/SOUTHAFRICA/R07876/202023_H3N2`.
 21. Observing that the study was open-label and non-randomised, and framing the package as hypothesis-generating rather than claim-supporting.
