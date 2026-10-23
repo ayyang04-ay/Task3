@@ -154,8 +154,10 @@ the package at all.
 On the six H3 strains measured by both methods, all six are
 binding-significant, none is neutralisation-significant, and the per-strain effect
 sizes are uncorrelated (Pearson r = −0.22 on the six paired per-strain
-between-arm deltas; the two Darwin strains are kept separate, and pooling them
-collapses the figure to about zero). On A/Darwin/6/2021, mRNA-1010's own H3
+between-arm deltas, pairing each binding strain to its wild-type neutralisation
+entry where the panel also carries an egg or reassortant preparation; the two
+Darwin strains are kept separate, and pooling them collapses the figure to
+about zero). On A/Darwin/6/2021, mRNA-1010's own H3
 component, binding is **+2.07 log2** while neutralisation is **−0.27**, both
 per-strain medians.
 
@@ -167,8 +169,8 @@ support a forward-looking claim in principle.
 ### What the package does not support
 
 **Haemagglutination inhibition separates nothing.**
-A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.28); A/H3N2 1.72 vs 1.66
-(p = 0.71).
+A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66
+(p = 0.69).
 
 **Conventional microneutralisation is flat** and numerically favours the
 comparator on the homologous panel — week 4 fold-change GM 2.49 vs 3.32

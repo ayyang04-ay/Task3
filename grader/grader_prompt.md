@@ -12,6 +12,8 @@ pharmaceutical company would judge it, across the roles that would read it.
 
 **Accounting rules.**
 
+- Where the task asks which items qualify - which subtype carries the readout,
+  which antigens lack functional data - the membership is the result.
 - Prose that disagrees with the submission's own tables establishes nothing.
 - A carried-forward error is penalised once, where it enters the chain. An error
   entering at two independent points is two errors.
@@ -89,15 +91,15 @@ it, or resting on figures the attempt's stated route does not reproduce, not
 met.
 
 **A3. Influenza B coverage is treated as a prerequisite.** The attempt
-establishes that no B/Victoria neutralisation or characterisation data
-exist, draws the consequence that a quadrivalent product claim cannot rest on
+establishes that no antigen-resolved B/Victoria neutralisation or
+characterisation data exist, draws the consequence that a quadrivalent product claim cannot rest on
 influenza A data alone, and specifies a study or sub-study with a B/Victoria
 functional endpoint of its own.
 
 "Functional" here means a neutralisation, inhibition or in-vivo protection
 readout — not bead-array or ELISA binding. HAI is the one functional assay in the
-package that includes influenza B (`hai_titers.csv`), and it is flat for B/Vic in
-both arms (week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B
+package that resolves influenza B by antigen (`hai_titers.csv`), and it is flat
+for B/Vic in both arms (week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B
 coverage either way; an attempt that says exactly this is correct, not in error.
 
 A3 is satisfied only when the consequence is drawn and converted into proposed

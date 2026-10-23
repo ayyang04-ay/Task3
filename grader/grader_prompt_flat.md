@@ -4,6 +4,7 @@ You are grading a proposal recommending the next studies for a quadrivalent mRNA
 
 **Accounting rules.**
 
+- Where the task asks which items qualify - which subtype carries the readout, which antigens lack functional data - the membership is the result.
 - Prose that disagrees with the submission's own tables establishes nothing.
 - A carried-forward error is penalised once, where it enters the chain. An error entering at two independent points is two errors.
 - Impartial between methods. No verbosity penalty, in either direction.
@@ -37,9 +38,9 @@ Naming A/H1N1 as the only functional signal in the analysis and then recommendin
 
 **A2. The strain set is contemporary and forward-drift H1N1 isolates.** The attempt specifies a panel of isolates contemporary with or post-dating the 2022-2023 composition rather than a historical strain series. Any of these groundings counts: the 2023 isolates among the significant viruses in `neutralization_seqbased.csv`; or that neither binding panel (`binding_breadth_h1.csv`, `binding_breadth_h3.csv`) contains a strain later than 2022 and so cannot speak to forward drift. A2 is met on the attempt's own grounding, traced to a mounted file: asserted without it, or resting on figures the attempt's stated route does not reproduce, not met.
 
-**A3. Influenza B coverage is treated as a prerequisite.** The attempt establishes that no B/Victoria neutralisation or characterisation data exist, draws the consequence that a quadrivalent product claim cannot rest on influenza A data alone, and specifies a study or sub-study with a B/Victoria functional endpoint of its own.
+**A3. Influenza B coverage is treated as a prerequisite.** The attempt establishes that no antigen-resolved B/Victoria neutralisation or characterisation data exist, draws the consequence that a quadrivalent product claim cannot rest on influenza A data alone, and specifies a study or sub-study with a B/Victoria functional endpoint of its own.
 
-"Functional" here means a neutralisation, inhibition or in-vivo protection readout - not bead-array or ELISA binding. HAI is the one functional assay in the package that includes influenza B (`hai_titers.csv`), and it is flat for B/Vic in both arms (week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B coverage either way; an attempt that says exactly this is correct, not in error.
+"Functional" here means a neutralisation, inhibition or in-vivo protection readout - not bead-array or ELISA binding. HAI is the one functional assay in the package that resolves influenza B by antigen (`hai_titers.csv`), and it is flat for B/Vic in both arms (week-4 fold-change 1.08 vs 1.05, p = 0.675), so it establishes no B coverage either way; an attempt that says exactly this is correct, not in error.
 
 A3 is satisfied only when the consequence is drawn and converted into proposed work carrying a B/Victoria-specific functional endpoint. Two things do not satisfy A3: listing influenza B among absent assays without proposing anything to close it (the single most common way a strong attempt fails); and writing B/Victoria isolates into a panel whose endpoint is defined around A/H1N1 with no B-specific readout - that is cosmetic coverage, not characterisation. B/Victoria is one of the four antigens the product encodes, so its coverage must be justified in its own right. A3 is met on the attempt's own grounding, traced to a mounted file: asserted without it, or resting on figures the attempt's stated route does not reproduce, not met.
 
