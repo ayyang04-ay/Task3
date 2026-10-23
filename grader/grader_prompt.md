@@ -138,9 +138,9 @@ exhaustive - apply your judgment to any other issues you identify.
 
 **B1. Powering the protection readout on the bead-array binding result.**
 Selecting A/H3N2 because binding breadth is largest there (12 of 12 strains,
-per-strain median between-arm delta +2.30 log2), when `neutralization_seqbased.csv` shows 0 of 83 H3N2 viruses
-separating on the one functional assay run against them, while the same file
-shows 11 of 13 in H1N1.
+per-strain median between-arm delta +2.30 log2), when
+`neutralization_seqbased.csv` shows 0 of 83 H3N2 viruses separating on the one
+functional assay run against them, while the same file shows 11 of 13 in H1N1.
 
 **B2. A multiplex-binding primary endpoint.** Proposing bead-array or ELISA
 binding as the primary readout for a protection claim, or citing the 12-of-12
@@ -160,6 +160,7 @@ B3 fires on the recommendation, not the observation. Absence of evidence rather
 than evidence of absence, wide confidence intervals, a smaller true H3 effect
 going undetected at this n, and a larger H3N2 study proposed as exploratory work
 alongside an A/H1N1 primary are all correct reasoning and are not penalised.
+What is penalised is staking the protection readout on it.
 
 **B4. Correcting for multiplicity across all 96 viruses at once.** The 13
 A/H1N1 and 83 A/H3N2 viruses are two separately assembled libraries screened for
@@ -168,7 +169,8 @@ A/H3N2 tests set the threshold for the 13 A/H1N1 ones; the A/H1N1 count falls
 from 11 to 0 on the pooling alone. Penalised where the pooled correction is the
 basis offered for the verdict, usually with the conclusion that neither subtype
 has functional support. Reporting it alongside the within-panel result, with the
-choice of family reasoned through, is not B4.
+choice of family reasoned through, is not B4 - nor is any other test, which
+C23 and the equivalent-methods clause leave open.
 
 **B5. Treating the week-4 influenza B binding advantage as coverage.** Citing
 p = 0.0146 at week 4 as evidence B is characterised, when the same comparison is
@@ -206,7 +208,8 @@ in its own vaccine.
 **B11. The study specification is missing.** A recommended study is offered
 without its endpoints, population, comparator and readouts. The prompt requires
 these for each study it asks for, so their absence is the error, whatever the
-response spent its space on instead. Where the specification is present, what
+response spent its space on instead and whether or not the gap is filled by
+methodological material. Where the specification is present, what
 else the response carries is not scored here (C30).
 
 **B12. Offering the absence of neuraminidase data as the coverage gap.**
@@ -234,10 +237,10 @@ neutral (C5).
 composition.** Treating the arms as non-comparable on A/H1N1, and so declining to
 power on it, on the grounds that the two products' antigens differ. The trial
 summary assigns the same A(H1N1)pdm09 component to both arms and records the
-difference as H3N2 only. The data refute it independently: the per-virus gain is
-largest on A/Wisconsin/588/2019 (+1.61 log2, same reduction), the stated H1
-component itself,
-where a newer-antigen explanation predicts the opposite. Questioning the
+difference as H3N2 only. The data refute it independently: the per-virus gain
+is uniform across the 13-virus panel and largest on A/Wisconsin/588/2019
+(+1.61 log2, same reduction), the stated H1 component itself, where a
+newer-antigen explanation predicts the opposite. Questioning the
 comparator's stated formulation is neutral (C31); using that question to set the
 A/H1N1 result aside is not.
 
