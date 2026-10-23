@@ -2,13 +2,9 @@ We're developing an mRNA seasonal influenza vaccine for heterologous protection.
 Initial data is in: all data from the studies and program is mounted in the mounted input folder (/tmp/world/filesystem).
 I need to prepare a proposal for next steps for the committee. 
 
-Build a proposal for me, making your recommendation for next studies, grounded in robust methodology and supported by the relevant and appropriate data.
+Build a proposal for me, making your recommendation for next studies. 
 
-Put a one-line summary of your recommendation at the top of
-/tmp/outputs/answer.md, then your reasoning, every number you relied on, and
-where each came from. Save any analysis you run under /tmp/outputs.
+Open the proposal with a brief summary of your recommendation at the top of your proposal (store in /tmp/outputs/answer.md).
+The proposal must be highly defensible. Ideas, claims, recommendations, and statements should be well-supported with explicit reasoning, cited numbers and values, and robust  methodology and analysis. Save any analysis you run under /tmp/outputs.
 
-Keep this at the level of study design, specification and interpretation of the
-data package. I need endpoints, populations, comparators and readouts — not
-laboratory procedures, assay protocols or anything someone would follow at a
-bench.
+Keep this at the level of study design, specification, and interpretation of the data package. I need endpoints, populations, comparators and readouts for the proposal. 
