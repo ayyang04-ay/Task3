@@ -40,9 +40,9 @@ The following are common errors observed on this task. This list is not exhausti
 
 **B1. Powering the protection readout on the bead-array binding result.** Selecting A/H3N2 because binding breadth is largest there (12 of 12 strains, per-strain median between-arm delta +2.30 log2), when `neutralization_seqbased.csv` shows 0 of 83 H3N2 viruses separating on the one functional assay run against them and 11 of 13 in H1N1.
 
-**B2. A multiplex-binding primary endpoint.** Proposing bead-array or ELISA binding as the primary readout for a protection claim, or citing the 12-of-12 result as evidence of protective strain coverage, without confronting the neutralisation nulls or the A/Darwin/6/2021 dissociation (per-strain median between-arm deltas, +2.07 binding against -0.27 neutralisation).
+**B2. Bead-array or ELISA binding as the primary endpoint.** Proposing either as the primary readout for a protection claim, or citing the 12-of-12 result as evidence of protective strain coverage, without confronting the neutralisation nulls or the A/Darwin/6/2021 dissociation (per-strain median between-arm deltas, +2.07 binding against -0.27 neutralisation).
 
-**B3. Powering the protection trial on A/H3N2 by treating the 83 nulls as a sample-size problem.** Recommending a larger H3N2 neutralisation study *as the heterologous-protection trial*, on the grounds that the nulls reflect n rather than absence of effect. With 0 of 83 viruses separating, the package carries no functional H3 effect estimate to power against.
+**B3. Powering the protection trial on A/H3N2 by treating the 83 nulls as a sample-size problem.** Recommending a larger H3N2 neutralisation study *as the heterologous-protection trial*. With 0 of 83 viruses separating, the package carries no functional H3 effect estimate to power against.
 
 B3 fires on the recommendation, not the observation. Absence of evidence rather than evidence of absence, wide confidence intervals, a smaller true H3 effect going undetected at this n, and a larger H3N2 study proposed as exploratory work alongside an A/H1N1 primary are all correct reasoning and are not penalised. What is penalised is staking the protection readout on it.
 
@@ -52,25 +52,25 @@ B3 fires on the recommendation, not the observation. Absence of evidence rather 
 
 **B6. Treating HAI as influenza B coverage.** HAI is flat for B in both arms, so it supports no endpoint in either direction.
 
-**B7. Treating B/Victoria as deferrable to a future seasonal update.** Addressing the influenza B component through later strain-composition changes, or sequencing it behind the influenza A programme as lower priority, on the implied basis that it is adequately covered - when no functional B data exist anywhere in the mount and the binding advantage that does exist is gone by wk17/26 (1.57 vs 1.56, p = 0.8363).
+**B7. Treating B/Victoria as deferrable to a future seasonal update.** Addressing the influenza B component through later strain-composition changes, or sequencing it behind the influenza A programme as lower priority, on the implied basis that it is adequately covered - when no functional B data exist anywhere in the mount and the binding advantage that does exist is gone by wk17/26.
 
-**B8. Advancing on mechanism.** Recommending progression on germinal-centre persistence, repertoire diversification or clonotype counts as though these bore on protection. These rest on a 6-versus-11 lymph-node cohort and 7 donors and carry no protection weight.
+**B8. Advancing the programme on mechanistic data.** Recommending progression on germinal-centre persistence, repertoire diversification or clonotype counts as though these bore on protection. These rest on a 6-versus-11 lymph-node cohort and 7 donors and carry no protection weight.
 
-**B9. Reading strain-name collisions as influenza B data.** The panels contain influenza A strains named after the Australian state of Victoria and the Japanese prefecture of Yamagata - among them `A/Victoria/4897/2022_IVR-238_H1N1`, `A/Victoria/1389/2023_H1N1` and `A/YAMAGATA/98/2023_H3N2`. The actual B antigens named in the trial summary are B/Austria/1359417/2021 and B/Phuket/3073/2013, and neither appears in any functional file, so reading an A strain as B-lineage coverage is a nomenclature error.
+**B9. Reading strain-name collisions as influenza B data.** The panels contain influenza A strains named after the Australian state of Victoria and the Japanese prefecture of Yamagata - among them `A/Victoria/4897/2022_IVR-238_H1N1`, `A/Victoria/1389/2023_H1N1` and `A/YAMAGATA/98/2023_H3N2`. The actual B antigens named in the trial summary are B/Austria/1359417/2021 and B/Phuket/3073/2013, and neither appears in any functional file.
 
-**B10. Normalising heterologous titre to the participant's own vaccine-strain titre** and reporting the resulting A/H3N2 separation as a real effect. The mRNA arm responded less well at A/Darwin/6/2021, so the signal is a smaller denominator and the endpoint rewards an arm for failing against the strain in its own vaccine.
+**B10. Normalising heterologous titre to the participant's own vaccine-strain titre.** Reporting the resulting A/H3N2 separation as a real effect. The mRNA arm responded less well at A/Darwin/6/2021, so the signal is a smaller denominator and the endpoint rewards an arm for failing against the strain in its own vaccine.
 
 **B11. The study specification is missing.** A recommended study is offered without its endpoints, population, comparator and readouts. The prompt requires these for each study it asks for, so their absence is the error, whatever the response spent its space on instead and whether or not the gap is filled by methodological material. Where the specification is present, what else the response carries is not scored here (C30).
 
-**B12. Offering the absence of neuraminidase data as the coverage gap.** Reasonable as a mechanism observation, and haemagglutinin carries the dominant antibody response, but the four antigens `trial_summary.md` names are all haemagglutinin and neuraminidase is not among them, so no NA absence threatens the product's coverage claim the way an uncharacterised encoded antigen does. It does not satisfy A3.
+**B12. Offering the absence of neuraminidase data as the coverage gap.** Reasonable as a mechanism observation, but the four antigens `trial_summary.md` names are all haemagglutinin and neuraminidase is not among them, so no NA absence threatens the product's coverage claim the way an uncharacterised encoded antigen does. It does not satisfy A3.
 
 **B13. Unsupported assertion.** A number, p-value or claim with no derivation, or whose inputs do not exist in the mount. Penalised in its own right, whether or not the value is correct.
 
 **B14. A day-29-only functional primary.** Recommending a protection readout with no durability timepoint reaching roughly the length of an influenza season (~4-6 months post-dose; day 121 or day 181), when the A/H1N1 functional advantage wanes 2.13-fold against 1.24-fold in the Fluarix comparator from day 29 to day 181 (p = 0.0022, per-participant geometric-mean folds; reducing by arm GMT instead gives 2.20-fold against 1.59-fold, same direction) - a claim the data show has already decayed within one season. Any durability timepoint at or beyond ~4-6 months avoids B14; its exact value is neutral (C5).
 
-**B15. Discarding the A/H1N1 neutralisation result as confounded by vaccine composition.** Treating the arms as non-comparable on A/H1N1, and so declining to power on it, on the grounds that the two products' antigens differ. The trial summary assigns the same A(H1N1)pdm09 component to both arms and records the difference as H3N2 only. The data refute it independently: the per-virus gain is uniform across the 13-virus panel and largest on A/Wisconsin/588/2019 (+1.61 log2, same reduction), the stated H1 component itself, where a newer-antigen explanation predicts the opposite. Questioning the comparator's stated formulation is neutral (C31); using that question to set the A/H1N1 result aside is not.
+**B15. Discarding the A/H1N1 neutralisation result as confounded by vaccine composition.** Treating the arms as non-comparable on A/H1N1 and so declining to power on it. The trial summary assigns the same A(H1N1)pdm09 component to both arms and records the difference as H3N2 only. The data refute it independently: the per-virus gain is uniform across the 13-virus panel and largest on A/Wisconsin/588/2019 (+1.61 log2, same reduction), the stated H1 component itself, where a newer-antigen explanation predicts the opposite. Questioning the comparator's stated formulation is neutral (C31); using that question to set the A/H1N1 result aside is not.
 
-**B16. A stated derivation that does not produce the value it is offered as producing.** A figure given with a named file and a described route, where recomputing by that route yields a materially different value. Distinct from B13, which covers an assertion carrying no derivation at all or whose inputs do not exist in the mount. Whether the commitment it supports still stands is governed by the A items; this records the misstatement.
+**B16. A derivation that does not produce its own value.** A figure given with a named file and a described route, where recomputing by that route yields a materially different value. Distinct from B13, which covers an assertion carrying no derivation at all or whose inputs do not exist in the mount. Whether the commitment it supports still stands is governed by the A items; this records the misstatement.
 
 ## C) NEUTRAL
 
@@ -78,7 +78,7 @@ The following are examples of acceptable variations that should not affect the s
 
 1. The number of studies proposed, and their ordering.
 2. Whether B/Victoria is a standalone study or a sub-study of the main trial.
-3. The scale of the B/Victoria work - full functional characterisation or a narrower bridging study. A3 still requires a functional B/Victoria endpoint, so a narrower study satisfies A3 only if it carries one.
+3. The scale of the B/Victoria work - full functional characterisation or a narrower bridging study.
 4. Sample size and power assumptions, and whether any are offered at all.
 5. Timepoint selection beyond the durability timepoint B14 requires - day 181, day 271, day 365 all count.
 6. Choice of neutralisation platform: sequencing-based, conventional microneutralisation, pseudovirus, or focus-reduction.
@@ -99,10 +99,10 @@ The following are examples of acceptable variations that should not affect the s
 21. Observing that the study was open-label and non-randomised, and framing the package as hypothesis-generating rather than claim-supporting.
 22. Whether the attempt frames its headline as "do not take this to committee" or as "here is what the next studies must show". Both are responsive.
 23. Statistical choices: Mann-Whitney against t-test on log titres, exact against asymptotic, median against geometric-mean summaries, and whether multiplicity correction is applied to the binding panels.
-24. Whether the H1N1 gain is characterised as a strain-coverage gradient, as a potency shift, or as both, provided the recommended panel is still contemporary and forward-drift. Neither reading is scored.
+24. Whether the H1N1 gain is characterised as a strain-coverage gradient, as a potency shift, or as both.
 25. Whether the adverse waning result is reported as a fold-ratio, a retention fraction, or a slope.
 26. Language, tooling, file layout and presentation of saved analysis.
-27. Omitting work on the A/H3N2 binding-versus-neutralisation dissociation. The deliverable fully answers the prompt without it.
+27. Omitting work on the A/H3N2 binding-versus-neutralisation dissociation.
 28. Omitting any number that is not needed to establish A1, A2 or A3.
 29. Length, section ordering, and whether studies are numbered or named. Whether the word "quadrivalent" is used.
 30. Appended methodological, assay or bench-level detail, where the specification is already complete. Scope is enforced on substitution (B11), not on addition: a complete specification with extra material appended scores as one without it.
