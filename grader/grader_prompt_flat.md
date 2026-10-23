@@ -21,7 +21,7 @@ Designs are judged on testing structure, not the label used. A MET row does not 
 | Both A subtypes as equal co-primaries - shared alpha, success requiring both, no hierarchy | NOT MET |
 | Co-primaries with programme success if either A subtype passes | NOT MET |
 | A "≥2-of-3 families" or "at least one A subtype" go rule | NOT MET |
-| A go rule the programme can satisfy without demonstrating heterologous protection, such as an HAI or seroconversion non-inferiority path against matched strains | NOT MET |
+| A go rule the programme can satisfy without demonstrating heterologous protection | NOT MET |
 | A/H3N2 tested first, with A/H1N1 reached only if A/H3N2 passes | NOT MET |
 | A single pooled multi-subtype primary panel | NOT MET |
 | Subtype unspecified, or the two A subtypes treated as interchangeable | NOT MET |
