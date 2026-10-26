@@ -11,16 +11,16 @@ is named at the figure.
 
 **Recommendation.** Power the heterologous-protection readout on A/H1N1 against
 contemporary and forward-drift isolates with a durability co-primary, and run a
-B/Victoria functional characterisation study in parallel — the package
+B/Victoria functional characterisation study in parallel. The package
 establishes broader binding, not broader protection, and for half the
 formulation it generates no antigen-resolved neutralisation or characterisation
 data at all and only a flat HAI result.
 
-### Study 1 — heterologous protection, A/H1N1
+### Study 1. Heterologous protection, A/H1N1
 
 **What is measured.** Neutralisation titre against a pre-locked panel of
 contemporary and forward-drift A/H1N1 clinical isolates. Co-primary endpoints at
-day 29 and at a durability timepoint covering the influenza season (~4–6 months
+day 29 and at a durability timepoint covering the influenza season (about 4 to 6 months
 post-dose; day 121 or day 181). Haemagglutination inhibition retained as a
 regulatory bridge, not as the primary functional readout.
 
@@ -39,9 +39,9 @@ Birth-cohort stratification follows from the H1/H3 asymmetry below, which is the
 pattern immune imprinting would produce. No age or birth year appears anywhere in
 the mount, so the held data cannot test it.
 
-**Against what.** Wild-type clinical isolates post-dating the 2022–2023
+**Against what.** Wild-type clinical isolates post-dating the 2022-2023
 composition named in the trial summary. Egg- and cell-propagated production
-reassortants excluded — the panel in `neutralization_seqbased.csv` contains six,
+reassortants excluded. The panel in `neutralization_seqbased.csv` contains six,
 identifiable by their reassortant designations (`IVR-238` on the one H1N1 strain;
 `NIB-88`, `X-307A`, `X-223A` and two `egg`-suffixed strains on H3N2).
 
@@ -55,6 +55,14 @@ A/Michigan/45/2015 and A/Brisbane/02/2018; the oldest isolate in the panel,
 A/California/07/2009, is itself significant (q = 0.036), so the separation is not
 a simple old-versus-new split. **6 of the 11** significant viruses are 2023
 isolates post-dating the vaccine composition.
+
+One of the 13 is A/Wisconsin/588/2019, the H1 component `trial_summary.md`
+assigns to both arms, so the contrast there measures homologous response rather
+than breadth. Both arms clear that bar: mRNA-1010 rises 6.15-fold from day 0 to
+day 29 (p = 0.0002) and the comparator 2.34-fold (p = 0.0009), so the
+precondition for advancing either product is met and the open question is
+breadth. Setting that strain aside, 10 of the remaining 12 separate at a median
+delta of +1.24 log2, which is the figure the heterologous claim rests on.
 
 The advantage is broadly uniform across the panel rather than concentrated in the
 contemporary strains: the median per-virus delta on the 2023 isolates is
@@ -72,7 +80,7 @@ day 29 (ratio 1.76) and 402.5 vs 315.9 at day 181 (ratio 1.27). Waning from day
 29 to day 181 is **2.13-fold in the mRNA arm against 1.24-fold in the comparator,
 p = 0.0022** - per-participant day-29/day-181 titre ratios over the wild-type
 panel, n = 11 against 10, asymptotic with the continuity correction. The exact
-test on the same inputs gives p = 0.0011; both reject — significant, and unfavourable to the investigational arm.
+test on the same inputs gives p = 0.0011; both reject, and the direction is unfavourable to the investigational arm.
 
 Those waning figures are per-participant geometric-mean folds: for each
 participant, the geometric-mean titre across the wild-type panel viruses at each
@@ -88,7 +96,7 @@ durability signals disagree, and a protection claim is governed by the functiona
 one. A day-29-only design would support a claim that has decayed before the end
 of a single season.
 
-### Study 2 — B/Victoria functional characterisation
+### Study 2. B/Victoria functional characterisation
 
 **What is measured.** Neutralisation against a B/Victoria panel, plus the
 characterisation that already exists for the A subtypes: a binding-breadth panel
@@ -100,7 +108,7 @@ This may run as a sub-study of Study 1 or standalone.
 **Against what.** Contemporary B/Victoria isolates, including drift variants
 post-dating B/Austria/1359417/2021.
 
-**Why this is a prerequisite and not an addition.** The product is quadrivalent —
+**Why this is a prerequisite and not an addition.** The product is quadrivalent:
 the trial summary names four antigens, two of them influenza B. Across the whole
 mount, influenza B appears only in `elisa_igg_titers.csv`, `hai_titers.csv` and
 `igm_fold_change.csv`. The functional assays are influenza A only:
@@ -123,15 +131,15 @@ so it supports no endpoint either way.
 B/Yamagata is out of scope: it has not circulated since 2020 and has been removed
 from seasonal formulations. The live influenza B question is B/Victoria.
 
-### Study 3 — resolving the A/H3N2 binding-versus-function dissociation
+### Study 3. Resolving the A/H3N2 binding-versus-function dissociation
 
 **What is measured.** Whether the additional H3 binding is functional at all:
 stem-competition and epitope mapping, Fc-effector readouts, neuraminidase
 inhibition, and neutralisation against drifted H3 isolates rather than binding
 alone. Passive
 transfer and heterologous challenge in a pre-immune animal model, interpreted as
-protection per unit neutralising titre. This orthogonal pairing — in-vitro
-neutralisation plus in-vivo protection — is what substantiates a
+protection per unit neutralising titre. This orthogonal pairing of in-vitro
+neutralisation with in-vivo protection is what substantiates a
 heterologous-protection claim; HAI tracks only matched strains and a binding
 readout cannot carry it.
 
@@ -148,21 +156,21 @@ signal in the package to carry a protection endpoint: the large H3 effect that
 does exist is a binding effect, and the one functional readout that has been run
 against these viruses finds nothing. A larger H3N2 neutralisation study might
 yet detect something, but that is a hypothesis to be generated, not a protection
-trial to be powered — the effect it would be powered to find has no estimate in
+trial to be powered: the effect it would be powered to find has no estimate in
 the package at all.
 
 On the six H3 strains measured by both methods, all six are
 binding-significant, none is neutralisation-significant, and the per-strain effect
-sizes are uncorrelated (Pearson r = −0.22 on the six paired per-strain
+sizes are uncorrelated (Pearson r = -0.22 on the six paired per-strain
 between-arm deltas, pairing each binding strain to its wild-type neutralisation
 entry where the panel also carries an egg or reassortant preparation; the two
 Darwin strains are kept separate, and pooling them collapses the figure to
 about zero). On A/Darwin/6/2021, mRNA-1010's own H3
-component, binding is **+2.07 log2** while neutralisation is **−0.27**, both
+component, binding is **+2.07 log2** while neutralisation is **-0.27**, both
 per-strain medians.
 
-Separately, neither bead-array breadth panel — `binding_breadth_h1.csv` or
-`binding_breadth_h3.csv` — contains a strain later than 2022, so both measure
+Separately, neither bead-array breadth panel, `binding_breadth_h1.csv` or
+`binding_breadth_h3.csv`, contains a strain later than 2022, so both measure
 back-boost against historical strains rather than forward drift and cannot
 support a forward-looking claim in principle.
 
@@ -173,12 +181,12 @@ A/H1N1 week 4 fold-change 2.76 vs 2.25 (p = 0.26); A/H3N2 1.72 vs 1.66
 (p = 0.69).
 
 **Conventional microneutralisation is flat** and numerically favours the
-comparator on the homologous panel — week 4 fold-change GM 2.49 vs 3.32
+comparator on the homologous panel: week 4 fold-change GM 2.49 vs 3.32
 (p = 0.53). Heterologous is 4.12 vs 3.03 (p = 0.32), confounded by the baseline
 deficit noted above.
 
-**Molecular and mechanistic readouts** — germinal-centre persistence, repertoire
-diversification, clonotype counts, single-cell annotations — support a mechanism,
+**Molecular and mechanistic readouts.** Germinal-centre persistence, repertoire
+diversification, clonotype counts and single-cell annotations support a mechanism,
 not a protection claim, and rest on small subsets. The lymph-node cohort in
 `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and
 `pb_gc_clonal_overlap.csv` covers the same 7 donors as the monoclonal panels,
@@ -188,7 +196,7 @@ pseudoreplicated across those same 7 donors, so per-monoclonal percentages
 overstate the evidence; `group_I` runs opposite to `group_II`.
 
 **Correcting across all 96 viruses at once** extinguishes the H1N1 signal
-(11 → 0, nothing surviving) and makes the subtypes look equivalent. The panels
+(11 down to 0, nothing surviving) and makes the subtypes look equivalent. The panels
 are two separate libraries of 13 and 83 viruses; correction belongs within each.
 
 **Normalising heterologous titre to each participant's own vaccine-strain titre**

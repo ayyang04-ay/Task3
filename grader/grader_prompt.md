@@ -84,6 +84,14 @@ appear in no neutralisation or characterisation file. The
 `heterologous` and do not resolve by antigen, so they neither satisfy A3 nor
 count against an inventory reporting the absence.
 
+**A4. Homologous protection is addressed.** A product that does not protect
+against its own formulated strains does not advance, so the attempt has to deal
+with it. Either route counts: establishing from the package that mRNA-1010
+raises titres against A/Wisconsin/588/2019, the H1 component
+`trial_summary.md` assigns to it (6.15-fold at day 29, p = 0.0002); or carrying
+a homologous readout forward as a control in the proposed programme, such as
+HAI or vaccine-strain neutralisation alongside the heterologous primary.
+
 ## B) PENALIZE FOR
 
 The following are common errors observed on this task. This list is not
@@ -186,10 +194,10 @@ and its exact value is neutral (C5).
 **B15. Discarding the A/H1N1 neutralisation result as confounded by vaccine
 composition.** Treating the arms as non-comparable on A/H1N1 and so declining
 to power on it. The trial summary assigns the same A(H1N1)pdm09 component to both arms and records
-the difference as H3N2 only. The data refute it independently: the per-virus
-gain is uniform across the 13-virus panel and largest on A/Wisconsin/588/2019
-(+1.61 log2, same reduction), the stated H1 component itself, where a
-newer-antigen explanation predicts the opposite. Questioning the comparator's
+the difference as H3N2 only. The result does not rest on
+that comparison in any case. Set the formulated strain aside and 10 of the
+remaining 12 viruses still separate, median delta +1.24 log2, which is where a
+heterologous claim lives. Questioning the comparator's
 stated formulation is neutral (C31); using that question to set the A/H1N1
 result aside is not.
 
@@ -259,7 +267,7 @@ score. Other variations may also be neutral - use your judgment.
     fraction, or a slope.
 26. Language, tooling, file layout and presentation of saved analysis.
 27. Omitting work on the A/H3N2 binding-versus-neutralisation dissociation.
-28. Omitting any number that is not needed to establish A1, A2 or A3.
+28. Omitting any number that is not needed to establish A1 to A4.
 29. Length, section ordering, and whether studies are numbered or named.
     Whether the word "quadrivalent" is used.
 30. Appended methodological, assay or bench-level detail, where the
@@ -282,4 +290,4 @@ mounted files earns what any other route earns. Per-virus Mann-Whitney with
 within-panel Benjamini-Hochberg correction and participant-level geometric
 means, a mixed model over the panel, a covariate-adjusted analysis of day-29
 titre, a permutation test, and a distance-regression approach all count where
-they establish A1, A2 and A3 from the same files.
+they establish A1 to A4 from the same files.
