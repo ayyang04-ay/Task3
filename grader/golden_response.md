@@ -2,10 +2,13 @@
 
 ## Golden Response
 
-**Methods.** All tests are two-sided Mann-Whitney on log2 values, scipy 1.18.1
-`mannwhitneyu` at its default settings, which for these group sizes is the
-asymptotic approximation with the continuity correction applied. Multiplicity is
-controlled by Benjamini-Hochberg within each virus panel. Summaries are
+**Methods.** Between-arm comparisons are two-sided Mann-Whitney on log2
+values, scipy 1.18.1 `mannwhitneyu` at its default settings, which for these
+group sizes is the asymptotic approximation with the continuity correction
+applied. A within-arm comparison of two timepoints in the same participants is
+a two-sided paired Wilcoxon signed-rank test, scipy `wilcoxon` at its
+defaults. Multiplicity is controlled by Benjamini-Hochberg within each virus
+panel. Summaries are
 geometric means. Where a figure depends on the unit it is reduced over, the unit
 is named at the figure.
 
