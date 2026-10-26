@@ -85,12 +85,10 @@ appear in no neutralisation or characterisation file. The
 count against an inventory reporting the absence.
 
 **A4. Homologous protection is addressed.** A product that does not protect
-against its own formulated strains does not advance, so the attempt has to deal
-with it. Either route counts: establishing from the package that mRNA-1010
-raises titres against A/Wisconsin/588/2019, the H1 component
-`trial_summary.md` assigns to it (6.15-fold at day 29, p = 0.0002); or carrying
-a homologous readout forward as a control in the proposed programme, such as
-HAI or vaccine-strain neutralisation alongside the heterologous primary.
+against its own formulated strains does not advance. Either route counts:
+establishing from the package that the product raises titres against the H1
+component `trial_summary.md` assigns to it, or carrying a homologous readout
+forward as a control in the proposed programme.
 
 ## B) PENALIZE FOR
 
@@ -193,11 +191,10 @@ and its exact value is neutral (C5).
 
 **B15. Discarding the A/H1N1 neutralisation result as confounded by vaccine
 composition.** Treating the arms as non-comparable on A/H1N1 and so declining
-to power on it. The trial summary assigns the same A(H1N1)pdm09 component to both arms and records
-the difference as H3N2 only. The result does not rest on
-that comparison in any case. Set the formulated strain aside and 10 of the
-remaining 12 viruses still separate, median delta +1.24 log2, which is where a
-heterologous claim lives. Questioning the comparator's
+to power on it. The trial summary assigns the same A(H1N1)pdm09 component to
+both arms and records the difference as H3N2 only. The result does not rest on
+that comparison either: set the formulated strain aside and 10 of the remaining
+12 viruses still separate, median delta +1.24 log2. Questioning the comparator's
 stated formulation is neutral (C31); using that question to set the A/H1N1
 result aside is not.
 
