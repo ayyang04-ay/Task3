@@ -6,10 +6,9 @@
 values, scipy 1.18.1 `mannwhitneyu` at its default settings, which for these
 group sizes is the asymptotic approximation with the continuity correction
 applied. A within-arm comparison of two timepoints in the same participants is
-a two-sided paired Wilcoxon signed-rank test, scipy `wilcoxon` at its
-defaults. Multiplicity is controlled by Benjamini-Hochberg within each virus
-panel. Summaries are
-geometric means. Where a figure depends on the unit it is reduced over, the unit
+a two-sided paired Wilcoxon signed-rank test on log2 values, scipy `wilcoxon`
+at its defaults. Multiplicity is controlled by Benjamini-Hochberg within each
+virus panel. Summaries are geometric means. Where a figure depends on the unit it is reduced over, the unit
 is named at the figure.
 
 **Recommendation.** Power the heterologous-protection readout on A/H1N1 against
@@ -31,12 +30,14 @@ regulatory bridge, not as the primary functional readout.
 active comparator, stratified on pre-vaccination titre and on birth cohort.
 
 Baseline stratification is required. In `neutralization_seqbased.csv` the
-mRNA-1010 arm starts lower on A/H3N2 (day 0 GMT 185.3 vs 277.7, participant-level
-geometric means over all 83 H3N2 viruses; pooling rows instead gives 186.8 vs
-278.4) and in
-`microneutralization.csv` on the heterologous panel (week 0 GM 57.0 vs 121.3);
-baseline anti-correlates with fold-rise. An unstratified fold-rise endpoint
-therefore flatters whichever arm enrolled lower.
+mRNA-1010 arm starts lower on A/H3N2 (day 0 GMT 185.3 vs 277.7,
+participant-level geometric means over all 83 H3N2 viruses; pooling rows
+instead gives 186.8 vs 278.4) and in `microneutralization.csv` on the
+heterologous panel (week 0 GM 57.0 vs 121.3).
+Higher baseline titres leave less room for a fold-rise, so an unstratified
+fold-rise endpoint flatters whichever arm enrolled lower. The trend is present
+here but not established at this size: Spearman -0.28, p = 0.15 over 27
+participants.
 
 Birth-cohort stratification follows from the H1/H3 asymmetry below, which is the
 pattern immune imprinting would produce. No age or birth year appears anywhere in
@@ -64,7 +65,7 @@ assigns to both arms, so the contrast there measures homologous response rather
 than breadth. Both arms clear that bar: mRNA-1010 rises 6.15-fold from day 0 to
 day 29 (p = 0.0002) and the comparator 2.34-fold (p = 0.0009), so the
 precondition for advancing either product is met and the open question is
-breadth. Setting that strain aside, 10 of the remaining 12 separate at a median
+breadth. Setting that strain aside, 10 of the other 12 viruses separate at a median
 delta of +1.24 log2, which is the figure the heterologous claim rests on.
 
 The advantage is broadly uniform across the panel rather than concentrated in the
@@ -189,7 +190,7 @@ comparator on the homologous panel: week 4 fold-change GM 2.49 vs 3.32
 deficit noted above.
 
 **Molecular and mechanistic readouts.** Germinal-centre persistence, repertoire
-diversification, clonotype counts and single-cell annotations support a mechanism,
+diversification and clonotype counts support a mechanism,
 not a protection claim, and rest on small subsets. The lymph-node cohort in
 `gc_frequencies.csv` is 6 mRNA-1010 against 11 Fluarix participants, and
 `pb_gc_clonal_overlap.csv` covers the same 7 donors as the monoclonal panels,
